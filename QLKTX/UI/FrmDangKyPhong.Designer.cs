@@ -1,0 +1,277 @@
+﻿namespace QLKTX.UI
+{
+    partial class FrmDangKyPhong
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lbMSSV = new System.Windows.Forms.Label();
+            this.lbMaPhong = new System.Windows.Forms.Label();
+            this.lbHocKi = new System.Windows.Forms.Label();
+            this.lbNamHoc = new System.Windows.Forms.Label();
+            this.lbPhieuDangKy = new System.Windows.Forms.Label();
+            this.tBMSSV = new System.Windows.Forms.TextBox();
+            this.tBNamHoc = new System.Windows.Forms.TextBox();
+            this.btnDangKy = new System.Windows.Forms.Button();
+            this.btnInPDK = new System.Windows.Forms.Button();
+            this.lbKhu = new System.Windows.Forms.Label();
+            this.cmbHocKi = new System.Windows.Forms.ComboBox();
+            this.cmbMaPhong = new System.Windows.Forms.ComboBox();
+            this.cmbKhu = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbNhanVien = new System.Windows.Forms.Label();
+            this.lbNgay = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // lbMSSV
+            // 
+            this.lbMSSV.AutoSize = true;
+            this.lbMSSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMSSV.Location = new System.Drawing.Point(16, 22);
+            this.lbMSSV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMSSV.Name = "lbMSSV";
+            this.lbMSSV.Size = new System.Drawing.Size(50, 16);
+            this.lbMSSV.TabIndex = 0;
+            this.lbMSSV.Text = "MSSV";
+            // 
+            // lbMaPhong
+            // 
+            this.lbMaPhong.AutoSize = true;
+            this.lbMaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaPhong.Location = new System.Drawing.Point(16, 92);
+            this.lbMaPhong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMaPhong.Name = "lbMaPhong";
+            this.lbMaPhong.Size = new System.Drawing.Size(76, 16);
+            this.lbMaPhong.TabIndex = 3;
+            this.lbMaPhong.Text = "Mã phòng";
+            // 
+            // lbHocKi
+            // 
+            this.lbHocKi.AutoSize = true;
+            this.lbHocKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHocKi.Location = new System.Drawing.Point(301, 22);
+            this.lbHocKi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbHocKi.Name = "lbHocKi";
+            this.lbHocKi.Size = new System.Drawing.Size(52, 16);
+            this.lbHocKi.TabIndex = 4;
+            this.lbHocKi.Text = "Học kì";
+            // 
+            // lbNamHoc
+            // 
+            this.lbNamHoc.AutoSize = true;
+            this.lbNamHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNamHoc.Location = new System.Drawing.Point(301, 61);
+            this.lbNamHoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNamHoc.Name = "lbNamHoc";
+            this.lbNamHoc.Size = new System.Drawing.Size(69, 16);
+            this.lbNamHoc.TabIndex = 5;
+            this.lbNamHoc.Text = "Năm học";
+            // 
+            // lbPhieuDangKy
+            // 
+            this.lbPhieuDangKy.BackColor = System.Drawing.Color.Goldenrod;
+            this.lbPhieuDangKy.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbPhieuDangKy.Font = new System.Drawing.Font("Segoe UI Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhieuDangKy.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbPhieuDangKy.Location = new System.Drawing.Point(0, 0);
+            this.lbPhieuDangKy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPhieuDangKy.Name = "lbPhieuDangKy";
+            this.lbPhieuDangKy.Size = new System.Drawing.Size(592, 54);
+            this.lbPhieuDangKy.TabIndex = 9;
+            this.lbPhieuDangKy.Text = "PHIẾU ĐĂNG KÝ";
+            this.lbPhieuDangKy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tBMSSV
+            // 
+            this.tBMSSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBMSSV.Location = new System.Drawing.Point(96, 22);
+            this.tBMSSV.Margin = new System.Windows.Forms.Padding(2);
+            this.tBMSSV.Name = "tBMSSV";
+            this.tBMSSV.Size = new System.Drawing.Size(164, 22);
+            this.tBMSSV.TabIndex = 14;
+            // 
+            // tBNamHoc
+            // 
+            this.tBNamHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBNamHoc.Location = new System.Drawing.Point(374, 61);
+            this.tBNamHoc.Margin = new System.Windows.Forms.Padding(2);
+            this.tBNamHoc.Name = "tBNamHoc";
+            this.tBNamHoc.Size = new System.Drawing.Size(164, 22);
+            this.tBNamHoc.TabIndex = 15;
+            // 
+            // btnDangKy
+            // 
+            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDangKy.Location = new System.Drawing.Point(196, 238);
+            this.btnDangKy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(100, 32);
+            this.btnDangKy.TabIndex = 20;
+            this.btnDangKy.Text = "ĐĂNG KÝ";
+            this.btnDangKy.UseVisualStyleBackColor = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnHoanTat_Click);
+            // 
+            // btnInPDK
+            // 
+            this.btnInPDK.Enabled = false;
+            this.btnInPDK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInPDK.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInPDK.Location = new System.Drawing.Point(314, 238);
+            this.btnInPDK.Name = "btnInPDK";
+            this.btnInPDK.Size = new System.Drawing.Size(100, 32);
+            this.btnInPDK.TabIndex = 21;
+            this.btnInPDK.Text = "IN PHIẾU";
+            this.btnInPDK.UseVisualStyleBackColor = true;
+            // 
+            // lbKhu
+            // 
+            this.lbKhu.AutoSize = true;
+            this.lbKhu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKhu.Location = new System.Drawing.Point(16, 56);
+            this.lbKhu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbKhu.Name = "lbKhu";
+            this.lbKhu.Size = new System.Drawing.Size(33, 16);
+            this.lbKhu.TabIndex = 22;
+            this.lbKhu.Text = "Khu";
+            // 
+            // cmbHocKi
+            // 
+            this.cmbHocKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbHocKi.FormattingEnabled = true;
+            this.cmbHocKi.Items.AddRange(new object[] {
+            "Học kì 1",
+            "Học kì 2",
+            "Học kì 3 (Hè)"});
+            this.cmbHocKi.Location = new System.Drawing.Point(374, 22);
+            this.cmbHocKi.Name = "cmbHocKi";
+            this.cmbHocKi.Size = new System.Drawing.Size(164, 24);
+            this.cmbHocKi.TabIndex = 28;
+            // 
+            // cmbMaPhong
+            // 
+            this.cmbMaPhong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbMaPhong.Enabled = false;
+            this.cmbMaPhong.FormattingEnabled = true;
+            this.cmbMaPhong.Location = new System.Drawing.Point(97, 92);
+            this.cmbMaPhong.Name = "cmbMaPhong";
+            this.cmbMaPhong.Size = new System.Drawing.Size(163, 21);
+            this.cmbMaPhong.TabIndex = 29;
+            // 
+            // cmbKhu
+            // 
+            this.cmbKhu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbKhu.FormattingEnabled = true;
+            this.cmbKhu.Location = new System.Drawing.Point(97, 56);
+            this.cmbKhu.Name = "cmbKhu";
+            this.cmbKhu.Size = new System.Drawing.Size(163, 21);
+            this.cmbKhu.TabIndex = 30;
+            this.cmbKhu.SelectedIndexChanged += new System.EventHandler(this.cmbKhu_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.cmbKhu);
+            this.panel1.Controls.Add(this.cmbMaPhong);
+            this.panel1.Controls.Add(this.cmbHocKi);
+            this.panel1.Controls.Add(this.lbKhu);
+            this.panel1.Controls.Add(this.tBNamHoc);
+            this.panel1.Controls.Add(this.tBMSSV);
+            this.panel1.Controls.Add(this.lbNamHoc);
+            this.panel1.Controls.Add(this.lbHocKi);
+            this.panel1.Controls.Add(this.lbMaPhong);
+            this.panel1.Controls.Add(this.lbMSSV);
+            this.panel1.Location = new System.Drawing.Point(20, 88);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(555, 137);
+            this.panel1.TabIndex = 31;
+            // 
+            // lbNhanVien
+            // 
+            this.lbNhanVien.AutoSize = true;
+            this.lbNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lbNhanVien.Location = new System.Drawing.Point(17, 72);
+            this.lbNhanVien.Name = "lbNhanVien";
+            this.lbNhanVien.Size = new System.Drawing.Size(75, 13);
+            this.lbNhanVien.TabIndex = 32;
+            this.lbNhanVien.Text = "Mã nhân viên:";
+            // 
+            // lbNgay
+            // 
+            this.lbNgay.AutoSize = true;
+            this.lbNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lbNgay.Location = new System.Drawing.Point(390, 72);
+            this.lbNgay.Name = "lbNgay";
+            this.lbNgay.Size = new System.Drawing.Size(77, 13);
+            this.lbNgay.TabIndex = 33;
+            this.lbNgay.Text = "Ngày đăng ký:";
+            // 
+            // FrmDangKyPhong
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(592, 280);
+            this.Controls.Add(this.lbNgay);
+            this.Controls.Add(this.lbNhanVien);
+            this.Controls.Add(this.btnDangKy);
+            this.Controls.Add(this.btnInPDK);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lbPhieuDangKy);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.Name = "FrmDangKyPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đăng ký phòng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhieuDangKy_FormClosing);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lbMSSV;
+        private System.Windows.Forms.Label lbMaPhong;
+        private System.Windows.Forms.Label lbHocKi;
+        private System.Windows.Forms.Label lbNamHoc;
+        private System.Windows.Forms.Label lbPhieuDangKy;
+        private System.Windows.Forms.TextBox tBMSSV;
+        private System.Windows.Forms.TextBox tBNamHoc;
+        private System.Windows.Forms.Button btnDangKy;
+        private System.Windows.Forms.Button btnInPDK;
+        private System.Windows.Forms.Label lbKhu;
+        private System.Windows.Forms.ComboBox cmbHocKi;
+        private System.Windows.Forms.ComboBox cmbMaPhong;
+        private System.Windows.Forms.ComboBox cmbKhu;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbNhanVien;
+        private System.Windows.Forms.Label lbNgay;
+    }
+}

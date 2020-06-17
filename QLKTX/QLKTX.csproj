@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEF7F432-93E9-4058-9D68-11C791360A96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLKTX</RootNamespace>
+    <AssemblyName>QLKTX</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BS\BL_DichVu.cs" />
+    <Compile Include="BS\BL_NhanVien.cs" />
+    <Compile Include="BS\BL_SinhVien.cs" />
+    <Compile Include="DB\DB_Main.cs" />
+    <Compile Include="UI\FrmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmDangNhap.Designer.cs">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmHoaDon.Designer.cs">
+      <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmLoaiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmLoaiPhong.Designer.cs">
+      <DependentUpon>FrmLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTimKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTimKiem.Designer.cs">
+      <DependentUpon>FrmTimKiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmNhanVien.Designer.cs">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPhong.Designer.cs">
+      <DependentUpon>FrmPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmDangKyPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmDangKyPhong.Designer.cs">
+      <DependentUpon>FrmDangKyPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSinhVien.Designer.cs">
+      <DependentUpon>FrmSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTongQuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTongQuan.Designer.cs">
+      <DependentUpon>FrmTongQuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI\FrmDangNhap.resx">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmHoaDon.resx">
+      <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmNhanVien.resx">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmDangKyPhong.resx">
+      <DependentUpon>FrmDangKyPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPhong.resx">
+      <DependentUpon>FrmPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTongQuan.resx">
+      <DependentUpon>FrmTongQuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\FrmSinhVien.resx">
+      <DependentUpon>FrmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTimKiem.resx">
+      <DependentUpon>FrmTimKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\punk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-6s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-7s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-8s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_6s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy_3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy-5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-11s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-12s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl_9s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\girl-10s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-room-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-students-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trash-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-water-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-wi-fi-logo-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-building-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bunk-bed-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-business-report-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-collaboration-female-male-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-course-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-electrical-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-forgot-password-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-form-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-garage-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-id-verified-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-info-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-paid-parking-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pay-date-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ktxb.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

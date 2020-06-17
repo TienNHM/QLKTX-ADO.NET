@@ -1,0 +1,181 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace QLKTX.UI
+{
+    public delegate void ClickEvent();
+    public partial class FrmMain : Form
+    {
+        private string strMaNV = "admin";
+        public string StrMaNV { get => strMaNV; set => strMaNV = value; }
+
+        public FrmMain(string MaNV)
+        {
+            StrMaNV = MaNV;
+            InitializeComponent();
+            Init();
+            lbNgay.Text = "Ngày hiện tại: " + DateTime.Today.ToString("dddd, dd MMMM yyyy");
+        }
+
+        #region Init
+        private Item ctrlDangXuat;
+        private Item ctrlThoat;
+        private Item ctrlSinhVien;
+        private Item ctrlPhong;
+        private Item ctrlHoaDon;
+        private Item ctrlDS_SinhVien;
+        private Item ctrlDS_NhanVien;
+        private Item ctrlLoaiPhong;
+        private Item ctrlDS_DichVu;
+        private Item ctrlTimKiem;
+        private Item ctrlBaoCao;
+        private Item ctrlHuongDan;
+
+        private void Init()
+        {
+            //Đăng nhập
+            ctrlDangXuat = new Item(DangXuat);
+            ctrlDangXuat.picItem.BackgroundImage = Properties.Resources.logout;
+            ctrlDangXuat.btnTitle.Text = "ĐĂNG XUẤT";
+            ctrlDangXuat.Dock = DockStyle.Top;
+            ctrlDangXuat.btnTitle.ForeColor = Color.DarkRed;
+            pnQuanTriLayout.Controls.Add(ctrlDangXuat);
+            //Thoát
+            ctrlThoat = new Item(Thoat);
+            ctrlThoat.picItem.BackgroundImage = Properties.Resources.cancel;
+            ctrlThoat.btnTitle.Text = "THOÁT";
+            ctrlThoat.Dock = DockStyle.Top;
+            ctrlThoat.btnTitle.ForeColor = Color.DarkRed;
+            pnQuanTriLayout.Controls.Add(ctrlThoat);
+            //Sinh viên
+            ctrlSinhVien = new Item(SinhVien);
+            ctrlSinhVien.picItem.BackgroundImage = Properties.Resources.student;
+            ctrlSinhVien.btnTitle.Text = "SINH VIÊN";
+            ctrlSinhVien.Dock = DockStyle.Top;
+            pnThemLayout.Controls.Add(ctrlSinhVien);
+            //Phòng
+            ctrlPhong = new Item(Phong);
+            ctrlPhong.picItem.BackgroundImage = Properties.Resources.room;
+            ctrlPhong.btnTitle.Text = "PHÒNG";
+            ctrlPhong.Dock = DockStyle.Top;
+            pnThemLayout.Controls.Add(ctrlPhong);
+            //Hoá đơn
+            ctrlHoaDon = new Item(HoaDon);
+            ctrlHoaDon.picItem.BackgroundImage = Properties.Resources.form;
+            ctrlHoaDon.btnTitle.Text = "HOÁ ĐƠN";
+            ctrlHoaDon.Dock = DockStyle.Top;
+            pnThemLayout.Controls.Add(ctrlHoaDon);
+            //DS Sinh Viên
+            ctrlDS_SinhVien = new Item(ItemType.SinhVien);
+            ctrlDS_SinhVien.picItem.BackgroundImage = Properties.Resources.students;
+            ctrlDS_SinhVien.btnTitle.Text = "DS Sinh viên";
+            ctrlDS_SinhVien.Dock = DockStyle.Top;
+            pnThongTinLayout.Controls.Add(ctrlDS_SinhVien);
+            //DS Nhân viên
+            ctrlDS_NhanVien = new Item(ItemType.NhanVien);
+            ctrlDS_NhanVien.picItem.BackgroundImage = Properties.Resources.collaboration;
+            ctrlDS_NhanVien.btnTitle.Text = "DS Nhân viên";
+            ctrlDS_NhanVien.Dock = DockStyle.Top;
+            pnThongTinLayout.Controls.Add(ctrlDS_NhanVien);
+            //DS Khu phòng
+            ctrlLoaiPhong = new Item(ItemType.LoaiPhong);
+            ctrlLoaiPhong.picItem.BackgroundImage = Properties.Resources.building;
+            ctrlLoaiPhong.btnTitle.Text = "Loại phòng";
+            ctrlLoaiPhong.Dock = DockStyle.Top;
+            pnThongTinLayout.Controls.Add(ctrlLoaiPhong);
+            //DS dịch vụ
+            ctrlDS_DichVu = new Item(ItemType.DichVu);
+            ctrlDS_DichVu.picItem.BackgroundImage = Properties.Resources.water;
+            ctrlDS_DichVu.btnTitle.Text = "Dịch vụ";
+            ctrlDS_DichVu.Dock = DockStyle.Top;
+            pnThongTinLayout.Controls.Add(ctrlDS_DichVu);
+            //Tìm kiếm
+            ctrlTimKiem = new Item(TimKiem);
+            ctrlTimKiem.picItem.BackgroundImage = Properties.Resources.search;
+            ctrlTimKiem.btnTitle.Text = "Tìm kiếm";
+            ctrlTimKiem.Dock = DockStyle.Top;
+            pnThongTinLayout.Controls.Add(ctrlTimKiem);
+            //Báo cáo
+            ctrlBaoCao = new Item(BaoCao);
+            ctrlBaoCao.picItem.BackgroundImage = Properties.Resources.business_report;
+            ctrlBaoCao.btnTitle.Text = "Báo cáo";
+            ctrlBaoCao.Dock = DockStyle.Top;
+            pnThongTinLayout.Controls.Add(ctrlBaoCao);
+            //Hướng dẫn
+            ctrlHuongDan = new Item(HuongDan);
+            ctrlHuongDan.picItem.BackgroundImage = Properties.Resources.info;
+            ctrlHuongDan.btnTitle.Text = "Hướng dẫn";
+            ctrlHuongDan.Dock = DockStyle.Top;
+            pnThongTinLayout.Controls.Add(ctrlHuongDan);
+        }
+        #endregion
+
+        private void DangXuat()
+        {
+            DialogResult re = MessageBox.Show("Bạn muốn đăng xuất khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (re == DialogResult.Yes)
+                this.Dispose();
+        }
+
+        bool isExit = false;
+        private void Thoat()
+        {
+            DialogResult re = MessageBox.Show("Bạn muốn thoát khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (re == DialogResult.Yes)
+            {
+                isExit = true;
+                Application.Exit();
+            }    
+        }
+
+        private void Phong()
+        {
+            FrmDangKyPhong frmDangKyPhong = new FrmDangKyPhong(strMaNV);
+            frmDangKyPhong.ShowDialog();
+        }
+
+        private void SinhVien()
+        {
+            FrmSinhVien frmSinhVien = new FrmSinhVien();
+            frmSinhVien.ShowDialog();
+        }
+
+        private void TimKiem()
+        {
+            FrmTimKiem frmTimKiem = new FrmTimKiem();
+            frmTimKiem.ShowDialog();
+        }
+
+        private void BaoCao()
+        {
+
+        }
+
+        private void HuongDan()
+        {
+
+        }
+
+        private void HoaDon()
+        {
+            FrmHoaDon hoaDon = new FrmHoaDon();
+            hoaDon.ShowDialog();
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (isExit)
+                Application.Exit();
+            else
+                Thoat();
+        }
+    }
+}
