@@ -13,9 +13,13 @@ namespace QLKTX.BS
     {
         public enum SelectType
         {
+            MSSV = 0,
+            MaLop,  
+            HoTen,
             Phai,
-            Lop,
-            DienSV,
+            CMND,
+            Email,
+            SDT,
             QueQuan,
             All
         }
@@ -27,21 +31,33 @@ namespace QLKTX.BS
             db = new DB_Main();
         }
 
-        public DataTable Select(SelectType type, string strValue)
+        public DataTable Select(SelectType type, string strValue, ref string error)
         {
             string strType = type.ToString();
-            string sql = $"SELECT * FROM SINHVIEN WHERE {strType} = @Value";
-            SqlParameter[] sqlParameters = new SqlParameter[]
-            {
-                new SqlParameter("Value", strValue)
-            };
+            string sql = "";
+            SqlParameter[] sqlParameters = new SqlParameter[] { };
             if (type == SelectType.All)
             {
                 sql = "SELECT * FROM SinhVien";
-                sqlParameters = new SqlParameter[] { };
+            }
+            else if (type == SelectType.HoTen)
+            {
+                strValue = "%" + strValue + "%";
+                sql = $"SELECT * FROM SINHVIEN WHERE {strType} LIKE @Value";
+                sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("Value", strValue)
+                };
+            }   
+            else
+            {
+                sql = $"SELECT * FROM SINHVIEN WHERE {strType} = @Value";
+                sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("Value", strValue)
+                };
             }    
-            
-            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text);
+            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
         }
 
         public bool Insert(string MSSV, string MaLop, string DienSV, string HoTen, string Phai,

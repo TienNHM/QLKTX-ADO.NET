@@ -12,7 +12,7 @@ namespace QLKTX.BS
     public class BL_LoaiPhong
     {
         DB_Main db = null;
-
+        string error = "";
         public BL_LoaiPhong()
         {
             db = new DB_Main();
@@ -22,7 +22,7 @@ namespace QLKTX.BS
         {
             string sql = "SELECT * FROM LOAIPHONG";
             SqlParameter[] sqlParameters = new SqlParameter[] { };
-            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text);
+            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
         }
 
         public bool Insert(string MaLoaiPhong, int SoSV, float DienTich, int DonGia, ref string err)

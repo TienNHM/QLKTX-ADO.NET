@@ -49,9 +49,12 @@
   <ItemGroup>
     <Compile Include="BS\BL_DangNhap.cs" />
     <Compile Include="BS\BL_DichVu.cs" />
+    <Compile Include="BS\BL_HoaDon.cs" />
     <Compile Include="BS\BL_LoaiPhong.cs" />
-    <Compile Include="BS\BL_NhanVien.cs" />
+    <Compile Include="BS\BL_PhieuDK.cs" />
     <Compile Include="BS\BL_SinhVien.cs" />
+    <Compile Include="BS\BS_layer.cs" />
+    <Compile Include="BS\EnumConst.cs" />
     <Compile Include="DB\DB_Main.cs" />
     <Compile Include="UI\FrmDangNhap.cs">
       <SubType>Form</SubType>

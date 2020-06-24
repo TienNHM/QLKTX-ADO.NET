@@ -12,6 +12,7 @@ namespace QLKTX.BS
     public class BL_DangNhap
     {
         DB_Main db = null;
+        string error = "";
 
         public BL_DangNhap()
         {
@@ -26,7 +27,7 @@ namespace QLKTX.BS
                 new SqlParameter("TenDN", TenDN),
                 new SqlParameter("MatKhau", MatKhau)
             };
-            DataTable table = db.ExecuteQuery(sql, sqlParameters, CommandType.Text);
+            DataTable table = db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
             if (table.Rows.Count > 0)
                 return table.Columns[2].ToString();
             else

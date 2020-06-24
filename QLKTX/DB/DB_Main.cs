@@ -24,18 +24,26 @@ namespace QLKTX.DB
             comm = conn.CreateCommand();
         }
 
-        public DataTable ExecuteQuery(string strSQL, SqlParameter[] sqlParameters, CommandType ct)
+        public DataTable ExecuteQuery(string strSQL, SqlParameter[] sqlParameters, CommandType ct, ref string error)
         {
-            if (conn.State == ConnectionState.Open)
-                conn.Close();
-            conn.Open();
-            comm.Parameters.AddRange(sqlParameters);
-            comm.CommandText = strSQL;
-            comm.CommandType = ct;
-            da = new SqlDataAdapter(comm);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+                comm.Parameters.AddRange(sqlParameters);
+                comm.CommandText = strSQL;
+                comm.CommandType = ct;
+                da = new SqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return null;
+            }
         }
 
         public bool ExecuteNonQuery(string strSQL, SqlParameter[] sqlParameters, CommandType ct, ref string error)

@@ -17,6 +17,7 @@ namespace QLKTX.UI
         private ItemType type = ItemType.Unknown;
         private Item item = new Item(null);
         private DataTable dt = new DataTable();
+        private string error = "";
 
         public FrmTongQuan(ItemType type)
         {
@@ -41,13 +42,10 @@ namespace QLKTX.UI
             {
                 this.Text = "THÔNG TIN LOẠI PHÒNG";
                 item.picItem.BackgroundImage = Properties.Resources.room;
-                BL_LoaiPhong db = new BL_LoaiPhong();
-                dt = db.Select();
+                dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.LoaiPhong, BS_layer.SelectType.All);
                 dgv.DataSource = dt;
-                dgv.Columns[0].HeaderText = "Mã loại phòng";
-                dgv.Columns[1].HeaderText = "Số sinh viên tối đa";
-                dgv.Columns[2].HeaderText = "Diện tích (met vuông)";
-                dgv.Columns[3].HeaderText = "Đơn giá (đồng/tháng)";
+                for (int i = 0; i < dgv.ColumnCount; i++)
+                    dgv.Columns[i].HeaderText = EnumConst.LoaiPhongHeaderText[i];
             }
             else if (type == ItemType.KhuPhong)
             {
@@ -59,17 +57,10 @@ namespace QLKTX.UI
             {
                 this.Text = "THÔNG TIN NHÂN VIÊN";
                 item.picItem.BackgroundImage = Properties.Resources.collaboration;
-                BL_NhanVien db = new BL_NhanVien();
-                dt = db.Select();
+                dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.NhanVien, BS_layer.SelectType.All);
                 dgv.DataSource = dt;
-                dgv.Columns[0].HeaderText = "Mã NV";
-                dgv.Columns[1].HeaderText = "CMND";
-                dgv.Columns[2].HeaderText = "Họ tên";
-                dgv.Columns[3].HeaderText = "SĐT";
-                dgv.Columns[4].HeaderText = "Email";
-                dgv.Columns[5].HeaderText = "Địa chỉ";
-                dgv.Columns[6].HeaderText = "Lương";
-                dgv.Columns[7].HeaderText = "Quản lý";
+                for (int i = 0; i < dgv.ColumnCount; i++)
+                    dgv.Columns[i].HeaderText = EnumConst.NhanVienHeaderText[i];
             }
             else
             {

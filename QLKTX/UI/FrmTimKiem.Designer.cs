@@ -28,39 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnPhong = new System.Windows.Forms.Button();
             this.btnSinhVien = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.pnTop = new System.Windows.Forms.Panel();
             this.pnInput = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbMucTimKiem = new System.Windows.Forms.ComboBox();
             this.lbMuc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnPhanLoai = new System.Windows.Forms.Panel();
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnPhieuDK = new System.Windows.Forms.Button();
             this.lbPhanLoai = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.btnXuat = new System.Windows.Forms.Button();
-            this.pnContainer = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnKey = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtKhu = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPhong = new System.Windows.Forms.TextBox();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.pnTop.SuspendLayout();
             this.pnInput.SuspendLayout();
             this.pnPhanLoai.SuspendLayout();
             this.pnBottom.SuspendLayout();
+            this.pnKey.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTimKiem.Location = new System.Drawing.Point(296, 28);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(0);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(631, 25);
-            this.txtTimKiem.TabIndex = 0;
             // 
             // btnSearch
             // 
@@ -137,11 +139,11 @@
             // 
             // pnInput
             // 
-            this.pnInput.Controls.Add(this.comboBox1);
+            this.pnInput.Controls.Add(this.pnKey);
+            this.pnInput.Controls.Add(this.cmbMucTimKiem);
             this.pnInput.Controls.Add(this.lbMuc);
             this.pnInput.Controls.Add(this.btnSearch);
             this.pnInput.Controls.Add(this.label1);
-            this.pnInput.Controls.Add(this.txtTimKiem);
             this.pnInput.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnInput.Location = new System.Drawing.Point(0, 44);
             this.pnInput.Name = "pnInput";
@@ -149,15 +151,16 @@
             this.pnInput.Size = new System.Drawing.Size(1064, 61);
             this.pnInput.TabIndex = 7;
             // 
-            // comboBox1
+            // cmbMucTimKiem
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(241, 25);
-            this.comboBox1.TabIndex = 10;
+            this.cmbMucTimKiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbMucTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbMucTimKiem.FormattingEnabled = true;
+            this.cmbMucTimKiem.Location = new System.Drawing.Point(24, 28);
+            this.cmbMucTimKiem.Name = "cmbMucTimKiem";
+            this.cmbMucTimKiem.Size = new System.Drawing.Size(241, 25);
+            this.cmbMucTimKiem.TabIndex = 10;
+            this.cmbMucTimKiem.SelectedIndexChanged += new System.EventHandler(this.cmbMucTimKiem_SelectedIndexChanged);
             // 
             // lbMuc
             // 
@@ -172,7 +175,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label1.Location = new System.Drawing.Point(293, 1);
+            this.label1.Location = new System.Drawing.Point(297, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 26);
             this.label1.TabIndex = 8;
@@ -237,6 +240,14 @@
             this.lbPhanLoai.Text = "Loại thông tin tìm kiếm:";
             this.lbPhanLoai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1064, 12);
+            this.panel1.TabIndex = 0;
+            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Goldenrod;
@@ -273,29 +284,114 @@
             this.btnXuat.Text = "Xuất dữ liệu";
             this.btnXuat.UseVisualStyleBackColor = true;
             // 
-            // pnContainer
+            // pnKey
             // 
-            this.pnContainer.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContainer.Location = new System.Drawing.Point(0, 159);
-            this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Size = new System.Drawing.Size(1064, 477);
-            this.pnContainer.TabIndex = 10;
+            this.pnKey.Controls.Add(this.txtPhong);
+            this.pnKey.Controls.Add(this.label4);
+            this.pnKey.Controls.Add(this.txtKhu);
+            this.pnKey.Controls.Add(this.label3);
+            this.pnKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnKey.Location = new System.Drawing.Point(300, 27);
+            this.pnKey.Name = "pnKey";
+            this.pnKey.Size = new System.Drawing.Size(630, 26);
+            this.pnKey.TabIndex = 11;
+            this.pnKey.Visible = false;
             // 
-            // panel1
+            // label3
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1064, 12);
-            this.panel1.TabIndex = 0;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 26);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Mã khu:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtKhu
+            // 
+            this.txtKhu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtKhu.Location = new System.Drawing.Point(91, 0);
+            this.txtKhu.Name = "txtKhu";
+            this.txtKhu.Size = new System.Drawing.Size(150, 25);
+            this.txtKhu.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.label4.Location = new System.Drawing.Point(296, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Mã phòng: ";
+            // 
+            // txtPhong
+            // 
+            this.txtPhong.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPhong.Location = new System.Drawing.Point(389, 0);
+            this.txtPhong.Name = "txtPhong";
+            this.txtPhong.Size = new System.Drawing.Size(150, 25);
+            this.txtPhong.TabIndex = 3;
+            // 
+            // dgv
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgv.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgv.Location = new System.Drawing.Point(0, 159);
+            this.dgv.Margin = new System.Windows.Forms.Padding(10);
+            this.dgv.Name = "dgv";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv.Size = new System.Drawing.Size(1064, 477);
+            this.dgv.TabIndex = 10;
             // 
             // FrmTimKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 681);
-            this.Controls.Add(this.pnContainer);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pnBottom);
@@ -306,16 +402,16 @@
             this.Text = "Tìm kiếm";
             this.pnTop.ResumeLayout(false);
             this.pnInput.ResumeLayout(false);
-            this.pnInput.PerformLayout();
             this.pnPhanLoai.ResumeLayout(false);
             this.pnBottom.ResumeLayout(false);
+            this.pnKey.ResumeLayout(false);
+            this.pnKey.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnPhong;
         private System.Windows.Forms.Button btnSinhVien;
@@ -330,9 +426,14 @@
         private System.Windows.Forms.Button btnPhieuDK;
         private System.Windows.Forms.Panel pnBottom;
         private System.Windows.Forms.Button btnXuat;
-        private System.Windows.Forms.Panel pnContainer;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbMucTimKiem;
         private System.Windows.Forms.Label lbMuc;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnKey;
+        private System.Windows.Forms.TextBox txtKhu;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPhong;
+        private System.Windows.Forms.DataGridView dgv;
     }
 }

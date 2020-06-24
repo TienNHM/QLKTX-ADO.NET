@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLKTX.BS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,8 @@ namespace QLKTX.UI
     public partial class FrmMain : Form
     {
         private string strMaNV = "admin";
-        bool isExit = false;
+        private bool isExit = false;
+        public static BS_layer bS_Layer = new BS_layer();
 
         public string StrMaNV { get => strMaNV; set => strMaNV = value; }
 
