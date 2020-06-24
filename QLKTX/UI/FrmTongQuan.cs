@@ -41,11 +41,19 @@ namespace QLKTX.UI
             {
                 this.Text = "THÔNG TIN LOẠI PHÒNG";
                 item.picItem.BackgroundImage = Properties.Resources.room;
-                
+                BL_LoaiPhong db = new BL_LoaiPhong();
+                dt = db.Select();
+                dgv.DataSource = dt;
+                dgv.Columns[0].HeaderText = "Mã loại phòng";
+                dgv.Columns[1].HeaderText = "Số sinh viên tối đa";
+                dgv.Columns[2].HeaderText = "Diện tích (met vuông)";
+                dgv.Columns[3].HeaderText = "Đơn giá (đồng/tháng)";
             }
-            else if (type == ItemType.SinhVien)
+            else if (type == ItemType.KhuPhong)
             {
                 item.picItem.BackgroundImage = Properties.Resources.students;
+                this.Text = "THÔNG TIN KHU PHÒNG";
+
             }
             else if (type == ItemType.NhanVien)
             {

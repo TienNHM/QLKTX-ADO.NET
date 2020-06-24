@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BS\BL_DangNhap.cs" />
     <Compile Include="BS\BL_DichVu.cs" />
+    <Compile Include="BS\BL_LoaiPhong.cs" />
     <Compile Include="BS\BL_NhanVien.cs" />
     <Compile Include="BS\BL_SinhVien.cs" />
     <Compile Include="DB\DB_Main.cs" />

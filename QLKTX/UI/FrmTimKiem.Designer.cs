@@ -32,20 +32,20 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnPhong = new System.Windows.Forms.Button();
             this.btnSinhVien = new System.Windows.Forms.Button();
-            this.dataGridViewTimKiem = new System.Windows.Forms.DataGridView();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.pnTop = new System.Windows.Forms.Panel();
             this.pnPhanLoai = new System.Windows.Forms.Panel();
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnPhieuDK = new System.Windows.Forms.Button();
             this.lbPhanLoai = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnInput = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.btnXuat = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimKiem)).BeginInit();
+            this.pnContainer = new System.Windows.Forms.Panel();
+            this.lbMuc = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnTop.SuspendLayout();
             this.pnPhanLoai.SuspendLayout();
             this.pnInput.SuspendLayout();
@@ -54,11 +54,11 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.txtTimKiem.Location = new System.Drawing.Point(9, 26);
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtTimKiem.Location = new System.Drawing.Point(296, 28);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(0);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(965, 26);
+            this.txtTimKiem.Size = new System.Drawing.Size(631, 25);
             this.txtTimKiem.TabIndex = 0;
             // 
             // btnSearch
@@ -66,12 +66,12 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSearch.Location = new System.Drawing.Point(991, 26);
+            this.btnSearch.Location = new System.Drawing.Point(950, 27);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(53, 26);
+            this.btnSearch.Size = new System.Drawing.Size(93, 26);
             this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "TÌM";
+            this.btnSearch.Text = "TÌM KIẾM";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -107,19 +107,6 @@
             this.btnSinhVien.UseVisualStyleBackColor = false;
             this.btnSinhVien.Click += new System.EventHandler(this.TimTheoLoai_Click);
             // 
-            // dataGridViewTimKiem
-            // 
-            this.dataGridViewTimKiem.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.dataGridViewTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewTimKiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTimKiem.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewTimKiem.Location = new System.Drawing.Point(0, 62);
-            this.dataGridViewTimKiem.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewTimKiem.Name = "dataGridViewTimKiem";
-            this.dataGridViewTimKiem.RowTemplate.Height = 24;
-            this.dataGridViewTimKiem.Size = new System.Drawing.Size(1064, 574);
-            this.dataGridViewTimKiem.TabIndex = 4;
-            // 
             // btnNhanVien
             // 
             this.btnNhanVien.BackColor = System.Drawing.SystemColors.Control;
@@ -138,9 +125,8 @@
             // 
             // pnTop
             // 
-            this.pnTop.Controls.Add(this.pnPhanLoai);
-            this.pnTop.Controls.Add(this.panel1);
             this.pnTop.Controls.Add(this.pnInput);
+            this.pnTop.Controls.Add(this.pnPhanLoai);
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTop.Location = new System.Drawing.Point(0, 50);
             this.pnTop.Name = "pnTop";
@@ -156,7 +142,7 @@
             this.pnPhanLoai.Controls.Add(this.btnSinhVien);
             this.pnPhanLoai.Controls.Add(this.lbPhanLoai);
             this.pnPhanLoai.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnPhanLoai.Location = new System.Drawing.Point(0, 71);
+            this.pnPhanLoai.Location = new System.Drawing.Point(0, 0);
             this.pnPhanLoai.Name = "pnPhanLoai";
             this.pnPhanLoai.Size = new System.Drawing.Size(1064, 32);
             this.pnPhanLoai.TabIndex = 6;
@@ -204,33 +190,28 @@
             this.lbPhanLoai.Text = "  Tìm theo mục:";
             this.lbPhanLoai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 61);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1064, 10);
-            this.panel1.TabIndex = 8;
-            // 
             // pnInput
             // 
+            this.pnInput.Controls.Add(this.comboBox1);
+            this.pnInput.Controls.Add(this.lbMuc);
             this.pnInput.Controls.Add(this.btnSearch);
             this.pnInput.Controls.Add(this.label1);
             this.pnInput.Controls.Add(this.txtTimKiem);
             this.pnInput.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnInput.Location = new System.Drawing.Point(0, 0);
+            this.pnInput.Location = new System.Drawing.Point(0, 32);
             this.pnInput.Name = "pnInput";
+            this.pnInput.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.pnInput.Size = new System.Drawing.Size(1064, 61);
             this.pnInput.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(293, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 26);
             this.label1.TabIndex = 8;
-            this.label1.Text = "  Nội dung tìm kiếm:";
+            this.label1.Text = "Nội dung tìm kiếm:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -269,22 +250,48 @@
             this.btnXuat.Text = "Xuất dữ liệu";
             this.btnXuat.UseVisualStyleBackColor = true;
             // 
+            // pnContainer
+            // 
+            this.pnContainer.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnContainer.Location = new System.Drawing.Point(0, 159);
+            this.pnContainer.Name = "pnContainer";
+            this.pnContainer.Size = new System.Drawing.Size(1064, 477);
+            this.pnContainer.TabIndex = 10;
+            // 
+            // lbMuc
+            // 
+            this.lbMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lbMuc.Location = new System.Drawing.Point(24, 4);
+            this.lbMuc.Name = "lbMuc";
+            this.lbMuc.Size = new System.Drawing.Size(163, 26);
+            this.lbMuc.TabIndex = 9;
+            this.lbMuc.Text = "Tìm kiếm theo mục:";
+            this.lbMuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(24, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(241, 25);
+            this.comboBox1.TabIndex = 10;
+            // 
             // FrmTimKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.pnContainer);
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridViewTimKiem);
             this.Controls.Add(this.pnBottom);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1050, 700);
             this.Name = "FrmTimKiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm kiếm";
-            this.Load += new System.EventHandler(this.FrmTimKiem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimKiem)).EndInit();
             this.pnTop.ResumeLayout(false);
             this.pnPhanLoai.ResumeLayout(false);
             this.pnInput.ResumeLayout(false);
@@ -300,7 +307,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnPhong;
         private System.Windows.Forms.Button btnSinhVien;
-        private System.Windows.Forms.DataGridView dataGridViewTimKiem;
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Panel pnInput;
@@ -310,8 +316,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.Button btnPhieuDK;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnBottom;
         private System.Windows.Forms.Button btnXuat;
+        private System.Windows.Forms.Panel pnContainer;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbMuc;
     }
 }

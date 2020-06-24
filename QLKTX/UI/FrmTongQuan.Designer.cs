@@ -35,10 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.pnContent = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.pnTop.SuspendLayout();
-            this.pnContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,15 +61,6 @@
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "THÔNG TIN";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnContent
-            // 
-            this.pnContent.Controls.Add(this.dgv);
-            this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContent.Location = new System.Drawing.Point(0, 98);
-            this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(1064, 583);
-            this.pnContent.TabIndex = 4;
             // 
             // dgv
             // 
@@ -104,7 +93,7 @@
             this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgv.Location = new System.Drawing.Point(0, 0);
+            this.dgv.Location = new System.Drawing.Point(0, 98);
             this.dgv.Margin = new System.Windows.Forms.Padding(10);
             this.dgv.Name = "dgv";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -130,13 +119,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 681);
-            this.Controls.Add(this.pnContent);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.pnTop);
             this.Name = "FrmTongQuan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin";
             this.pnTop.ResumeLayout(false);
-            this.pnContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
@@ -146,7 +134,6 @@
 
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.Panel pnContent;
         private System.Windows.Forms.DataGridView dgv;
     }
 }

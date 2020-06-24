@@ -13,7 +13,7 @@ namespace QLKTX
 {
     public enum ItemType
     {
-        SinhVien,
+        KhuPhong,
         NhanVien,
         DichVu,
         HoaDon,

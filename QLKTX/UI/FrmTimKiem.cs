@@ -12,30 +12,18 @@ namespace QLKTX.UI
 {
     public partial class FrmTimKiem : Form
     {
+        public enum SearchType
+        {
+            NhanVien,
+            SinhVien,
+            PhieuDK,
+            Phong,
+            HoaDon
+        }
+
         public FrmTimKiem()
         {
             InitializeComponent();
-        }
-
-        private void btnTKPhong_Click(object sender, EventArgs e)
-        {
-            btnPhong.BackColor = Color.Gold;
-            btnSinhVien.BackColor = SystemColors.Control;
-            btnNhanVien.BackColor = SystemColors.Control;
-        }
-
-        private void btnTKSV_Click(object sender, EventArgs e)
-        {
-            btnPhong.BackColor = SystemColors.Control;
-            btnSinhVien.BackColor = Color.Gold;
-            btnNhanVien.BackColor = SystemColors.Control;
-        }
-
-        private void btnTKNV_Click(object sender, EventArgs e)
-        {
-            btnPhong.BackColor = SystemColors.Control;
-            btnSinhVien.BackColor = SystemColors.Control;
-            btnNhanVien.BackColor = Color.Gold;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -50,12 +38,8 @@ namespace QLKTX.UI
             btnPhieuDK.BackColor = SystemColors.Control;
             btnPhong.BackColor = SystemColors.Control;
             btnHoaDon.BackColor = SystemColors.Control;
-            (sender as Button).BackColor = Color.Gold;
-        }
-
-        private void FrmTimKiem_Load(object sender, EventArgs e)
-        {
-
+            var btn = sender as Button;
+            btn.BackColor = Color.Gold;
         }
     }
 }

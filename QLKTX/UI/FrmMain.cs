@@ -15,6 +15,8 @@ namespace QLKTX.UI
     public partial class FrmMain : Form
     {
         private string strMaNV = "admin";
+        bool isExit = false;
+
         public string StrMaNV { get => strMaNV; set => strMaNV = value; }
 
         public FrmMain(string MaNV)
@@ -31,7 +33,7 @@ namespace QLKTX.UI
         private Item ctrlSinhVien;
         private Item ctrlPhong;
         private Item ctrlHoaDon;
-        private Item ctrlDS_SinhVien;
+        private Item ctrlDS_KhuPhong;
         private Item ctrlDS_NhanVien;
         private Item ctrlLoaiPhong;
         private Item ctrlDS_DichVu;
@@ -63,7 +65,7 @@ namespace QLKTX.UI
             pnThemLayout.Controls.Add(ctrlSinhVien);
             //Phòng
             ctrlPhong = new Item(Phong);
-            ctrlPhong.picItem.BackgroundImage = Properties.Resources.room;
+            ctrlPhong.picItem.BackgroundImage = Properties.Resources.bunk_bed;
             ctrlPhong.btnTitle.Text = "PHÒNG";
             ctrlPhong.Dock = DockStyle.Top;
             pnThemLayout.Controls.Add(ctrlPhong);
@@ -73,12 +75,12 @@ namespace QLKTX.UI
             ctrlHoaDon.btnTitle.Text = "HOÁ ĐƠN";
             ctrlHoaDon.Dock = DockStyle.Top;
             pnThemLayout.Controls.Add(ctrlHoaDon);
-            //DS Sinh Viên
-            ctrlDS_SinhVien = new Item(ItemType.SinhVien);
-            ctrlDS_SinhVien.picItem.BackgroundImage = Properties.Resources.students;
-            ctrlDS_SinhVien.btnTitle.Text = "DS Sinh viên";
-            ctrlDS_SinhVien.Dock = DockStyle.Top;
-            pnThongTinLayout.Controls.Add(ctrlDS_SinhVien);
+            //DS Khu phòng
+            ctrlDS_KhuPhong = new Item(ItemType.KhuPhong);
+            ctrlDS_KhuPhong.picItem.BackgroundImage = Properties.Resources.room;
+            ctrlDS_KhuPhong.btnTitle.Text = "DS Khu phòng";
+            ctrlDS_KhuPhong.Dock = DockStyle.Top;
+            pnThongTinLayout.Controls.Add(ctrlDS_KhuPhong);
             //DS Nhân viên
             ctrlDS_NhanVien = new Item(ItemType.NhanVien);
             ctrlDS_NhanVien.picItem.BackgroundImage = Properties.Resources.collaboration;
@@ -87,7 +89,7 @@ namespace QLKTX.UI
             pnThongTinLayout.Controls.Add(ctrlDS_NhanVien);
             //DS Khu phòng
             ctrlLoaiPhong = new Item(ItemType.LoaiPhong);
-            ctrlLoaiPhong.picItem.BackgroundImage = Properties.Resources.building;
+            ctrlLoaiPhong.picItem.BackgroundImage = Properties.Resources.bunk_bed;
             ctrlLoaiPhong.btnTitle.Text = "Loại phòng";
             ctrlLoaiPhong.Dock = DockStyle.Top;
             pnThongTinLayout.Controls.Add(ctrlLoaiPhong);
@@ -122,16 +124,20 @@ namespace QLKTX.UI
         {
             DialogResult re = MessageBox.Show("Bạn muốn đăng xuất khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (re == DialogResult.Yes)
+            {
+                isExit = false;
+                FrmDangNhap.exit = false;
                 this.Dispose();
+            }
         }
 
-        bool isExit = false;
         private void Thoat()
         {
             DialogResult re = MessageBox.Show("Bạn muốn thoát khỏi phần mềm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (re == DialogResult.Yes)
             {
                 isExit = true;
+                FrmDangNhap.exit = true;
                 Application.Exit();
             }    
         }
@@ -175,7 +181,7 @@ namespace QLKTX.UI
             if (isExit)
                 Application.Exit();
             else
-                Thoat();
+                this.Dispose();
         }
     }
 }
