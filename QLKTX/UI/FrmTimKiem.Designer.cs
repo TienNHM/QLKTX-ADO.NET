@@ -34,21 +34,22 @@
             this.btnSinhVien = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.pnTop = new System.Windows.Forms.Panel();
+            this.pnInput = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbMuc = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnPhanLoai = new System.Windows.Forms.Panel();
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnPhieuDK = new System.Windows.Forms.Button();
             this.lbPhanLoai = new System.Windows.Forms.Label();
-            this.pnInput = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.btnXuat = new System.Windows.Forms.Button();
             this.pnContainer = new System.Windows.Forms.Panel();
-            this.lbMuc = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnTop.SuspendLayout();
-            this.pnPhanLoai.SuspendLayout();
             this.pnInput.SuspendLayout();
+            this.pnPhanLoai.SuspendLayout();
             this.pnBottom.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@
             this.btnPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhong.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnPhong.Location = new System.Drawing.Point(343, 0);
+            this.btnPhong.Location = new System.Drawing.Point(475, 0);
             this.btnPhong.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.Size = new System.Drawing.Size(90, 32);
@@ -98,7 +99,7 @@
             this.btnSinhVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSinhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSinhVien.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnSinhVien.Location = new System.Drawing.Point(163, 0);
+            this.btnSinhVien.Location = new System.Drawing.Point(295, 0);
             this.btnSinhVien.Margin = new System.Windows.Forms.Padding(2);
             this.btnSinhVien.Name = "btnSinhVien";
             this.btnSinhVien.Size = new System.Drawing.Size(90, 32);
@@ -114,7 +115,7 @@
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanVien.ForeColor = System.Drawing.Color.Indigo;
-            this.btnNhanVien.Location = new System.Drawing.Point(253, 0);
+            this.btnNhanVien.Location = new System.Drawing.Point(385, 0);
             this.btnNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(90, 32);
@@ -127,11 +128,56 @@
             // 
             this.pnTop.Controls.Add(this.pnInput);
             this.pnTop.Controls.Add(this.pnPhanLoai);
+            this.pnTop.Controls.Add(this.panel1);
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTop.Location = new System.Drawing.Point(0, 50);
             this.pnTop.Name = "pnTop";
             this.pnTop.Size = new System.Drawing.Size(1064, 109);
             this.pnTop.TabIndex = 6;
+            // 
+            // pnInput
+            // 
+            this.pnInput.Controls.Add(this.comboBox1);
+            this.pnInput.Controls.Add(this.lbMuc);
+            this.pnInput.Controls.Add(this.btnSearch);
+            this.pnInput.Controls.Add(this.label1);
+            this.pnInput.Controls.Add(this.txtTimKiem);
+            this.pnInput.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnInput.Location = new System.Drawing.Point(0, 44);
+            this.pnInput.Name = "pnInput";
+            this.pnInput.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.pnInput.Size = new System.Drawing.Size(1064, 61);
+            this.pnInput.TabIndex = 7;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(24, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(241, 25);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // lbMuc
+            // 
+            this.lbMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lbMuc.Location = new System.Drawing.Point(24, 4);
+            this.lbMuc.Name = "lbMuc";
+            this.lbMuc.Size = new System.Drawing.Size(163, 26);
+            this.lbMuc.TabIndex = 9;
+            this.lbMuc.Text = "Tìm kiếm theo mục:";
+            this.lbMuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label1.Location = new System.Drawing.Point(293, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 26);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Nội dung tìm kiếm:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnPhanLoai
             // 
@@ -142,7 +188,7 @@
             this.pnPhanLoai.Controls.Add(this.btnSinhVien);
             this.pnPhanLoai.Controls.Add(this.lbPhanLoai);
             this.pnPhanLoai.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnPhanLoai.Location = new System.Drawing.Point(0, 0);
+            this.pnPhanLoai.Location = new System.Drawing.Point(0, 12);
             this.pnPhanLoai.Name = "pnPhanLoai";
             this.pnPhanLoai.Size = new System.Drawing.Size(1064, 32);
             this.pnPhanLoai.TabIndex = 6;
@@ -154,7 +200,7 @@
             this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoaDon.ForeColor = System.Drawing.Color.DeepPink;
-            this.btnHoaDon.Location = new System.Drawing.Point(523, 0);
+            this.btnHoaDon.Location = new System.Drawing.Point(655, 0);
             this.btnHoaDon.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(90, 32);
@@ -170,7 +216,7 @@
             this.btnPhieuDK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhieuDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhieuDK.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnPhieuDK.Location = new System.Drawing.Point(433, 0);
+            this.btnPhieuDK.Location = new System.Drawing.Point(565, 0);
             this.btnPhieuDK.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnPhieuDK.Name = "btnPhieuDK";
             this.btnPhieuDK.Size = new System.Drawing.Size(90, 32);
@@ -185,34 +231,11 @@
             this.lbPhanLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.lbPhanLoai.Location = new System.Drawing.Point(0, 0);
             this.lbPhanLoai.Name = "lbPhanLoai";
-            this.lbPhanLoai.Size = new System.Drawing.Size(163, 32);
+            this.lbPhanLoai.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
+            this.lbPhanLoai.Size = new System.Drawing.Size(295, 32);
             this.lbPhanLoai.TabIndex = 7;
-            this.lbPhanLoai.Text = "  Tìm theo mục:";
+            this.lbPhanLoai.Text = "Loại thông tin tìm kiếm:";
             this.lbPhanLoai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnInput
-            // 
-            this.pnInput.Controls.Add(this.comboBox1);
-            this.pnInput.Controls.Add(this.lbMuc);
-            this.pnInput.Controls.Add(this.btnSearch);
-            this.pnInput.Controls.Add(this.label1);
-            this.pnInput.Controls.Add(this.txtTimKiem);
-            this.pnInput.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnInput.Location = new System.Drawing.Point(0, 32);
-            this.pnInput.Name = "pnInput";
-            this.pnInput.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.pnInput.Size = new System.Drawing.Size(1064, 61);
-            this.pnInput.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label1.Location = new System.Drawing.Point(293, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 26);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Nội dung tìm kiếm:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -259,24 +282,13 @@
             this.pnContainer.Size = new System.Drawing.Size(1064, 477);
             this.pnContainer.TabIndex = 10;
             // 
-            // lbMuc
+            // panel1
             // 
-            this.lbMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lbMuc.Location = new System.Drawing.Point(24, 4);
-            this.lbMuc.Name = "lbMuc";
-            this.lbMuc.Size = new System.Drawing.Size(163, 26);
-            this.lbMuc.TabIndex = 9;
-            this.lbMuc.Text = "Tìm kiếm theo mục:";
-            this.lbMuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(241, 25);
-            this.comboBox1.TabIndex = 10;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1064, 12);
+            this.panel1.TabIndex = 0;
             // 
             // FrmTimKiem
             // 
@@ -293,9 +305,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm kiếm";
             this.pnTop.ResumeLayout(false);
-            this.pnPhanLoai.ResumeLayout(false);
             this.pnInput.ResumeLayout(false);
             this.pnInput.PerformLayout();
+            this.pnPhanLoai.ResumeLayout(false);
             this.pnBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -321,5 +333,6 @@
         private System.Windows.Forms.Panel pnContainer;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbMuc;
+        private System.Windows.Forms.Panel panel1;
     }
 }

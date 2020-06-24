@@ -40,6 +40,27 @@ namespace QLKTX.UI
             btnHoaDon.BackColor = SystemColors.Control;
             var btn = sender as Button;
             btn.BackColor = Color.Gold;
+            SearchType searchType;
+            if (btn.Name == "btnNhanVien")
+            {
+                searchType = SearchType.NhanVien;
+            }
+            else if (btn.Name == "btnSinhVien")
+            {
+                searchType = SearchType.SinhVien;
+            }   
+            else if (btn.Name == "btnPhieuDK")
+            {
+                searchType = SearchType.PhieuDK;
+            }   
+            else if (btn.Name == "btnPhong")
+            {
+                searchType = SearchType.Phong;
+            }   
+            else if (btn.Name == "btnHoaDon")
+            {
+                searchType = SearchType.HoaDon;
+            }    
         }
     }
 }
