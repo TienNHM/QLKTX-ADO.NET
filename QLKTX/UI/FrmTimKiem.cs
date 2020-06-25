@@ -106,8 +106,12 @@ namespace QLKTX.UI
             var btn = sender as Button;
             btn.BackColor = Color.Gold;
 
+            dgv.DataSource = null;
             cmbMucTimKiem.Items.Clear();
             cmbMucTimKiem.Text = "";
+            txtKey.Clear();
+            txtKhu.Clear();
+            txtPhong.Clear();
 
             txtKey.Visible = true;
 
@@ -164,6 +168,36 @@ namespace QLKTX.UI
         private void btnXuat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = e.RowIndex;
+            switch (this.searchType)
+            {
+                case SearchType.NhanVien:
+                    FrmNhanVien nhanVien = new FrmNhanVien(dgv.Rows[r].Cells[0].Value.ToString());
+                    nhanVien.ShowDialog();
+                    break;
+                case SearchType.SinhVien:
+                    FrmSinhVien sinhVien = new FrmSinhVien(dgv.Rows[r].Cells[0].Value.ToString());
+                    sinhVien.ShowDialog();
+                    break;
+                case SearchType.PhieuDK:
+                    FrmDangKyPhong frmDangKy = new FrmDangKyPhong(dgv.Rows[r].Cells[0].Value.ToString());
+                    frmDangKy.ShowDialog();
+                    break;
+                case SearchType.Phong:
+                    FrmPhong phong = new FrmPhong(
+                        Khu: dgv.Rows[r].Cells[1].Value.ToString(),
+                        MaPhong: dgv.Rows[r].Cells[0].Value.ToString());
+                    phong.ShowDialog();
+                    break;
+                case SearchType.HoaDon:
+                    FrmHoaDon hoaDon = new FrmHoaDon(dgv.Rows[r].Cells[1].Value.ToString());
+                    hoaDon.ShowDialog();
+                    break;
+            }
         }
     }
 }

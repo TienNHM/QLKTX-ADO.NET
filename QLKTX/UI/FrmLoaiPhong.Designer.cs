@@ -46,7 +46,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.richTextBox1);
             this.Name = "FrmLoaiPhong";
-            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLoaiPhong";
             this.ResumeLayout(false);
 

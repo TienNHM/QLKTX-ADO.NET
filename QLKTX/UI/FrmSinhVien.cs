@@ -23,9 +23,28 @@ namespace QLKTX.UI
             InitializeComponent();
         }
 
-        public FrmSinhVien(string maSV)
+        public FrmSinhVien(string MSSV)
         {
             InitializeComponent();
+            var dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.SinhVien, EnumConst.SinhVien.MSSV, MSSV);
+            if (dt != null)
+            {
+                txtMSSV.Text = dt.Rows[0]["MSSV"].ToString();
+                txtHoTen.Text = dt.Rows[0]["HoTen"].ToString();
+                txtCMND.Text = dt.Rows[0]["CMND"].ToString();
+                ckbNu.Checked = (bool) dt.Rows[0]["Phai"];
+                txtDienSV.Text = dt.Rows[0]["DienSV"].ToString();
+                txtEmail.Text = dt.Rows[0]["Email"].ToString();
+                txtNgSinh.Text = ((DateTime)dt.Rows[0]["NgSinh"]).ToString("yyyy-MM-dd");
+                txtQueQuan.Text = dt.Rows[0]["QueQuan"].ToString();
+                strAvt = dt.Rows[0]["AnhChanDung"].ToString();
+                txtSDT.Text = dt.Rows[0]["SDT"].ToString();
+                txtBHYT.Text = dt.Rows[0]["BHYT"].ToString();
+                cmbMaLop.Text = dt.Rows[0]["MaLop"].ToString();
+                try { picAvt.BackgroundImage = Image.FromFile(strAvt); }
+                catch { }
+            }
+            pnContainer.Enabled = false;
         }
 
         private void btnMoRong_Click(object sender, EventArgs e)
@@ -46,9 +65,9 @@ namespace QLKTX.UI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             var dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.SinhVien, EnumConst.SinhVien.MSSV, txtMSSV.Text.Trim());
-            bool bNu = true;
-            if (txtGioiTinh.Text.Trim() == "Nam")
-                bNu = false;
+            bool bNu = false;
+            if (ckbNu.Checked)
+                bNu = true;
             bool result = false;
             if (dt != null)
             {
@@ -103,6 +122,11 @@ namespace QLKTX.UI
                 strAvt = fileDialog.FileName;
                 picAvt.BackgroundImage = Image.FromStream(fileDialog.OpenFile());
             }    
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            pnContainer.Enabled = true;
         }
     }
 }

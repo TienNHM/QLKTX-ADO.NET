@@ -36,7 +36,7 @@
             this.lbDonVi = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.cmbTenDV = new System.Windows.Forms.ComboBox();
             this.lbSoLuong = new System.Windows.Forms.Label();
             this.lbTenDV = new System.Windows.Forms.Label();
@@ -44,9 +44,9 @@
             this.btnHoanTat = new System.Windows.Forms.Button();
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.pnContainerTop = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtNgayHD = new System.Windows.Forms.DateTimePicker();
             this.lbNgay = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.lbNhanVien = new System.Windows.Forms.Label();
             this.cmbPhong = new System.Windows.Forms.ComboBox();
             this.cmbKhu = new System.Windows.Forms.ComboBox();
@@ -56,7 +56,7 @@
             this.pnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             this.pnContainerBottom.SuspendLayout();
             this.pnContainerTop.SuspendLayout();
             this.SuspendLayout();
@@ -112,7 +112,7 @@
             this.panel1.Controls.Add(this.lbDonVi);
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.numSoLuong);
             this.panel1.Controls.Add(this.cmbTenDV);
             this.panel1.Controls.Add(this.lbSoLuong);
             this.panel1.Controls.Add(this.lbTenDV);
@@ -156,15 +156,15 @@
             this.btnThem.Text = "THÊM";
             this.btnThem.UseVisualStyleBackColor = false;
             // 
-            // numericUpDown1
+            // numSoLuong
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.numericUpDown1.Location = new System.Drawing.Point(119, 42);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(156, 23);
-            this.numericUpDown1.TabIndex = 16;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.numSoLuong.Location = new System.Drawing.Point(119, 42);
+            this.numSoLuong.Name = "numSoLuong";
+            this.numSoLuong.Size = new System.Drawing.Size(156, 23);
+            this.numSoLuong.TabIndex = 16;
+            this.numSoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numSoLuong.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -240,9 +240,9 @@
             // pnContainerTop
             // 
             this.pnContainerTop.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.pnContainerTop.Controls.Add(this.dateTimePicker1);
+            this.pnContainerTop.Controls.Add(this.dtNgayHD);
             this.pnContainerTop.Controls.Add(this.lbNgay);
-            this.pnContainerTop.Controls.Add(this.textBox1);
+            this.pnContainerTop.Controls.Add(this.txtNhanVien);
             this.pnContainerTop.Controls.Add(this.lbNhanVien);
             this.pnContainerTop.Controls.Add(this.cmbPhong);
             this.pnContainerTop.Controls.Add(this.cmbKhu);
@@ -254,15 +254,15 @@
             this.pnContainerTop.Size = new System.Drawing.Size(434, 118);
             this.pnContainerTop.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dtNgayHD
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd hh:mm:ss";
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(241, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(158, 20);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dtNgayHD.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            this.dtNgayHD.Enabled = false;
+            this.dtNgayHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayHD.Location = new System.Drawing.Point(241, 32);
+            this.dtNgayHD.Name = "dtNgayHD";
+            this.dtNgayHD.Size = new System.Drawing.Size(158, 20);
+            this.dtNgayHD.TabIndex = 13;
             // 
             // lbNgay
             // 
@@ -274,13 +274,13 @@
             this.lbNgay.TabIndex = 12;
             this.lbNgay.Text = "Ngày lập hoá đơn";
             // 
-            // textBox1
+            // txtNhanVien
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(39, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtNhanVien.Enabled = false;
+            this.txtNhanVien.Location = new System.Drawing.Point(39, 32);
+            this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.Size = new System.Drawing.Size(158, 20);
+            this.txtNhanVien.TabIndex = 11;
             // 
             // lbNhanVien
             // 
@@ -339,7 +339,7 @@
             this.Controls.Add(this.pnTop);
             this.DoubleBuffered = true;
             this.Name = "FrmHoaDon";
-            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HÓA ĐƠN";
             this.pnTop.ResumeLayout(false);
@@ -347,7 +347,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
             this.pnContainerBottom.ResumeLayout(false);
             this.pnContainerTop.ResumeLayout(false);
             this.pnContainerTop.PerformLayout();
@@ -373,13 +373,13 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label lbDonVi;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numSoLuong;
         private System.Windows.Forms.ComboBox cmbTenDV;
         private System.Windows.Forms.Label lbSoLuong;
         private System.Windows.Forms.Label lbTenDV;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtNgayHD;
         private System.Windows.Forms.Label lbNgay;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNhanVien;
         private System.Windows.Forms.Label lbNhanVien;
     }
 }

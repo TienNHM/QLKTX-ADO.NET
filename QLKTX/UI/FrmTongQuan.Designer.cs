@@ -72,7 +72,7 @@
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.pnContainer);
             this.Name = "FrmTongQuan";
-            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin";
             this.pnTop.ResumeLayout(false);
