@@ -76,7 +76,7 @@ namespace QLKTX.UI
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     string khu = dt.Rows[i]["Khu"].ToString();
-                    var item = new Item(ItemType.LoaiPhong, khu);
+                    var item = new Item(ItemType.KhuPhong, khu);
                     item.picItem.BackgroundImage = Properties.Resources.room;
                     item.btnTitle.Text = khu;
                     pnContainer.Controls.Add(item);

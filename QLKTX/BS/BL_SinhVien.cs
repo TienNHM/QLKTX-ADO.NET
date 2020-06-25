@@ -52,7 +52,7 @@ namespace QLKTX.BS
                             "BHYT = @BHYT, " +
                             "QueQuan = @QueQuan, " +
                             "AnhChanDung = @AnhChanDung " +
-                         "WHERE MSSV=@MSSV";
+                         "WHERE MSSV = @MSSV";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("MSSV", MSSV),

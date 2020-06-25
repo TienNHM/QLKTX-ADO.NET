@@ -13,6 +13,7 @@ namespace QLKTX.BS
     public partial class BS_layer
     {
         public DB_Main db = null;
+        string error = "";
 
         public BS_layer()
         {

@@ -16,6 +16,7 @@ namespace QLKTX.UI
     {
         bool isExpended = false;
         string error = "";
+        string strAvt = null;
 
         public FrmSinhVien()
         {
@@ -63,7 +64,7 @@ namespace QLKTX.UI
                     txtSDT.Text,
                     txtBHYT.Text,
                     txtQueQuan.Text,
-                    txtAvt.Text.Trim(),
+                    strAvt.Trim(),
                     ref error);
             }   
             else
@@ -80,7 +81,7 @@ namespace QLKTX.UI
                     txtSDT.Text,
                     txtBHYT.Text,
                     txtQueQuan.Text,
-                    txtAvt.Text.Trim(),
+                    strAvt.Trim(),
                     ref error);
             }
             if (result)
@@ -99,7 +100,7 @@ namespace QLKTX.UI
             var re = fileDialog.ShowDialog();
             if (re == DialogResult.OK)
             {
-                txtAvt.Text = fileDialog.FileName;
+                strAvt = fileDialog.FileName;
                 picAvt.BackgroundImage = Image.FromStream(fileDialog.OpenFile());
             }    
         }

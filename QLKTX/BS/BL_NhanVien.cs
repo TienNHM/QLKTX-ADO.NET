@@ -38,7 +38,7 @@ namespace QLKTX.BS
                             "MaNQL = @MaNQL" +
                          "WHERE MaNV = @MaNV";
             SqlParameter[] sqlParameters = new SqlParameter[]
-           {
+            {
                 new SqlParameter("MaNV", MaNV),
                 new SqlParameter("CMND", CMND),
                 new SqlParameter("HoTen", HoTen),
@@ -47,7 +47,7 @@ namespace QLKTX.BS
                 new SqlParameter("DiaChi", DiaChi),
                 new SqlParameter("Luong", Luong),
                 new SqlParameter("MaNQL", MaNQL)
-           };
+            };
             return db.ExecuteNonQuery(sql, sqlParameters, System.Data.CommandType.Text, ref error);
         }
     }

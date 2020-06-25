@@ -11,7 +11,7 @@ namespace QLKTX.BS
 {
     public partial class BS_layer
     {
-        public bool Insert(string MaDV, string TenDV, int GiaDV, string DonViTinh, ref string err)
+        public bool Insert(string MaDV, string TenDV, int GiaDV, string DonViTinh, ref string error)
         {
             string sql = "INSERT INTO DICHVU VALUES(@MaDV, @TenDV, @GiaDV, @DonViTinh)";
             SqlParameter[] sqlParameters = new SqlParameter[]
@@ -21,10 +21,10 @@ namespace QLKTX.BS
                 new SqlParameter("GiaDV", GiaDV),
                 new SqlParameter("DonViTinh", DonViTinh)
             };
-            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
+            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref error);
         }
 
-        public bool Update(string MaDV, string TenDV, int GiaDV, string DonViTinh, ref string err)
+        public bool Update(string MaDV, string TenDV, int GiaDV, string DonViTinh, ref string error)
         {
             string sql = "UPDATE DICHVU SET" +
                             "TenDV = @TenDV, " +
@@ -38,17 +38,7 @@ namespace QLKTX.BS
                 new SqlParameter("GiaDV", GiaDV),
                 new SqlParameter("DonViTinh", DonViTinh)
             };
-            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
+            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref error);
         }
-
-        //public bool Delete(string MaDV, ref string err)
-        //{
-        //    string sql = "DELETE FROM DICHVU WHERE MaDV = @MaDV";
-        //    SqlParameter[] sqlParameters = new SqlParameter[]
-        //    {
-        //        new SqlParameter("MaDV", MaDV)
-        //    };
-        //    return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
-        //}
     }
 }

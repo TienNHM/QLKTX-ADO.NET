@@ -51,7 +51,6 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnMoRong = new System.Windows.Forms.Button();
             this.pnSV = new System.Windows.Forms.Panel();
-            this.txtAvt = new System.Windows.Forms.TextBox();
             this.btnChoose = new System.Windows.Forms.Button();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -264,7 +263,7 @@
             // picAvt
             // 
             this.picAvt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAvt.Location = new System.Drawing.Point(571, 108);
+            this.picAvt.Location = new System.Drawing.Point(571, 64);
             this.picAvt.Margin = new System.Windows.Forms.Padding(2);
             this.picAvt.Name = "picAvt";
             this.picAvt.Size = new System.Drawing.Size(112, 162);
@@ -317,7 +316,6 @@
             // pnSV
             // 
             this.pnSV.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnSV.Controls.Add(this.txtAvt);
             this.pnSV.Controls.Add(this.btnChoose);
             this.pnSV.Controls.Add(this.txtQueQuan);
             this.pnSV.Controls.Add(this.label3);
@@ -355,18 +353,11 @@
             this.pnSV.Size = new System.Drawing.Size(724, 378);
             this.pnSV.TabIndex = 29;
             // 
-            // txtAvt
-            // 
-            this.txtAvt.Location = new System.Drawing.Point(571, 67);
-            this.txtAvt.Name = "txtAvt";
-            this.txtAvt.Size = new System.Drawing.Size(114, 23);
-            this.txtAvt.TabIndex = 35;
-            // 
             // btnChoose
             // 
             this.btnChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChoose.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnChoose.Location = new System.Drawing.Point(587, 288);
+            this.btnChoose.Location = new System.Drawing.Point(587, 244);
             this.btnChoose.Name = "btnChoose";
             this.btnChoose.Size = new System.Drawing.Size(75, 23);
             this.btnChoose.TabIndex = 34;
@@ -595,6 +586,5 @@
         private System.Windows.Forms.TextBox txtQueQuan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnChoose;
-        private System.Windows.Forms.TextBox txtAvt;
     }
 }

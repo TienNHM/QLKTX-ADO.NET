@@ -54,6 +54,7 @@ namespace QLKTX
             switch (this.type)
             {
                 case ItemType.KhuPhong:
+                    MessageBox.Show("");
                     break;
                 case ItemType.LoaiPhong:
                     FrmLoaiPhong loaiPhong = new FrmLoaiPhong(this.strKey);
@@ -64,6 +65,7 @@ namespace QLKTX
                     nhanVien.ShowDialog();
                     break;
                 case ItemType.DichVu:
+                    MessageBox.Show("Dịch vụ");
                     break;
             }    
         }

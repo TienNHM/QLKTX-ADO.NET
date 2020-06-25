@@ -156,7 +156,14 @@ namespace QLKTX.UI
             {
                 txtKey.Visible = true;
                 pnKey.Visible = false;
-            }    
+            }
+            if (cmbMucTimKiem.SelectedIndex >= 0)
+                btnSearch.Enabled = true;
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

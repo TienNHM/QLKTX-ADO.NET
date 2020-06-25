@@ -28,263 +28,333 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbMaNV = new System.Windows.Forms.Label();
-            this.lbHoTen = new System.Windows.Forms.Label();
-            this.lbSDT = new System.Windows.Forms.Label();
-            this.lbDiaChi = new System.Windows.Forms.Label();
-            this.lbLuong = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
-            this.lbCMND = new System.Windows.Forms.Label();
+            this.pnTop = new System.Windows.Forms.Panel();
+            this.lbTitle = new System.Windows.Forms.Label();
+            this.pnContainer = new System.Windows.Forms.Panel();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.txtCMND = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtLuong = new System.Windows.Forms.TextBox();
+            this.txtMaNQL = new System.Windows.Forms.TextBox();
             this.lbMaNQL = new System.Windows.Forms.Label();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.tBMaNQL = new System.Windows.Forms.TextBox();
-            this.tBLuongNV = new System.Windows.Forms.TextBox();
-            this.tBDiaChiNV = new System.Windows.Forms.TextBox();
-            this.tBEmailNV = new System.Windows.Forms.TextBox();
-            this.tBSDTNV = new System.Windows.Forms.TextBox();
-            this.tBHoTenNV = new System.Windows.Forms.TextBox();
-            this.tBCMNDNV = new System.Windows.Forms.TextBox();
-            this.tBMaNV = new System.Windows.Forms.TextBox();
+            this.lbCMND = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbLuong = new System.Windows.Forms.Label();
+            this.lbDiaChi = new System.Windows.Forms.Label();
+            this.lbSDT = new System.Windows.Forms.Label();
+            this.lbHoTen = new System.Windows.Forms.Label();
+            this.lbMaNV = new System.Windows.Forms.Label();
             this.picAvt = new System.Windows.Forms.PictureBox();
+            this.btnChoose = new System.Windows.Forms.Button();
             this.lbAnhChanDung = new System.Windows.Forms.Label();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.pnTop.SuspendLayout();
+            this.pnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbMaNV
+            // pnTop
             // 
-            this.lbMaNV.AutoSize = true;
-            this.lbMaNV.Location = new System.Drawing.Point(23, 29);
-            this.lbMaNV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbMaNV.Name = "lbMaNV";
-            this.lbMaNV.Size = new System.Drawing.Size(40, 13);
-            this.lbMaNV.TabIndex = 1;
-            this.lbMaNV.Text = "Mã NV";
+            this.pnTop.Controls.Add(this.lbTitle);
+            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnTop.MinimumSize = new System.Drawing.Size(839, 65);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(849, 65);
+            this.pnTop.TabIndex = 32;
             // 
-            // lbHoTen
+            // lbTitle
             // 
-            this.lbHoTen.AutoSize = true;
-            this.lbHoTen.Location = new System.Drawing.Point(23, 131);
-            this.lbHoTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbHoTen.Name = "lbHoTen";
-            this.lbHoTen.Size = new System.Drawing.Size(39, 13);
-            this.lbHoTen.TabIndex = 3;
-            this.lbHoTen.Text = "Họ tên";
+            this.lbTitle.BackColor = System.Drawing.Color.Goldenrod;
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbTitle.Location = new System.Drawing.Point(0, 0);
+            this.lbTitle.MinimumSize = new System.Drawing.Size(845, 65);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(849, 65);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "THÔNG TIN NHÂN VIÊN";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbSDT
+            // pnContainer
             // 
-            this.lbSDT.AutoSize = true;
-            this.lbSDT.Location = new System.Drawing.Point(310, 29);
-            this.lbSDT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbSDT.Name = "lbSDT";
-            this.lbSDT.Size = new System.Drawing.Size(29, 13);
-            this.lbSDT.TabIndex = 4;
-            this.lbSDT.Text = "SĐT";
+            this.pnContainer.BackColor = System.Drawing.Color.Transparent;
+            this.pnContainer.Controls.Add(this.txtMaNV);
+            this.pnContainer.Controls.Add(this.txtCMND);
+            this.pnContainer.Controls.Add(this.txtHoTen);
+            this.pnContainer.Controls.Add(this.txtSDT);
+            this.pnContainer.Controls.Add(this.txtEmail);
+            this.pnContainer.Controls.Add(this.txtDiaChi);
+            this.pnContainer.Controls.Add(this.txtLuong);
+            this.pnContainer.Controls.Add(this.txtMaNQL);
+            this.pnContainer.Controls.Add(this.lbMaNQL);
+            this.pnContainer.Controls.Add(this.lbCMND);
+            this.pnContainer.Controls.Add(this.lbEmail);
+            this.pnContainer.Controls.Add(this.lbLuong);
+            this.pnContainer.Controls.Add(this.lbDiaChi);
+            this.pnContainer.Controls.Add(this.lbSDT);
+            this.pnContainer.Controls.Add(this.lbHoTen);
+            this.pnContainer.Controls.Add(this.lbMaNV);
+            this.pnContainer.Location = new System.Drawing.Point(0, 68);
+            this.pnContainer.Name = "pnContainer";
+            this.pnContainer.Size = new System.Drawing.Size(680, 210);
+            this.pnContainer.TabIndex = 33;
             // 
-            // lbDiaChi
+            // txtMaNV
             // 
-            this.lbDiaChi.AutoSize = true;
-            this.lbDiaChi.Location = new System.Drawing.Point(310, 132);
-            this.lbDiaChi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbDiaChi.Name = "lbDiaChi";
-            this.lbDiaChi.Size = new System.Drawing.Size(40, 13);
-            this.lbDiaChi.TabIndex = 5;
-            this.lbDiaChi.Text = "Địa chỉ";
+            this.txtMaNV.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMaNV.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNV.Location = new System.Drawing.Point(112, 35);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.ReadOnly = true;
+            this.txtMaNV.Size = new System.Drawing.Size(198, 25);
+            this.txtMaNV.TabIndex = 51;
             // 
-            // lbLuong
+            // txtCMND
             // 
-            this.lbLuong.AutoSize = true;
-            this.lbLuong.Location = new System.Drawing.Point(310, 181);
-            this.lbLuong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbLuong.Name = "lbLuong";
-            this.lbLuong.Size = new System.Drawing.Size(37, 13);
-            this.lbLuong.TabIndex = 6;
-            this.lbLuong.Text = "Lương";
+            this.txtCMND.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCMND.Location = new System.Drawing.Point(114, 171);
+            this.txtCMND.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(198, 25);
+            this.txtCMND.TabIndex = 50;
             // 
-            // lbEmail
+            // txtHoTen
             // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(310, 78);
-            this.lbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(32, 13);
-            this.lbEmail.TabIndex = 7;
-            this.lbEmail.Text = "Email";
+            this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoTen.Location = new System.Drawing.Point(112, 123);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(198, 25);
+            this.txtHoTen.TabIndex = 49;
             // 
-            // lbCMND
+            // txtSDT
             // 
-            this.lbCMND.AutoSize = true;
-            this.lbCMND.Location = new System.Drawing.Point(23, 180);
-            this.lbCMND.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCMND.Name = "lbCMND";
-            this.lbCMND.Size = new System.Drawing.Size(39, 13);
-            this.lbCMND.TabIndex = 8;
-            this.lbCMND.Text = "CMND";
+            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(434, 35);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(198, 25);
+            this.txtSDT.TabIndex = 48;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(434, 79);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(198, 25);
+            this.txtEmail.TabIndex = 47;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Location = new System.Drawing.Point(434, 128);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(198, 25);
+            this.txtDiaChi.TabIndex = 46;
+            // 
+            // txtLuong
+            // 
+            this.txtLuong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLuong.Location = new System.Drawing.Point(436, 175);
+            this.txtLuong.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(198, 25);
+            this.txtLuong.TabIndex = 45;
+            // 
+            // txtMaNQL
+            // 
+            this.txtMaNQL.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMaNQL.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNQL.Location = new System.Drawing.Point(112, 79);
+            this.txtMaNQL.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtMaNQL.Name = "txtMaNQL";
+            this.txtMaNQL.ReadOnly = true;
+            this.txtMaNQL.Size = new System.Drawing.Size(198, 25);
+            this.txtMaNQL.TabIndex = 44;
             // 
             // lbMaNQL
             // 
             this.lbMaNQL.AutoSize = true;
-            this.lbMaNQL.Location = new System.Drawing.Point(23, 78);
+            this.lbMaNQL.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaNQL.Location = new System.Drawing.Point(50, 79);
             this.lbMaNQL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaNQL.Name = "lbMaNQL";
-            this.lbMaNQL.Size = new System.Drawing.Size(44, 13);
-            this.lbMaNQL.TabIndex = 9;
-            this.lbMaNQL.Text = "MaNQL";
+            this.lbMaNQL.Size = new System.Drawing.Size(58, 17);
+            this.lbMaNQL.TabIndex = 41;
+            this.lbMaNQL.Text = "Mã NQL";
             // 
-            // btnThem
+            // lbCMND
             // 
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(69, 233);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(76, 23);
-            this.btnThem.TabIndex = 10;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.lbCMND.AutoSize = true;
+            this.lbCMND.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCMND.Location = new System.Drawing.Point(52, 174);
+            this.lbCMND.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCMND.Name = "lbCMND";
+            this.lbCMND.Size = new System.Drawing.Size(48, 17);
+            this.lbCMND.TabIndex = 40;
+            this.lbCMND.Text = "CMND";
             // 
-            // btnSua
+            // lbEmail
             // 
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(249, 233);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(76, 23);
-            this.btnSua.TabIndex = 11;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.Location = new System.Drawing.Point(385, 79);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(42, 17);
+            this.lbEmail.TabIndex = 39;
+            this.lbEmail.Text = "Email";
             // 
-            // btnLuu
+            // lbLuong
             // 
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(446, 233);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(76, 23);
-            this.btnLuu.TabIndex = 13;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
+            this.lbLuong.AutoSize = true;
+            this.lbLuong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLuong.Location = new System.Drawing.Point(387, 175);
+            this.lbLuong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbLuong.Name = "lbLuong";
+            this.lbLuong.Size = new System.Drawing.Size(48, 17);
+            this.lbLuong.TabIndex = 38;
+            this.lbLuong.Text = "Lương";
             // 
-            // tBMaNQL
+            // lbDiaChi
             // 
-            this.tBMaNQL.BackColor = System.Drawing.SystemColors.Window;
-            this.tBMaNQL.Location = new System.Drawing.Point(69, 78);
-            this.tBMaNQL.Margin = new System.Windows.Forms.Padding(2);
-            this.tBMaNQL.Name = "tBMaNQL";
-            this.tBMaNQL.ReadOnly = true;
-            this.tBMaNQL.Size = new System.Drawing.Size(170, 20);
-            this.tBMaNQL.TabIndex = 14;
+            this.lbDiaChi.AutoSize = true;
+            this.lbDiaChi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDiaChi.Location = new System.Drawing.Point(385, 128);
+            this.lbDiaChi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDiaChi.Name = "lbDiaChi";
+            this.lbDiaChi.Size = new System.Drawing.Size(51, 17);
+            this.lbDiaChi.TabIndex = 37;
+            this.lbDiaChi.Text = "Địa chỉ";
             // 
-            // tBLuongNV
+            // lbSDT
             // 
-            this.tBLuongNV.Location = new System.Drawing.Point(352, 181);
-            this.tBLuongNV.Margin = new System.Windows.Forms.Padding(2);
-            this.tBLuongNV.Name = "tBLuongNV";
-            this.tBLuongNV.Size = new System.Drawing.Size(170, 20);
-            this.tBLuongNV.TabIndex = 15;
+            this.lbSDT.AutoSize = true;
+            this.lbSDT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSDT.Location = new System.Drawing.Point(385, 35);
+            this.lbSDT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbSDT.Name = "lbSDT";
+            this.lbSDT.Size = new System.Drawing.Size(33, 17);
+            this.lbSDT.TabIndex = 36;
+            this.lbSDT.Text = "SĐT";
             // 
-            // tBDiaChiNV
+            // lbHoTen
             // 
-            this.tBDiaChiNV.Location = new System.Drawing.Point(352, 132);
-            this.tBDiaChiNV.Margin = new System.Windows.Forms.Padding(2);
-            this.tBDiaChiNV.Name = "tBDiaChiNV";
-            this.tBDiaChiNV.Size = new System.Drawing.Size(170, 20);
-            this.tBDiaChiNV.TabIndex = 16;
+            this.lbHoTen.AutoSize = true;
+            this.lbHoTen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoTen.Location = new System.Drawing.Point(50, 127);
+            this.lbHoTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbHoTen.Name = "lbHoTen";
+            this.lbHoTen.Size = new System.Drawing.Size(50, 17);
+            this.lbHoTen.TabIndex = 35;
+            this.lbHoTen.Text = "Họ tên";
             // 
-            // tBEmailNV
+            // lbMaNV
             // 
-            this.tBEmailNV.Location = new System.Drawing.Point(352, 78);
-            this.tBEmailNV.Margin = new System.Windows.Forms.Padding(2);
-            this.tBEmailNV.Name = "tBEmailNV";
-            this.tBEmailNV.Size = new System.Drawing.Size(170, 20);
-            this.tBEmailNV.TabIndex = 17;
-            // 
-            // tBSDTNV
-            // 
-            this.tBSDTNV.Location = new System.Drawing.Point(352, 29);
-            this.tBSDTNV.Margin = new System.Windows.Forms.Padding(2);
-            this.tBSDTNV.Name = "tBSDTNV";
-            this.tBSDTNV.Size = new System.Drawing.Size(170, 20);
-            this.tBSDTNV.TabIndex = 18;
-            // 
-            // tBHoTenNV
-            // 
-            this.tBHoTenNV.Location = new System.Drawing.Point(69, 128);
-            this.tBHoTenNV.Margin = new System.Windows.Forms.Padding(2);
-            this.tBHoTenNV.Name = "tBHoTenNV";
-            this.tBHoTenNV.Size = new System.Drawing.Size(170, 20);
-            this.tBHoTenNV.TabIndex = 19;
-            // 
-            // tBCMNDNV
-            // 
-            this.tBCMNDNV.Location = new System.Drawing.Point(69, 178);
-            this.tBCMNDNV.Margin = new System.Windows.Forms.Padding(2);
-            this.tBCMNDNV.Name = "tBCMNDNV";
-            this.tBCMNDNV.Size = new System.Drawing.Size(170, 20);
-            this.tBCMNDNV.TabIndex = 20;
-            // 
-            // tBMaNV
-            // 
-            this.tBMaNV.BackColor = System.Drawing.SystemColors.Window;
-            this.tBMaNV.Location = new System.Drawing.Point(69, 29);
-            this.tBMaNV.Margin = new System.Windows.Forms.Padding(2);
-            this.tBMaNV.Name = "tBMaNV";
-            this.tBMaNV.ReadOnly = true;
-            this.tBMaNV.Size = new System.Drawing.Size(170, 20);
-            this.tBMaNV.TabIndex = 21;
+            this.lbMaNV.AutoSize = true;
+            this.lbMaNV.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaNV.Location = new System.Drawing.Point(50, 35);
+            this.lbMaNV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMaNV.Name = "lbMaNV";
+            this.lbMaNV.Size = new System.Drawing.Size(50, 17);
+            this.lbMaNV.TabIndex = 34;
+            this.lbMaNV.Text = "Mã NV";
             // 
             // picAvt
             // 
             this.picAvt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAvt.Location = new System.Drawing.Point(571, 74);
+            this.picAvt.Location = new System.Drawing.Point(685, 106);
             this.picAvt.Margin = new System.Windows.Forms.Padding(2);
             this.picAvt.Name = "picAvt";
-            this.picAvt.Size = new System.Drawing.Size(90, 120);
-            this.picAvt.TabIndex = 22;
+            this.picAvt.Size = new System.Drawing.Size(112, 162);
+            this.picAvt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picAvt.TabIndex = 57;
             this.picAvt.TabStop = false;
+            // 
+            // btnChoose
+            // 
+            this.btnChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChoose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChoose.ForeColor = System.Drawing.Color.Crimson;
+            this.btnChoose.Location = new System.Drawing.Point(697, 282);
+            this.btnChoose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(93, 30);
+            this.btnChoose.TabIndex = 56;
+            this.btnChoose.Text = "Chọn ảnh";
+            this.btnChoose.UseVisualStyleBackColor = true;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
             // lbAnhChanDung
             // 
             this.lbAnhChanDung.AutoSize = true;
-            this.lbAnhChanDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnhChanDung.Location = new System.Drawing.Point(568, 32);
+            this.lbAnhChanDung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAnhChanDung.Location = new System.Drawing.Point(691, 87);
             this.lbAnhChanDung.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAnhChanDung.Name = "lbAnhChanDung";
-            this.lbAnhChanDung.Size = new System.Drawing.Size(104, 17);
-            this.lbAnhChanDung.TabIndex = 23;
+            this.lbAnhChanDung.Size = new System.Drawing.Size(102, 17);
+            this.lbAnhChanDung.TabIndex = 55;
             this.lbAnhChanDung.Text = "Ảnh chân dung";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnLuu.Location = new System.Drawing.Point(388, 284);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(93, 30);
+            this.btnLuu.TabIndex = 59;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnSua.Location = new System.Drawing.Point(222, 284);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(93, 30);
+            this.btnSua.TabIndex = 58;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // FrmNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 276);
-            this.Controls.Add(this.lbAnhChanDung);
-            this.Controls.Add(this.picAvt);
-            this.Controls.Add(this.tBMaNV);
-            this.Controls.Add(this.tBCMNDNV);
-            this.Controls.Add(this.tBHoTenNV);
-            this.Controls.Add(this.tBSDTNV);
-            this.Controls.Add(this.tBEmailNV);
-            this.Controls.Add(this.tBDiaChiNV);
-            this.Controls.Add(this.tBLuongNV);
-            this.Controls.Add(this.tBMaNQL);
+            this.ClientSize = new System.Drawing.Size(849, 329);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.lbMaNQL);
-            this.Controls.Add(this.lbCMND);
-            this.Controls.Add(this.lbEmail);
-            this.Controls.Add(this.lbLuong);
-            this.Controls.Add(this.lbDiaChi);
-            this.Controls.Add(this.lbSDT);
-            this.Controls.Add(this.lbHoTen);
-            this.Controls.Add(this.lbMaNV);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Controls.Add(this.picAvt);
+            this.Controls.Add(this.btnChoose);
+            this.Controls.Add(this.lbAnhChanDung);
+            this.Controls.Add(this.pnContainer);
+            this.Controls.Add(this.pnTop);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FrmNhanVien";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân Viên";
+            this.pnTop.ResumeLayout(false);
+            this.pnContainer.ResumeLayout(false);
+            this.pnContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,26 +362,29 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lbMaNV;
-        private System.Windows.Forms.Label lbHoTen;
-        private System.Windows.Forms.Label lbSDT;
-        private System.Windows.Forms.Label lbDiaChi;
-        private System.Windows.Forms.Label lbLuong;
-        private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.Label lbCMND;
+        private System.Windows.Forms.Panel pnTop;
+        private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.Panel pnContainer;
+        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.TextBox txtCMND;
+        private System.Windows.Forms.TextBox txtHoTen;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtLuong;
+        private System.Windows.Forms.TextBox txtMaNQL;
         private System.Windows.Forms.Label lbMaNQL;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.TextBox tBMaNQL;
-        private System.Windows.Forms.TextBox tBLuongNV;
-        private System.Windows.Forms.TextBox tBDiaChiNV;
-        private System.Windows.Forms.TextBox tBEmailNV;
-        private System.Windows.Forms.TextBox tBSDTNV;
-        private System.Windows.Forms.TextBox tBHoTenNV;
-        private System.Windows.Forms.TextBox tBCMNDNV;
-        private System.Windows.Forms.TextBox tBMaNV;
+        private System.Windows.Forms.Label lbCMND;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbLuong;
+        private System.Windows.Forms.Label lbDiaChi;
+        private System.Windows.Forms.Label lbSDT;
+        private System.Windows.Forms.Label lbHoTen;
+        private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.PictureBox picAvt;
+        private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.Label lbAnhChanDung;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnSua;
     }
 }

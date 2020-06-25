@@ -29,7 +29,7 @@ namespace QLKTX.BS
             };
             DataTable table = db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
             if (table.Rows.Count > 0)
-                return table.Columns[2].ToString();
+                return table.Columns[2].ToString(); //MaNV
             else
                 return null;
         }
