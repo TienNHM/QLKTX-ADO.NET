@@ -26,6 +26,8 @@ namespace QLKTX
         public ClickEvent ClickEvent = null;
 
         private ItemType type = ItemType.Unknown;
+        private string strKey = "";
+
         public Item(ClickEvent click)
         {
             InitializeComponent();
@@ -37,6 +39,33 @@ namespace QLKTX
             InitializeComponent();
             this.type = type;
             this.ClickEvent = EventClick;
+        }
+
+        public Item(ItemType type, string key)
+        {
+            InitializeComponent();
+            this.type = type;
+            this.ClickEvent = ShowInfo;
+            strKey = key;
+        }
+
+        private void ShowInfo()
+        {
+            switch (this.type)
+            {
+                case ItemType.KhuPhong:
+                    break;
+                case ItemType.LoaiPhong:
+                    FrmLoaiPhong loaiPhong = new FrmLoaiPhong(this.strKey);
+                    loaiPhong.ShowDialog();
+                    break;
+                case ItemType.NhanVien:
+                    FrmNhanVien nhanVien = new FrmNhanVien(this.strKey);
+                    nhanVien.ShowDialog();
+                    break;
+                case ItemType.DichVu:
+                    break;
+            }    
         }
 
         private void EventClick()

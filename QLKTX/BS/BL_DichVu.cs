@@ -9,22 +9,8 @@ using QLKTX.DB;
 
 namespace QLKTX.BS
 {
-    public class BL_DichVu
+    public partial class BS_layer
     {
-        DB_Main db = null;
-        string error = "";
-        public BL_DichVu()
-        {
-            db = new DB_Main();
-        }
-
-        public DataTable Select()
-        {
-            string sql = "SELECT * FROM DICHVU";
-            SqlParameter[] sqlParameters = new SqlParameter[] { };
-            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
-        }
-
         public bool Insert(string MaDV, string TenDV, int GiaDV, string DonViTinh, ref string err)
         {
             string sql = "INSERT INTO DICHVU VALUES(@MaDV, @TenDV, @GiaDV, @DonViTinh)";
@@ -55,14 +41,14 @@ namespace QLKTX.BS
             return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
         }
 
-        public bool Delete(string MaDV, ref string err)
-        {
-            string sql = "DELETE FROM DICHVU WHERE MaDV = @MaDV";
-            SqlParameter[] sqlParameters = new SqlParameter[]
-            {
-                new SqlParameter("MaDV", MaDV)
-            };
-            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
-        }
+        //public bool Delete(string MaDV, ref string err)
+        //{
+        //    string sql = "DELETE FROM DICHVU WHERE MaDV = @MaDV";
+        //    SqlParameter[] sqlParameters = new SqlParameter[]
+        //    {
+        //        new SqlParameter("MaDV", MaDV)
+        //    };
+        //    return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
+        //}
     }
 }

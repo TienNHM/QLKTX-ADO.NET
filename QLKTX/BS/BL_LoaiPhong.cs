@@ -9,15 +9,8 @@ using QLKTX.DB;
 
 namespace QLKTX.BS
 {
-    public class BL_LoaiPhong
+    public partial class BS_layer
     {
-        DB_Main db = null;
-        string error = "";
-        public BL_LoaiPhong()
-        {
-            db = new DB_Main();
-        }
-
         public DataTable Select()
         {
             string sql = "SELECT * FROM LOAIPHONG";
@@ -55,11 +48,11 @@ namespace QLKTX.BS
             return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
         }
 
-        public bool Delete(string MaLoaiPhong, ref string err)
-        {
-            string sql = "DELETE FROM LOAIPHONG WHERE MaLoaiPhong = @MaLoaiPhong";
-            SqlParameter[] sqlParameters = new SqlParameter[] { };
-            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
-        }
+        //public bool Delete(string MaLoaiPhong, ref string err)
+        //{
+        //    string sql = "DELETE FROM LOAIPHONG WHERE MaLoaiPhong = @MaLoaiPhong";
+        //    SqlParameter[] sqlParameters = new SqlParameter[] { };
+        //    return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
+        //}
     }
 }

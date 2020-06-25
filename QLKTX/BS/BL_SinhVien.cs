@@ -6,61 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QLKTX.DB;
+using QLKTX.UI;
 
 namespace QLKTX.BS
 {
-    public class BL_SinhVien
+    public partial class BS_layer
     {
-        public enum SelectType
-        {
-            MSSV = 0,
-            MaLop,  
-            HoTen,
-            Phai,
-            CMND,
-            Email,
-            SDT,
-            QueQuan,
-            All
-        }
-
-        DB_Main db = null;
-
-        public BL_SinhVien()
-        {
-            db = new DB_Main();
-        }
-
-        public DataTable Select(SelectType type, string strValue, ref string error)
-        {
-            string strType = type.ToString();
-            string sql = "";
-            SqlParameter[] sqlParameters = new SqlParameter[] { };
-            if (type == SelectType.All)
-            {
-                sql = "SELECT * FROM SinhVien";
-            }
-            else if (type == SelectType.HoTen)
-            {
-                strValue = "%" + strValue + "%";
-                sql = $"SELECT * FROM SINHVIEN WHERE {strType} LIKE @Value";
-                sqlParameters = new SqlParameter[]
-                {
-                    new SqlParameter("Value", strValue)
-                };
-            }   
-            else
-            {
-                sql = $"SELECT * FROM SINHVIEN WHERE {strType} = @Value";
-                sqlParameters = new SqlParameter[]
-                {
-                    new SqlParameter("Value", strValue)
-                };
-            }    
-            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
-        }
-
-        public bool Insert(string MSSV, string MaLop, string DienSV, string HoTen, string Phai,
+        public bool Insert(string MSSV, string MaLop, string DienSV, string HoTen, bool Phai,
                             string NgSinh, string CMND, string Email, string SDT, string BHYT,
                             string QueQuan, string AnhChanDung, ref string err)
         {
@@ -83,17 +35,8 @@ namespace QLKTX.BS
             return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
         }
 
-        public bool Delete(string MSSV, ref string err)
-        {
-            string sql = "DELETE FROM SINHVIEN WHERE MSSV=@MSSV";
-            SqlParameter[] sqlParameters = new SqlParameter[]
-            {
-                new SqlParameter("MSSV", MSSV)
-            };
-            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
-        }
 
-        public bool Update(string MSSV, string MaLop, string DienSV, string HoTen, string Phai,
+        public bool Update(string MSSV, string MaLop, string DienSV, string HoTen, bool Phai,
                             string NgSinh, string CMND, string Email, string SDT, string BHYT,
                             string QueQuan, string AnhChanDung, ref string err)
         {
@@ -125,6 +68,7 @@ namespace QLKTX.BS
                 new SqlParameter("QueQuan", QueQuan),
                 new SqlParameter("AnhChanDung", AnhChanDung)
             };
+
             return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
         }
     }

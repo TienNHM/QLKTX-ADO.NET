@@ -39,6 +39,11 @@
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.pnTop = new System.Windows.Forms.Panel();
             this.pnInput = new System.Windows.Forms.Panel();
+            this.pnKey = new System.Windows.Forms.Panel();
+            this.txtPhong = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtKhu = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cmbMucTimKiem = new System.Windows.Forms.ComboBox();
             this.lbMuc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,17 +55,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.btnXuat = new System.Windows.Forms.Button();
-            this.pnKey = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtKhu = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPhong = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.pnTop.SuspendLayout();
             this.pnInput.SuspendLayout();
+            this.pnKey.SuspendLayout();
             this.pnPhanLoai.SuspendLayout();
             this.pnBottom.SuspendLayout();
-            this.pnKey.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +150,56 @@
             this.pnInput.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.pnInput.Size = new System.Drawing.Size(1064, 61);
             this.pnInput.TabIndex = 7;
+            // 
+            // pnKey
+            // 
+            this.pnKey.Controls.Add(this.txtPhong);
+            this.pnKey.Controls.Add(this.label4);
+            this.pnKey.Controls.Add(this.txtKhu);
+            this.pnKey.Controls.Add(this.label3);
+            this.pnKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnKey.Location = new System.Drawing.Point(300, 27);
+            this.pnKey.Name = "pnKey";
+            this.pnKey.Size = new System.Drawing.Size(630, 26);
+            this.pnKey.TabIndex = 11;
+            this.pnKey.Visible = false;
+            // 
+            // txtPhong
+            // 
+            this.txtPhong.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPhong.Location = new System.Drawing.Point(389, 0);
+            this.txtPhong.Name = "txtPhong";
+            this.txtPhong.Size = new System.Drawing.Size(150, 25);
+            this.txtPhong.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.label4.Location = new System.Drawing.Point(296, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Mã phòng: ";
+            // 
+            // txtKhu
+            // 
+            this.txtKhu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtKhu.Location = new System.Drawing.Point(91, 0);
+            this.txtKhu.Name = "txtKhu";
+            this.txtKhu.Size = new System.Drawing.Size(150, 25);
+            this.txtKhu.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 9F);
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 26);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Mã khu:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmbMucTimKiem
             // 
@@ -284,56 +334,6 @@
             this.btnXuat.Text = "Xuất dữ liệu";
             this.btnXuat.UseVisualStyleBackColor = true;
             // 
-            // pnKey
-            // 
-            this.pnKey.Controls.Add(this.txtPhong);
-            this.pnKey.Controls.Add(this.label4);
-            this.pnKey.Controls.Add(this.txtKhu);
-            this.pnKey.Controls.Add(this.label3);
-            this.pnKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnKey.Location = new System.Drawing.Point(300, 27);
-            this.pnKey.Name = "pnKey";
-            this.pnKey.Size = new System.Drawing.Size(630, 26);
-            this.pnKey.TabIndex = 11;
-            this.pnKey.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 9F);
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 26);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Mã khu:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtKhu
-            // 
-            this.txtKhu.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtKhu.Location = new System.Drawing.Point(91, 0);
-            this.txtKhu.Name = "txtKhu";
-            this.txtKhu.Size = new System.Drawing.Size(150, 25);
-            this.txtKhu.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F);
-            this.label4.Location = new System.Drawing.Point(296, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Mã phòng: ";
-            // 
-            // txtPhong
-            // 
-            this.txtPhong.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPhong.Location = new System.Drawing.Point(389, 0);
-            this.txtPhong.Name = "txtPhong";
-            this.txtPhong.Size = new System.Drawing.Size(150, 25);
-            this.txtPhong.TabIndex = 3;
-            // 
             // dgv
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -376,6 +376,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv.RowHeadersVisible = false;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
@@ -398,14 +399,15 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1050, 700);
             this.Name = "FrmTimKiem";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm kiếm";
             this.pnTop.ResumeLayout(false);
             this.pnInput.ResumeLayout(false);
-            this.pnPhanLoai.ResumeLayout(false);
-            this.pnBottom.ResumeLayout(false);
             this.pnKey.ResumeLayout(false);
             this.pnKey.PerformLayout();
+            this.pnPhanLoai.ResumeLayout(false);
+            this.pnBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 

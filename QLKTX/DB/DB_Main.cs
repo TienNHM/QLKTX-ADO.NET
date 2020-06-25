@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace QLKTX.DB
 {
@@ -31,6 +32,7 @@ namespace QLKTX.DB
                 if (conn.State == ConnectionState.Open)
                     conn.Close();
                 conn.Open();
+                comm.Parameters.Clear();
                 comm.Parameters.AddRange(sqlParameters);
                 comm.CommandText = strSQL;
                 comm.CommandType = ct;
@@ -54,6 +56,7 @@ namespace QLKTX.DB
             conn.Open();
             comm.CommandText = strSQL;
             comm.CommandType = ct;
+            comm.Parameters.Clear();
             comm.Parameters.AddRange(sqlParameters);
             try
             {

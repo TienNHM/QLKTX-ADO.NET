@@ -49,16 +49,51 @@ namespace QLKTX.UI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (searchType == SearchType.SinhVien)
+            BS_layer.TableName tableName = BS_layer.TableName.SinhVien;
+            object selectType = (EnumConst.SinhVien)cmbMucTimKiem.SelectedIndex;
+            string[] headerText = EnumConst.SinhVienHeaderText;
+
+            switch (searchType)
             {
-                BL_SinhVien sinhVien = new BL_SinhVien();
-                dgv.DataSource = sinhVien.Select(
-                    (BL_SinhVien.SelectType)cmbMucTimKiem.SelectedIndex, 
-                    txtKey.Text.Trim(),
-                    ref error);
-                for (int i = 0; i < dgv.Columns.Count; i++)
-                    dgv.Columns[i].HeaderText = EnumConst.SinhVienHeaderText[i];
-            }                
+                case SearchType.SinhVien:
+                    tableName = BS_layer.TableName.SinhVien;
+                    selectType = (EnumConst.SinhVien)cmbMucTimKiem.SelectedIndex;
+                    headerText = EnumConst.SinhVienHeaderText;
+                    break;
+                case SearchType.NhanVien:
+                    tableName = BS_layer.TableName.NhanVien;
+                    selectType = (EnumConst.NhanVien)cmbMucTimKiem.SelectedIndex;
+                    headerText = EnumConst.NhanVienHeaderText;
+                    break;
+                case SearchType.PhieuDK:
+                    tableName = BS_layer.TableName.PhieuDK;
+                    selectType = (EnumConst.PhieuDK)cmbMucTimKiem.SelectedIndex;
+                    headerText = EnumConst.PhieuDKHeaderText;
+                    break;
+                case SearchType.HoaDon:
+                    tableName = BS_layer.TableName.HoaDon;
+                    selectType = (EnumConst.HoaDon)cmbMucTimKiem.SelectedIndex;
+                    headerText = EnumConst.HoaDonHeaderText;
+                    break;
+                case SearchType.Phong:
+                    tableName = BS_layer.TableName.Phong;
+                    selectType = (EnumConst.Phong)cmbMucTimKiem.SelectedIndex;
+                    headerText = EnumConst.PhongHeaderText;
+                    break;
+                default:
+                    tableName = BS_layer.TableName.HoaDon;
+                    selectType = (EnumConst.HoaDon)cmbMucTimKiem.SelectedIndex;
+                    headerText = EnumConst.HoaDonHeaderText;
+                    break;
+            }
+
+            if (cmbMucTimKiem.Text != "Khu phòng")
+                dgv.DataSource = FrmMain.bS_Layer.Select(ref error, tableName, selectType, txtKey.Text.Trim());
+            else
+                dgv.DataSource = FrmMain.bS_Layer.Select(ref error, tableName, txtPhong.Text.Trim(), txtKhu.Text.Trim());
+
+            for (int i = 0; i < dgv.Columns.Count; i++)
+                dgv.Columns[i].HeaderText = headerText[i];
         }
 
         private void TimTheoLoai_Click(object sender, EventArgs e)
@@ -79,65 +114,27 @@ namespace QLKTX.UI
             if (btn.Name == "btnNhanVien")
             {
                 searchType = SearchType.NhanVien;
-                string[] items = new string[]
-                {
-                    "Mã nhân viên",
-                    "Chứng minh nhân dân",
-                    "Họ tên",
-                    "Số điện thoại",
-                    "Email",
-                    "Tất cả"
-                };
-                cmbMucTimKiem.Items.AddRange(items);
+                cmbMucTimKiem.Items.AddRange(EnumConst.SearchNhanVien);
             }
             else if (btn.Name == "btnSinhVien")
             {
                 searchType = SearchType.SinhVien;
-                string[] items = new string[]
-                {
-                    "Mã số sinh viên",
-                    "Mã lớp",
-                    "Họ tên",
-                    "Phái",
-                    "CMND",
-                    "Email",
-                    "Số điện thoại",
-                    "Quê quán",
-                    "Tất cả"
-                };
-                cmbMucTimKiem.Items.AddRange(items);
+                cmbMucTimKiem.Items.AddRange(EnumConst.SearchSinhVien);
             }   
             else if (btn.Name == "btnPhieuDK")
             {
                 searchType = SearchType.PhieuDK;
-                string[] items = new string[]
-                {
-                    "Mã phiếu",
-                    "Khu phòng",
-                    "Học kì",
-                    "Năm học"
-                };
-                cmbMucTimKiem.Items.AddRange(items);
+                cmbMucTimKiem.Items.AddRange(EnumConst.SearchPhieuDK);
             }   
             else if (btn.Name == "btnPhong")
             {
                 searchType = SearchType.Phong;
-                string[] items = new string[]
-                {
-                    "Khu phòng",
-                    "Loại phòng"
-                };
-                cmbMucTimKiem.Items.AddRange(items);
+                cmbMucTimKiem.Items.AddRange(EnumConst.SearchPhong);
             }   
             else if (btn.Name == "btnHoaDon")
             {
                 searchType = SearchType.HoaDon;
-                string[] items = new string[]
-                {
-                    "Mã hóa đơn",
-                    "Khu phòng",
-                };
-                cmbMucTimKiem.Items.AddRange(items);
+                cmbMucTimKiem.Items.AddRange(EnumConst.SearchHoaDon);
             }    
         }
 

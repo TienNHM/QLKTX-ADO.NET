@@ -16,5 +16,11 @@ namespace QLKTX.UI
         {
             InitializeComponent();
         }
+
+        public FrmLoaiPhong(string key)
+        {
+            InitializeComponent();
+
+        }
     }
 }

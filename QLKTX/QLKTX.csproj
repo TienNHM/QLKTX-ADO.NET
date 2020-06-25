@@ -51,6 +51,7 @@
     <Compile Include="BS\BL_DichVu.cs" />
     <Compile Include="BS\BL_HoaDon.cs" />
     <Compile Include="BS\BL_LoaiPhong.cs" />
+    <Compile Include="BS\BL_NhanVien.cs" />
     <Compile Include="BS\BL_PhieuDK.cs" />
     <Compile Include="BS\BL_SinhVien.cs" />
     <Compile Include="BS\BS_layer.cs" />
@@ -129,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmHoaDon.resx">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmLoaiPhong.resx">
+      <DependentUpon>FrmLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>

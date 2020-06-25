@@ -17,9 +17,14 @@ namespace QLKTX.UI
             InitializeComponent();
         }
 
-        public FrmPhong(string MaPhong)
+        public FrmPhong(string Khu, string MaPhong)
         {
             InitializeComponent();
+            cmbKhu.Text = Khu.Trim();
+            cmbKhu.Enabled = false;
+            cmbPhong.Text = MaPhong.Trim();
+            cmbPhong.Enabled = false;
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)

@@ -9,24 +9,18 @@ using System.Threading.Tasks;
 
 namespace QLKTX.BS
 {
-    public class BL_HoaDon
+    public partial class BS_layer
     {
-        public enum SelectType
+        public enum SelectTypeHoaDon
         {
             MaHD,
             KhuPhong,
             All
         }
 
-        DB_Main db = null;
         string error = "";
 
-        public BL_HoaDon()
-        {
-            db = new DB_Main();
-        }    
-
-        public DataTable Select(SelectType type, string strValue)
+        public DataTable Select(EnumConst.HoaDon type, string strValue)
         {
             string strType = type.ToString();
             string sql = $"SELECT * FROM HOADON WHERE {strType} = @Value";
@@ -34,7 +28,7 @@ namespace QLKTX.BS
             {
                 new SqlParameter("Value", strValue)
             };
-            if (type == SelectType.All)
+            if (type == EnumConst.HoaDon.All)
             {
                 sql = "SELECT * FROM HoaDon";
                 sqlParameters = new SqlParameter[] { };

@@ -282,6 +282,7 @@
             this.Controls.Add(this.lbMaNV);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmNhanVien";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân Viên";
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).EndInit();

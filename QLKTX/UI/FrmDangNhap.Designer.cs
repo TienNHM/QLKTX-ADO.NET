@@ -201,7 +201,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Đăng nhập";
+            this.Text = "QUẢN LÝ KÝ TÚC XÁ";
             this.pnBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

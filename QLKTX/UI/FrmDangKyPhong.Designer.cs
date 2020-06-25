@@ -245,6 +245,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmDangKyPhong";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng ký phòng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhieuDangKy_FormClosing);
