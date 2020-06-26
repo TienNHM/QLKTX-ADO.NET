@@ -54,6 +54,7 @@
     <Compile Include="BS\BL_NhanVien.cs" />
     <Compile Include="BS\BL_PhieuDK.cs" />
     <Compile Include="BS\BL_SinhVien.cs" />
+    <Compile Include="BS\BL_SDDV.cs" />
     <Compile Include="BS\BS_layer.cs" />
     <Compile Include="BS\EnumConst.cs" />
     <Compile Include="DB\DB_Main.cs" />
@@ -415,6 +416,14 @@
   <ItemGroup>
     <None Include="Resources\ktxb.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KTX_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

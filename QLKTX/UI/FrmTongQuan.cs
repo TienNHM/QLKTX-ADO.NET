@@ -47,6 +47,9 @@ namespace QLKTX.UI
                         item.picItem.BackgroundImage = Properties.Resources.wifi;
                     else if (TenDV == "Giữ xe")
                         item.picItem.BackgroundImage = Properties.Resources.garage;
+                    else if (TenDV == "Đổ rác")
+                        item.picItem.BackgroundImage = Properties.Resources.trash1;
+
                     item.btnTitle.Text = TenDV;
                     pnContainer.Controls.Add(item);
                 }                    

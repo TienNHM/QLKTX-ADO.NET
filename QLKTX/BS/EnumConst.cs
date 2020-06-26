@@ -150,7 +150,8 @@ namespace QLKTX.BS
             "Email",
             "Địa chỉ",
             "Lương",
-            "Mã NQL"
+            "Mã NQL",
+            "Ảnh"
         };
 
         public static string[] LoaiPhongHeaderText = new string[]
