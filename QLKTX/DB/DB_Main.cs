@@ -48,6 +48,28 @@ namespace QLKTX.DB
             }
         }
 
+        public bool SelectScopeIdentity(string strSQL, SqlParameter[] sqlParameters, CommandType ct, ref int identity, ref string error)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+                comm.CommandText = strSQL;
+                comm.CommandType = ct;
+                comm.Parameters.Clear();
+                comm.Parameters.AddRange(sqlParameters);
+                identity = Convert.ToInt32(comm.ExecuteScalar());
+                return true;
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                identity = -1;
+                return false;
+            }
+        }
+
         public bool ExecuteNonQuery(string strSQL, SqlParameter[] sqlParameters, CommandType ct, ref string error)
         {
             bool f = false;

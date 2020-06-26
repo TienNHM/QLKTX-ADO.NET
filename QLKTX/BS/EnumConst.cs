@@ -52,7 +52,7 @@ namespace QLKTX.BS
 
         public enum Phong
         {
-            KhuPhong,
+            Khu,
             LoaiPhong,
             All
         }
@@ -118,7 +118,7 @@ namespace QLKTX.BS
 
         public static string[] SearchPhong = new string[]
         {
-            "Khu phòng",
+            "Khu",
             "Loại phòng",
             "Tất cả"
         };

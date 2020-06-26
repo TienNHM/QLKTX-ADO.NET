@@ -174,7 +174,7 @@ namespace QLKTX.UI
 
         private void HoaDon()
         {
-            FrmHoaDon hoaDon = new FrmHoaDon();
+            FrmHoaDon hoaDon = new FrmHoaDon(strMaNV);
             hoaDon.ShowDialog();
         }
 

@@ -90,7 +90,7 @@ namespace QLKTX.UI
             if (cmbMucTimKiem.Text != "Khu phòng")
                 dgv.DataSource = FrmMain.bS_Layer.Select(ref error, tableName, selectType, txtKey.Text.Trim());
             else
-                dgv.DataSource = FrmMain.bS_Layer.Select(ref error, tableName, txtPhong.Text.Trim(), txtKhu.Text.Trim());
+                dgv.DataSource = FrmMain.bS_Layer.Select(ref error, tableName, strMaKhu: txtKhu.Text.Trim(), strMaPhong: txtPhong.Text.Trim());
 
             for (int i = 0; i < dgv.Columns.Count; i++)
                 dgv.Columns[i].HeaderText = headerText[i];
@@ -194,7 +194,7 @@ namespace QLKTX.UI
                     phong.ShowDialog();
                     break;
                 case SearchType.HoaDon:
-                    FrmHoaDon hoaDon = new FrmHoaDon(dgv.Rows[r].Cells[1].Value.ToString());
+                    FrmHoaDon hoaDon = new FrmHoaDon(MaHD: dgv.Rows[r].Cells[1].Value.ToString());
                     hoaDon.ShowDialog();
                     break;
             }

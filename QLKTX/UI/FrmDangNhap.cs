@@ -14,6 +14,7 @@ namespace QLKTX.UI
     public partial class FrmDangNhap : Form
     {
         public static bool exit = false;
+
         public FrmDangNhap()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace QLKTX.UI
             if (result != null)
             {
                 this.Hide();
-                FrmMain main = new FrmMain(txtUserName.Text.Trim());
+                FrmMain main = new FrmMain(result);
                 main.ShowDialog();
                 if (exit == false)
                 {

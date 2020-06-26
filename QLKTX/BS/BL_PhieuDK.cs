@@ -9,13 +9,12 @@ namespace QLKTX.BS
 {
     public partial class BS_layer
     {
-        public bool Insert(string MaPDK, string MSSV, string MaNV, string Khu, string MaPhong, string HocKi, string NamHoc,
+        public bool Insert(string MSSV, string MaNV, string Khu, string MaPhong, string HocKi, string NamHoc,
             DateTime NgayGioDK, int ThoiHan, string NgayBD, ref string error)
         {
-            string sql = "INSERT INTO PHIEUDK VALUES(@MaPDK, @MSSV, @MaNV, @Khu, @MaPhong, @HocKi, @NamHoc, @NgayGioDK, @ThoiHan, @NgayBD)";
+            string sql = "INSERT INTO PHIEUDK VALUES(@MSSV, @MaNV, @Khu, @MaPhong, @HocKi, @NamHoc, @NgayGioDK, @ThoiHan, @NgayBD)";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
-                new SqlParameter("MaPDK", MaPDK),
                 new SqlParameter("MSSV", MSSV),
                 new SqlParameter("MaNV", MaNV),
                 new SqlParameter("Khu", Khu),
@@ -41,7 +40,8 @@ namespace QLKTX.BS
                             "NamHoc = @NamHoc, " +
                             "NgayGioDK = @NgayGioDK, " +
                             "ThoiHan = @ThoiHan, " +
-                            "NgayBD = @NgayBD";
+                            "NgayBD = @NgayBD" +
+                        "WHERE MaPDK = @MaPDK";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("MaPDK", MaPDK),

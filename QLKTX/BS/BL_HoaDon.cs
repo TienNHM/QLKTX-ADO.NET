@@ -11,9 +11,10 @@ namespace QLKTX.BS
 {
     public partial class BS_layer
     {
-        public bool Insert(string MaHD, string Nam, string Thang, string NgayHD, string MaNV, string MaPhong, string Khu, ref string error)
+        public bool Insert(string MaHD, string Nam, string Thang, string NgayHD, string MaNV, string MaPhong, string Khu, ref int identity, ref string error)
         {
-            string sql = "INSERT INTO HoaDon VALUES(@MaHD, @Nam, @Thang, @NgayHD, @MaNV, @MaPhong, @Khu)";
+            string sql = "INSERT INTO HoaDon VALUES(@MaHD, @Nam, @Thang, @NgayHD, @MaNV, @MaPhong, @Khu)" +
+                            "SELECT SCOPE_IDENTITY()";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("MaHD", MaHD),
@@ -24,7 +25,7 @@ namespace QLKTX.BS
                 new SqlParameter("MaPhong", MaPhong),
                 new SqlParameter("Khu", Khu)
             };
-            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref error);
+            return db.SelectScopeIdentity(sql, sqlParameters, CommandType.Text, ref identity, ref error);
         }
 
         public bool Update(string MaHD, string Nam, string Thang, string NgayHD, string MaNV, string MaPhong, string Khu, ref string error)

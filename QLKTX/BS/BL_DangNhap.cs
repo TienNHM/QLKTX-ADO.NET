@@ -21,17 +21,24 @@ namespace QLKTX.BS
 
         public string Select(string TenDN, string MatKhau)
         {
-            string sql = "SELECT * FROM DANGNHAP WHERE TenDN = @TenDN AND MatKhau = @MatKhau";
-            SqlParameter[] sqlParameters = new SqlParameter[]
+            try
             {
+                string sql = "SELECT * FROM DANGNHAP WHERE TenDN = @TenDN AND MatKhau = @MatKhau";
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
                 new SqlParameter("TenDN", TenDN),
                 new SqlParameter("MatKhau", MatKhau)
-            };
-            DataTable table = db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
-            if (table.Rows.Count > 0)
-                return table.Columns[2].ToString(); //MaNV
-            else
+                };
+                DataTable table = db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
+                if (table != null)
+                    return table.Rows[0]["MaNV"].ToString(); //MaNV
+                else
+                    return null;
+            }
+            catch
+            {
                 return null;
+            }
         }
     }
 }
