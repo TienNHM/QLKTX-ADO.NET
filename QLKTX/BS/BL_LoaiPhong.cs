@@ -11,6 +11,31 @@ namespace QLKTX.BS
 {
     public partial class BS_layer
     {
+        public DataTable Select(ref string error, TableName table, string strMaKhu = "", string strMaPhong = "")
+        {
+            string strTableName = table.ToString();
+            string sql = $"SELECT * FROM {strTableName} WHERE Khu=@Khu AND MaPhong=@MaPhong";
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("Khu", strMaKhu),
+                new SqlParameter("MaPhong", strMaPhong)
+            };
+            if (strMaPhong == "" && strMaKhu == "")
+            {
+                sql = $"SELECT DISTINCT Khu FROM {strTableName}";
+                sqlParameters = new SqlParameter[] { };
+            }
+            else if (strMaKhu != "" && strMaPhong == "")
+            {
+                sql = $"SELECT DISTINCT MaPhong FROM {strTableName} WHERE Khu = @Khu";
+                sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("Khu", strMaKhu)
+                };
+            }
+            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
+        }
+
         public bool Insert(string MaLoaiPhong, int SoSV, float DienTich, int DonGia, ref string error)
         {
             string sql = "INSERT INTO LOAIPHONG VALUES(@MaLoaiPhong, @SoSV, @DienTich, @DonGia)";

@@ -72,6 +72,12 @@ namespace QLKTX.BS
             DonGia,
             All
         }
+
+        public enum SDDV
+        {
+            MaHD,
+            All
+        }
         #endregion
 
         #region Mục chọn để tìm kiếm
@@ -200,6 +206,13 @@ namespace QLKTX.BS
             "Mã phòng",
             "Mã khu",
             "Loại phòng"
+        };
+
+        public static string[] SDDVHeaderText = new string[]
+        {
+            "Mã hóa đơn",
+            "Mã dịch vụ",
+            "Số lượng"
         };
         #endregion
     }

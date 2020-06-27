@@ -16,14 +16,14 @@ namespace QLKTX.UI
         private string error = "";
         private string MaNV = "";
 
-        public FrmDangKyPhong(string StrMaNV)
+        public FrmDangKyPhong(string strMaNV = "")
         {
             InitializeComponent();
             //Ngày đăng kí
             lbNgay.Text = "Ngày đăng ký: " + DateTime.Today.ToString("yyyy-MM-dd hh:mm:ss");
             //Thông tin nhân viên
-            lbNhanVien.Text = "Mã nhân viên: " + StrMaNV;
-            MaNV = StrMaNV;
+            MaNV = (strMaNV == "") ? FrmMain.MaNV : strMaNV;
+            lbNhanVien.Text = "Mã nhân viên: " + MaNV;
             //Khu
             InitKhu();
         }

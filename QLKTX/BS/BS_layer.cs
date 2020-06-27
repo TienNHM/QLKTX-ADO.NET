@@ -28,32 +28,8 @@ namespace QLKTX.BS
             HoaDon,
             Phong,
             DichVu,
-            LoaiPhong
-        }
-
-        public DataTable Select(ref string error, TableName table, string strMaKhu = "", string strMaPhong = "")
-        {
-            string strTableName = table.ToString();
-            string sql = $"SELECT * FROM {strTableName} WHERE Khu=@Khu AND MaPhong=@MaPhong";
-            SqlParameter[] sqlParameters = new SqlParameter[]
-            {
-                new SqlParameter("Khu", strMaKhu),
-                new SqlParameter("MaPhong", strMaPhong)
-            };
-            if (strMaPhong == "" && strMaKhu == "") 
-            {
-                sql = $"SELECT DISTINCT Khu FROM {strTableName}";
-                sqlParameters = new SqlParameter[] { };
-            }    
-            else if (strMaKhu != "" && strMaPhong == "")
-            {
-                sql = $"SELECT DISTINCT MaPhong FROM {strTableName} WHERE Khu = @Khu";
-                sqlParameters = new SqlParameter[]
-                {
-                    new SqlParameter("Khu", strMaKhu)
-                };
-            }    
-            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
+            LoaiPhong,
+            SDDV
         }
 
         public DataTable Select(ref string error, TableName table, object selectType, string strValue = "")

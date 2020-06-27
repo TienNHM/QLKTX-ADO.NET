@@ -15,15 +15,14 @@ namespace QLKTX.UI
     public delegate void ClickEvent();
     public partial class FrmMain : Form
     {
-        private string strMaNV = "admin";
         private bool isExit = false;
         public static BS_layer bS_Layer = new BS_layer();
 
-        public string StrMaNV { get => strMaNV; set => strMaNV = value; }
+        public static string MaNV { get; set; }
 
-        public FrmMain(string MaNV)
+        public FrmMain(string strMaNV)
         {
-            StrMaNV = MaNV;
+            MaNV = strMaNV;
             InitializeComponent();
             Init();
             lbNgay.Text = "Ngày hiện tại: " + DateTime.Today.ToString("dddd, dd MMMM yyyy");
@@ -146,7 +145,7 @@ namespace QLKTX.UI
 
         private void Phong()
         {
-            FrmDangKyPhong frmDangKyPhong = new FrmDangKyPhong(strMaNV);
+            FrmDangKyPhong frmDangKyPhong = new FrmDangKyPhong();
             frmDangKyPhong.ShowDialog();
         }
 
@@ -174,7 +173,7 @@ namespace QLKTX.UI
 
         private void HoaDon()
         {
-            FrmHoaDon hoaDon = new FrmHoaDon(strMaNV);
+            FrmHoaDon hoaDon = new FrmHoaDon();
             hoaDon.ShowDialog();
         }
 

@@ -194,10 +194,13 @@ namespace QLKTX.UI
                     phong.ShowDialog();
                     break;
                 case SearchType.HoaDon:
-                    FrmHoaDon hoaDon = new FrmHoaDon(MaHD: dgv.Rows[r].Cells[1].Value.ToString());
+                    FrmHoaDon hoaDon = new FrmHoaDon(MaHD: dgv.Rows[r].Cells[0].Value.ToString());
                     hoaDon.ShowDialog();
                     break;
             }
+
+            //cập nhật lại những thay đổi, nếu có
+            btnSearch_Click(btnSearch, e);
         }
     }
 }

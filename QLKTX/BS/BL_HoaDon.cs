@@ -35,7 +35,7 @@ namespace QLKTX.BS
                             "NgayHD = @NgayHD, " +
                             "MaNV = @MaNV, " +
                             "MaPhong = @MaPhong, " +
-                            "Khu = @Khu" +
+                            "Khu = @Khu " +
                          "WHERE MaHD = @MaHD";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {

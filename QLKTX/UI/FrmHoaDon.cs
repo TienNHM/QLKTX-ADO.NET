@@ -1,12 +1,7 @@
 ﻿using QLKTX.BS;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLKTX.UI
@@ -15,47 +10,78 @@ namespace QLKTX.UI
     {
         string error = "";
         string MaNV = "";
-        DataTable dt;
+        string MaHD = "";
+        DataTable DS_DichVu;
         Dictionary<string, int> DichVuSuDung = new Dictionary<string, int>();
 
-        public FrmHoaDon(string MaNV = "", string MaHD = "")
+        public FrmHoaDon()
         {
             InitializeComponent();
+            InitKhu();
+            InitDichVu();
             dtNgayHD.Value = DateTime.Now;
-            if (MaHD != "" && MaNV == "")
+            txtMaNV.Text = FrmMain.MaNV;
+        }
+
+        public FrmHoaDon(string MaHD)
+        {
+            InitializeComponent();
+            InitKhu();
+            InitDichVu();
+            this.MaHD = MaHD;
+            dtNgayHD.Value = DateTime.Now;
+            var hoaDon = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.HoaDon, EnumConst.HoaDon.MaHD, MaHD);
+            if (hoaDon != null)
             {
-                var dt = FrmMain.bS_Layer.Select(ref error, BS.BS_layer.TableName.HoaDon, EnumConst.HoaDon.MaHD, MaHD);
-                if (dt.DataSet != null)
+                txtMaNV.Text = hoaDon.Rows[0]["MaNV"].ToString();
+                cmbKhu.Text = hoaDon.Rows[0]["Khu"].ToString();
+                cmbPhong.Text = hoaDon.Rows[0]["MaPhong"].ToString();
+                txtThang.Text = hoaDon.Rows[0]["Thang"].ToString();
+                txtNamHoc.Text = hoaDon.Rows[0]["Nam"].ToString();
+                dtNgayHD.Value = (DateTime)hoaDon.Rows[0]["NgayHD"];
+
+                //MaDV, SoLuong
+                var sddv = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.SDDV, EnumConst.SDDV.MaHD, MaHD);
+                sddv.Columns.RemoveAt(0);
+
+                DichVuSuDung.Clear();
+                dgvHoaDon.DataSource = null;
+                foreach (DataRow row in sddv.Rows)
                 {
-                    txtMaNV.Text = dt.Rows[0]["MaNV"].ToString();
-                    cmbKhu.Text = dt.Rows[0]["khu"].ToString();
-                    cmbPhong.Text = dt.Rows[0]["Phong"].ToString();
-                    dtNgayHD.Value = (DateTime)dt.Rows[0]["NgayHD"];
-                    cmbTenDV.Text = dt.Rows[0]["TenDV"].ToString();
-                }
-            }    
-            if (MaNV != "" && MaHD == "")
-            {
-                this.MaNV = MaNV;
-                txtMaNV.Text = MaNV;
-                InitKhu();
-                InitDichVu();
-            }    
+                    string key = row["MaDV"].ToString();
+                    int value = Convert.ToInt32(row["SoLuong"]);
+                    DichVuSuDung[key] = value;
+                    var r = DS_DichVu.Rows.Find(key);
+                    string[] data = new string[] { key, r["TenDV"].ToString(), value.ToString(), r["DonViTinh"].ToString() };
+                    dgvHoaDon.Rows.Add(data);
+                }    
+            }
         }
 
         private void InitDichVu()
         {
-            dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.DichVu, EnumConst.DichVu.All);
-            if (dt == null) return;
-            for (int i = 0; i < dt.Rows.Count; i++)
-                cmbTenDV.Items.Add(dt.Rows[i]["TenDV"].ToString());
+            //Lấy danh sách tất cả các dịch vụ hiện có
+            DS_DichVu = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.DichVu, EnumConst.DichVu.All);
+
+            if (DS_DichVu == null) return;
+
+            //Đặt primary key, để sau này có thể Find()
+            DataColumn[] primaryKey = new DataColumn[] { DS_DichVu.Columns["MaDV"] };
+            DS_DichVu.PrimaryKey = primaryKey;
+
+            //Cập nhật các dịch vụ hiện có lên giao diện người dùng
+            for (int i = 0; i < DS_DichVu.Rows.Count; i++)
+                cmbTenDV.Items.Add(DS_DichVu.Rows[i]["TenDV"].ToString());
         }
 
         private void InitKhu()
         {
+            //Lấy danh sách tất cả các khu nhà hiện có
             var dt = FrmMain.bS_Layer.Select(ref error, BS.BS_layer.TableName.Phong);
-            string[] Khu = { "" };
+
             if (dt == null) return;
+
+            //Cập nhật danh sách các khu nhà lên giao diện người dùng
             for (int i = 0; i < dt.Rows.Count; i++)
                 cmbKhu.Items.Add(dt.Rows[i]["Khu"].ToString());
         }
@@ -64,47 +90,60 @@ namespace QLKTX.UI
         {
             if (cmbKhu.SelectedIndex > 0)
             {
+                //Cho phép người dùng chọn phòng
                 cmbPhong.Enabled = true;
-                string[] MaPhong = { "" };
+
+                //Lấy danh sách tất cả các phòng ở hiện có, tương ứng với Khu được chọn
                 var dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.Phong, strMaKhu: cmbKhu.Text.Trim());
-                if (dt != null)
-                {
-                    List<string> tmp = new List<string>();
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                        tmp.Add(dt.Rows[i]["MaPhong"].ToString());
-                    MaPhong = tmp.ToArray();
-                }
-                cmbPhong.Items.AddRange(MaPhong);
+
+                if (dt == null) return;
+
+                //Cập nhật danh sách phòng ở lên giao diện người dùng
+                for (int i = 0; i < dt.Rows.Count; i++)
+                    cmbPhong.Items.Add(dt.Rows[i]["MaPhong"].ToString());
             }
         }
 
+        /// <summary>
+        /// Cập nhật đơn vị tính tương ứng cho từng dịch vụ được chọn
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbTenDV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbDonVi.Text = "Đơn vị tính: " + dt.Rows[cmbTenDV.SelectedIndex]["DonViTinh"].ToString();
+            lbDonVi.Text = "Đơn vị tính: " + DS_DichVu.Rows[cmbTenDV.SelectedIndex]["DonViTinh"].ToString();
             numSoLuong.Value = 1;
         }
 
+        /// <summary>
+        /// Thêm dịch vụ vào hóa đơn
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnThem_Click(object sender, EventArgs e)
         {
+            //Nếu chưa chọn dịch vụ nào, hoặc chọn số lượng không hợp lệ
             if (cmbTenDV.Text.Trim() == "" || numSoLuong.Value <= 0)
             {
                 MessageBox.Show("Số liệu không hợp lệ", "Lỗi nhập dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }    
 
-            string key = dt.Rows[cmbTenDV.SelectedIndex]["MaDV"].ToString();
-            string DonVi = dt.Rows[cmbTenDV.SelectedIndex]["DonViTinh"].ToString();
+            //Lấy MaDV, DonViTinh, SoLuong tương ứng cho từng dịch vụ
+            string key = DS_DichVu.Rows[cmbTenDV.SelectedIndex]["MaDV"].ToString();
+            string DonVi = DS_DichVu.Rows[cmbTenDV.SelectedIndex]["DonViTinh"].ToString();
             int value = (int)numSoLuong.Value;
 
             try 
             {
-                //Đã tồn tại, thì tăng giá trị lên
+                //Dịch vụ đã tồn tại trong hóa đơn, thì tăng giá trị lên
                 DichVuSuDung[key] += value;
+
+                //Cập nhật giá trị trên giao diện
                 for (int i = 0; i < dgvHoaDon.Rows.Count; i++)
                     if (dgvHoaDon.Rows[i].Cells[0].Value.ToString() == key) 
                     {
-                        int val = Convert.ToInt32(dgvHoaDon.Rows[i].Cells[2].Value.ToString().Trim()) + Convert.ToInt32(numSoLuong.Value);
-                        dgvHoaDon.Rows[i].Cells[2].Value = val.ToString();
+                        dgvHoaDon.Rows[i].Cells[2].Value = DichVuSuDung[key].ToString();
                         break;
                     }    
             } 
@@ -112,6 +151,8 @@ namespace QLKTX.UI
             {
                 //Ngược lại, thì thêm mới
                 DichVuSuDung[key] = value;
+
+                //Thêm mới một hàng vào dgv
                 string[] rowValue = new string[] { key, cmbTenDV.Text.Trim(), value.ToString(), DonVi };
                 dgvHoaDon.Rows.Add(rowValue);
             }
@@ -124,30 +165,63 @@ namespace QLKTX.UI
             {
                 MessageBox.Show("Vui lòng chọn ít nhất 1 dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }          
-            
-            int identity = -1;
-            bool createHoaDon = FrmMain.bS_Layer.Insert(txtNamHoc.Text.Trim(), txtThang.Text.Trim(), dtNgayHD.Value, 
-                                                        MaNV, cmbPhong.Text.Trim(), cmbKhu.Text.Trim(), ref identity, ref error);
-            int count = 0, max = 0;
-            if (createHoaDon && identity > 0)
-            {
-                foreach (var maDV in DichVuSuDung.Keys)
-                {
-                    max++;
-                    var re = FrmMain.bS_Layer.Insert(identity.ToString(), maDV, DichVuSuDung[maDV], ref error);
-                    if (re == false)
-                        MessageBox.Show("Lỗi khi thêm dịch vụ vào hóa đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else count++;
-                }    
             }
-            else
-                MessageBox.Show("Lỗi khi tạo hóa đơn. \n" + error, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            if (count == max && count > 0)
-                MessageBox.Show("Thêm hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //Sửa thông tin hóa đơn
+            if (MaHD != "")
+            {
+                bool reHoaDon = FrmMain.bS_Layer.Update(MaHD, txtNamHoc.Text.Trim(), txtThang.Text.Trim(), dtNgayHD.Value, 
+                                                    txtMaNV.Text.Trim(), cmbPhong.Text.Trim(), cmbKhu.Text.Trim(), ref error);
+
+                //Cập nhật danh sách các dịch vụ
+                foreach (string maDV_key in DichVuSuDung.Keys)
+                {
+                    //Kiểm tra dịch vụ maDV_key đã có trong hóa đơn chưa
+                    bool exist = FrmMain.bS_Layer.Select(ref error, MaHD, maDV_key);
+
+                    //Nếu đã có, cập nhật nó
+                    if (exist)
+                        FrmMain.bS_Layer.Update(ref error, MaHD, maDV_key, SoLuong: DichVuSuDung[maDV_key]);
+                    //Ngược lại, thêm mới 1 dịch vụ vào hóa đơn
+                    else
+                        FrmMain.bS_Layer.Insert(ref error, MaHD, maDV_key, SoLuong: DichVuSuDung[maDV_key]);
+                }    
+
+                if (reHoaDon)
+                    MessageBox.Show("Cập nhật hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Có lỗi xảy ra trong quá trình cập nhật hóa đơn! \n" + error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
+            //Thêm mới 1 hóa đơn
             else
-                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thực hiện lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                int identity = -1;  //Dùng để xác định mã hóa đơn vừa mới thêm vào
+
+                //Tạo mới 1 hóa đơn
+                bool createHoaDon = FrmMain.bS_Layer.Insert(txtNamHoc.Text.Trim(), txtThang.Text.Trim(), dtNgayHD.Value,
+                                                            MaNV, cmbPhong.Text.Trim(), cmbKhu.Text.Trim(), ref identity, ref error);
+                
+                int count = 0, max = 0; //Dùng để xác định có thêm được tất cả các dịch vụ vào hóa đơn hay không
+
+                if (createHoaDon && identity > 0)
+                {
+                    foreach (var maDV in DichVuSuDung.Keys)
+                    {
+                        max++;
+                        var re = FrmMain.bS_Layer.Insert(ref error, identity.ToString(), maDV, SoLuong: DichVuSuDung[maDV]);
+                        if (re == false)
+                            MessageBox.Show("Lỗi khi thêm dịch vụ vào hóa đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else count++;
+                    }
+                }
+                else
+                    MessageBox.Show("Lỗi khi tạo hóa đơn. \n" + error, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (count == max && count > 0)
+                    MessageBox.Show("Thêm hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thực hiện lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
