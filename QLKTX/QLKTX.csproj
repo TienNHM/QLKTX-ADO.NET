@@ -60,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,10 +83,16 @@
     <Compile Include="BS\BS_layer.cs" />
     <Compile Include="BS\EnumConst.cs" />
     <Compile Include="DB\DB_Main.cs" />
-    <Compile Include="QLKTXDataSet.Designer.cs">
+    <Compile Include="QUANLYKTXDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLKTXDataSet.xsd</DependentUpon>
+      <DependentUpon>QUANLYKTXDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FrmPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FrmPrint.Designer.cs">
+      <DependentUpon>FrmPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrmBaoCao.cs">
       <SubType>Form</SubType>
@@ -161,7 +168,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ReportSinhVien.rdlc" />
+    <EmbeddedResource Include="Reports\FrmPrint.resx">
+      <DependentUpon>FrmPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDangKyPhong.rdlc" />
+    <EmbeddedResource Include="Reports\ReportNhanVien.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSinhVien.rdlc" />
     <EmbeddedResource Include="UI\FrmBaoCao.resx">
       <DependentUpon>FrmBaoCao.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,16 +236,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="QLKTXDataSet.xsc">
-      <DependentUpon>QLKTXDataSet.xsd</DependentUpon>
+    <None Include="QUANLYKTXDataSet.xsc">
+      <DependentUpon>QUANLYKTXDataSet.xsd</DependentUpon>
     </None>
-    <None Include="QLKTXDataSet.xsd">
-      <SubType>Designer</SubType>
+    <None Include="QUANLYKTXDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLKTXDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>QUANLYKTXDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="QLKTXDataSet.xss">
-      <DependentUpon>QLKTXDataSet.xsd</DependentUpon>
+    <None Include="QUANLYKTXDataSet.xss">
+      <DependentUpon>QUANLYKTXDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\woman-4.png" />
   </ItemGroup>
@@ -476,5 +489,6 @@
   <ItemGroup>
     <None Include="Resources\Background.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

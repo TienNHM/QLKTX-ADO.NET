@@ -29,17 +29,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.qLKTXDataSet = new QLKTX.QLKTXDataSet();
-            this.qLKTXDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabSinhVien = new System.Windows.Forms.TabPage();
+            this.tabNhanVien = new System.Windows.Forms.TabPage();
+            this.rvNhanVien = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPhong = new System.Windows.Forms.TabPage();
+            this.rvPhong = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvSinhVien = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.qUANLYKTXDataSet = new QLKTX.QUANLYKTXDataSet();
+            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sINHVIENTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.SINHVIENTableAdapter();
+            this.NHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nHANVIENTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.NHANVIENTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.PHIEUDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pHIEUDKBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pHIEUDKTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.PHIEUDKTableAdapter();
             this.pnTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qLKTXDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLKTXDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SINHVIENBindingSource)).BeginInit();
+            this.tabControl.SuspendLayout();
+            this.tabSinhVien.SuspendLayout();
+            this.tabNhanVien.SuspendLayout();
+            this.tabPhong.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PHIEUDKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnTop
@@ -64,49 +86,179 @@
             this.lbTitle.Text = "BÁO CÁO";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // reportViewer1
+            // tabControl
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.SINHVIENBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QLKTX.ReportSinhVien.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 45);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1064, 636);
-            this.reportViewer1.TabIndex = 2;
+            this.tabControl.Controls.Add(this.tabSinhVien);
+            this.tabControl.Controls.Add(this.tabNhanVien);
+            this.tabControl.Controls.Add(this.tabPhong);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Location = new System.Drawing.Point(0, 45);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1064, 594);
+            this.tabControl.TabIndex = 2;
             // 
-            // qLKTXDataSet
+            // tabSinhVien
             // 
-            this.qLKTXDataSet.DataSetName = "QLKTXDataSet";
-            this.qLKTXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tabSinhVien.Controls.Add(this.rvSinhVien);
+            this.tabSinhVien.Location = new System.Drawing.Point(4, 26);
+            this.tabSinhVien.Name = "tabSinhVien";
+            this.tabSinhVien.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSinhVien.Size = new System.Drawing.Size(1056, 564);
+            this.tabSinhVien.TabIndex = 0;
+            this.tabSinhVien.Text = "Sinh viên";
+            this.tabSinhVien.UseVisualStyleBackColor = true;
             // 
-            // qLKTXDataSetBindingSource
+            // tabNhanVien
             // 
-            this.qLKTXDataSetBindingSource.DataSource = this.qLKTXDataSet;
-            this.qLKTXDataSetBindingSource.Position = 0;
+            this.tabNhanVien.Controls.Add(this.rvNhanVien);
+            this.tabNhanVien.Location = new System.Drawing.Point(4, 26);
+            this.tabNhanVien.Name = "tabNhanVien";
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNhanVien.Size = new System.Drawing.Size(1056, 564);
+            this.tabNhanVien.TabIndex = 1;
+            this.tabNhanVien.Text = "Nhân viên";
+            this.tabNhanVien.UseVisualStyleBackColor = true;
             // 
-            // SINHVIENBindingSource
+            // rvNhanVien
             // 
-            this.SINHVIENBindingSource.DataMember = "SINHVIEN";
-            this.SINHVIENBindingSource.DataSource = this.qLKTXDataSet;
+            this.rvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "DataSetNhanVien";
+            reportDataSource2.Value = this.NHANVIENBindingSource;
+            this.rvNhanVien.LocalReport.DataSources.Add(reportDataSource2);
+            this.rvNhanVien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportNhanVien.rdlc";
+            this.rvNhanVien.Location = new System.Drawing.Point(3, 3);
+            this.rvNhanVien.Name = "rvNhanVien";
+            this.rvNhanVien.ServerReport.BearerToken = null;
+            this.rvNhanVien.Size = new System.Drawing.Size(1050, 558);
+            this.rvNhanVien.TabIndex = 0;
+            // 
+            // tabPhong
+            // 
+            this.tabPhong.Controls.Add(this.rvPhong);
+            this.tabPhong.Location = new System.Drawing.Point(4, 26);
+            this.tabPhong.Name = "tabPhong";
+            this.tabPhong.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPhong.Size = new System.Drawing.Size(1056, 564);
+            this.tabPhong.TabIndex = 2;
+            this.tabPhong.Text = "Phòng";
+            this.tabPhong.UseVisualStyleBackColor = true;
+            // 
+            // rvPhong
+            // 
+            this.rvPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource3.Name = "DataSetDangKyPhong";
+            reportDataSource3.Value = this.pHIEUDKBindingSource1;
+            this.rvPhong.LocalReport.DataSources.Add(reportDataSource3);
+            this.rvPhong.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportDangKyPhong.rdlc";
+            this.rvPhong.Location = new System.Drawing.Point(3, 3);
+            this.rvPhong.Name = "rvPhong";
+            this.rvPhong.ServerReport.BearerToken = null;
+            this.rvPhong.Size = new System.Drawing.Size(1050, 558);
+            this.rvPhong.TabIndex = 0;
+            // 
+            // rvSinhVien
+            // 
+            this.rvSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSetSinhVien";
+            reportDataSource1.Value = this.sINHVIENBindingSource;
+            this.rvSinhVien.LocalReport.DataSources.Add(reportDataSource1);
+            this.rvSinhVien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportSinhVien.rdlc";
+            this.rvSinhVien.Location = new System.Drawing.Point(3, 3);
+            this.rvSinhVien.Name = "rvSinhVien";
+            this.rvSinhVien.ServerReport.BearerToken = null;
+            this.rvSinhVien.Size = new System.Drawing.Size(1050, 558);
+            this.rvSinhVien.TabIndex = 0;
+            // 
+            // qUANLYKTXDataSet
+            // 
+            this.qUANLYKTXDataSet.DataSetName = "QUANLYKTXDataSet";
+            this.qUANLYKTXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sINHVIENBindingSource
+            // 
+            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
+            this.sINHVIENBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // sINHVIENTableAdapter
+            // 
+            this.sINHVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // NHANVIENBindingSource
+            // 
+            this.NHANVIENBindingSource.DataMember = "NHANVIEN";
+            this.NHANVIENBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // nHANVIENTableAdapter
+            // 
+            this.nHANVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnCreate);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 639);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1064, 42);
+            this.panel1.TabIndex = 1;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreate.BackColor = System.Drawing.Color.Azure;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.Color.Navy;
+            this.btnCreate.Location = new System.Drawing.Point(449, 2);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(166, 33);
+            this.btnCreate.TabIndex = 0;
+            this.btnCreate.Text = "TẠO BÁO CÁO";
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // PHIEUDKBindingSource
+            // 
+            this.PHIEUDKBindingSource.DataMember = "PHIEUDK";
+            this.PHIEUDKBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // pHIEUDKBindingSource1
+            // 
+            this.pHIEUDKBindingSource1.DataMember = "PHIEUDK";
+            this.pHIEUDKBindingSource1.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // pHIEUDKTableAdapter
+            // 
+            this.pHIEUDKTableAdapter.ClearBeforeFill = true;
             // 
             // FrmBaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 681);
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnTop);
+            this.DoubleBuffered = true;
             this.Name = "FrmBaoCao";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBaoCao";
+            this.Text = "Báo cáo";
             this.Load += new System.EventHandler(this.FrmBaoCao_Load);
             this.pnTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.qLKTXDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLKTXDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SINHVIENBindingSource)).EndInit();
+            this.tabControl.ResumeLayout(false);
+            this.tabSinhVien.ResumeLayout(false);
+            this.tabNhanVien.ResumeLayout(false);
+            this.tabPhong.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PHIEUDKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -114,9 +266,22 @@
         #endregion
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Label lbTitle;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource qLKTXDataSetBindingSource;
-        private QLKTXDataSet qLKTXDataSet;
-        private System.Windows.Forms.BindingSource SINHVIENBindingSource;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabSinhVien;
+        private System.Windows.Forms.TabPage tabNhanVien;
+        private System.Windows.Forms.TabPage tabPhong;
+        private Microsoft.Reporting.WinForms.ReportViewer rvNhanVien;
+        private Microsoft.Reporting.WinForms.ReportViewer rvPhong;
+        private Microsoft.Reporting.WinForms.ReportViewer rvSinhVien;
+        private QUANLYKTXDataSet qUANLYKTXDataSet;
+        private System.Windows.Forms.BindingSource sINHVIENBindingSource;
+        private QUANLYKTXDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
+        private System.Windows.Forms.BindingSource NHANVIENBindingSource;
+        private QUANLYKTXDataSetTableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.BindingSource PHIEUDKBindingSource;
+        private System.Windows.Forms.BindingSource pHIEUDKBindingSource1;
+        private QUANLYKTXDataSetTableAdapters.PHIEUDKTableAdapter pHIEUDKTableAdapter;
     }
 }

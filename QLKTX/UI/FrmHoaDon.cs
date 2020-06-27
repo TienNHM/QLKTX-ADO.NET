@@ -1,4 +1,5 @@
 ﻿using QLKTX.BS;
+using QLKTX.Reports;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,6 +29,7 @@ namespace QLKTX.UI
             InitializeComponent();
             InitKhu();
             InitDichVu();
+            btnInHoaDon.Enabled = true;
             this.MaHD = MaHD;
             dtNgayHD.Value = DateTime.Now;
             var hoaDon = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.HoaDon, EnumConst.HoaDon.MaHD, MaHD);
@@ -240,7 +242,10 @@ namespace QLKTX.UI
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
         {
-
+            DataTable table = new DataTable();
+            table = (DataTable)dgvHoaDon.DataSource;
+            FrmPrint print = new FrmPrint(table);
+            print.ShowDialog();
         }
     }
 }
