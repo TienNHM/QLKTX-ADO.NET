@@ -163,7 +163,8 @@ namespace QLKTX.UI
 
         private void BaoCao()
         {
-
+            FrmBaoCao baoCao = new FrmBaoCao();
+            baoCao.ShowDialog();
         }
 
         private void HuongDan()
