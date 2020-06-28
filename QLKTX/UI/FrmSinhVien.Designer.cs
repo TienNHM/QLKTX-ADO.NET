@@ -85,6 +85,7 @@
             this.btnSua.TabIndex = 25;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Visible = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLuu
@@ -92,7 +93,7 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Crimson;
-            this.btnLuu.Location = new System.Drawing.Point(365, 6);
+            this.btnLuu.Location = new System.Drawing.Point(308, 6);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(72, 28);
@@ -182,6 +183,7 @@
             this.btnChoose.TabIndex = 59;
             this.btnChoose.Text = "Chọn hình";
             this.btnChoose.UseVisualStyleBackColor = true;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
             // txtQueQuan
             // 
@@ -318,7 +320,7 @@
             this.picAvt.Margin = new System.Windows.Forms.Padding(2);
             this.picAvt.Name = "picAvt";
             this.picAvt.Size = new System.Drawing.Size(112, 162);
-            this.picAvt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAvt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picAvt.TabIndex = 52;
             this.picAvt.TabStop = false;
             // 

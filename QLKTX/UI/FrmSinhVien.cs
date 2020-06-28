@@ -16,7 +16,7 @@ namespace QLKTX.UI
     {
         bool isExpended = false;
         string error = "";
-        string strAvt = null;
+        string strAvt = "";
 
         public FrmSinhVien()
         {
@@ -69,7 +69,7 @@ namespace QLKTX.UI
             if (ckbNu.Checked)
                 bNu = true;
             bool result = false;
-            if (dt != null)
+            if (dt.Rows.Count > 0)
             {
                 result = FrmMain.bS_Layer.Update(
                     txtMSSV.Text.Trim(),
@@ -83,7 +83,7 @@ namespace QLKTX.UI
                     txtSDT.Text,
                     txtBHYT.Text,
                     txtQueQuan.Text,
-                    strAvt.Trim(),
+                    strAvt,
                     ref error);
             }   
             else

@@ -14,19 +14,38 @@ namespace QLKTX.UI
     public partial class FrmDangKyPhong : Form
     {
         private string error = "";
-        private string MaNV = "";
         private string MaPDK = "";
 
-        public FrmDangKyPhong(string strMaNV = "")
+        public FrmDangKyPhong(string MaPDK = "")
         {
             InitializeComponent();
-            //Ngày đăng kí
-            lbNgay.Text = "Ngày đăng ký: " + DateTime.Today.ToString("yyyy-MM-dd hh:mm:ss");
-            //Thông tin nhân viên
-            MaNV = (strMaNV == "") ? FrmMain.MaNV : strMaNV;
-            lbNhanVien.Text = "Mã nhân viên: " + MaNV;
-            //Khu
-            InitKhu();
+            if (MaPDK != "")
+            {
+                var dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.PhieuDK, EnumConst.PhieuDK.MaPDK, MaPDK.Trim());
+                if (dt.Rows.Count > 0)
+                {
+                    this.MaPDK = MaPDK;
+                    txtMSSV.Text = dt.Rows[0]["MSSV"].ToString();
+                    txtNamHoc.Text = dt.Rows[0]["NamHoc"].ToString();
+                    txtNgayBD.Text = dt.Rows[0]["NgayBD"].ToString();
+                    txtThoiHan.Text = dt.Rows[0]["ThoiHan"].ToString();
+                    cmbHocKi.Text = dt.Rows[0]["HocKi"].ToString();
+                    cmbKhu.Text = dt.Rows[0]["Khu"].ToString();
+                    cmbMaPhong.Text = dt.Rows[0]["MaPhong"].ToString();
+                    lbMaNV.Text = dt.Rows[0]["MaNV"].ToString();
+                }
+                else
+                    MessageBox.Show("Đã xảy ra lỗi trong quá trình truy xuất dữ liệu! \n" + error, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
+            else
+            {
+                //Ngày đăng kí
+                lbNgayGioDK.Text = DateTime.Today.ToString("yyyy-MM-dd hh:mm:ss");
+                //Thông tin nhân viên
+                lbMaNV.Text = FrmMain.MaNV + "";
+                //Khu
+                InitKhu();
+            }    
         }
 
         private void InitKhu()
@@ -57,7 +76,7 @@ namespace QLKTX.UI
             {
                 var re = FrmMain.bS_Layer.Insert(
                MSSV: txtMSSV.Text.Trim(),
-               MaNV,
+               MaNV: FrmMain.MaNV,
                Khu: cmbKhu.Text.Trim(),
                MaPhong: cmbMaPhong.Text.Trim(),
                HocKi: cmbHocKi.Text.Trim(),

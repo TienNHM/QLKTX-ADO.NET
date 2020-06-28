@@ -92,6 +92,10 @@ namespace QLKTX.UI
             else
                 dgv.DataSource = FrmMain.bS_Layer.Select(ref error, tableName, strMaKhu: txtKhu.Text.Trim(), strMaPhong: txtPhong.Text.Trim());
 
+            //Xóa cột AnhChanDung
+            if (tableName == BS_layer.TableName.SinhVien || tableName == BS_layer.TableName.NhanVien)
+                dgv.Columns.RemoveAt(dgv.Columns.Count - 1);
+
             for (int i = 0; i < dgv.Columns.Count; i++)
                 dgv.Columns[i].HeaderText = headerText[i];
         }
@@ -163,11 +167,6 @@ namespace QLKTX.UI
             }
             if (cmbMucTimKiem.SelectedIndex >= 0)
                 btnSearch.Enabled = true;
-        }
-
-        private void btnXuat_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)

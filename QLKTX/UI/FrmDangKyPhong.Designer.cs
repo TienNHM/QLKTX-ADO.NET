@@ -48,6 +48,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbNhanVien = new System.Windows.Forms.Label();
             this.lbNgay = new System.Windows.Forms.Label();
+            this.lbMaNV = new System.Windows.Forms.Label();
+            this.lbNgayGioDK = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             this.lbMSSV.Location = new System.Drawing.Point(30, 20);
             this.lbMSSV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMSSV.Name = "lbMSSV";
-            this.lbMSSV.Size = new System.Drawing.Size(50, 16);
+            this.lbMSSV.Size = new System.Drawing.Size(54, 16);
             this.lbMSSV.TabIndex = 0;
             this.lbMSSV.Text = "MSSV";
             // 
@@ -69,7 +71,7 @@
             this.lbMaPhong.Location = new System.Drawing.Point(110, 76);
             this.lbMaPhong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaPhong.Name = "lbMaPhong";
-            this.lbMaPhong.Size = new System.Drawing.Size(76, 16);
+            this.lbMaPhong.Size = new System.Drawing.Size(78, 16);
             this.lbMaPhong.TabIndex = 3;
             this.lbMaPhong.Text = "Mã phòng";
             // 
@@ -80,7 +82,7 @@
             this.lbHocKi.Location = new System.Drawing.Point(245, 22);
             this.lbHocKi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHocKi.Name = "lbHocKi";
-            this.lbHocKi.Size = new System.Drawing.Size(52, 16);
+            this.lbHocKi.Size = new System.Drawing.Size(54, 16);
             this.lbHocKi.TabIndex = 4;
             this.lbHocKi.Text = "Học kì";
             // 
@@ -91,7 +93,7 @@
             this.lbNamHoc.Location = new System.Drawing.Point(245, 75);
             this.lbNamHoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNamHoc.Name = "lbNamHoc";
-            this.lbNamHoc.Size = new System.Drawing.Size(69, 16);
+            this.lbNamHoc.Size = new System.Drawing.Size(71, 16);
             this.lbNamHoc.TabIndex = 5;
             this.lbNamHoc.Text = "Năm học";
             // 
@@ -165,7 +167,7 @@
             this.lbKhu.Location = new System.Drawing.Point(30, 76);
             this.lbKhu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbKhu.Name = "lbKhu";
-            this.lbKhu.Size = new System.Drawing.Size(33, 16);
+            this.lbKhu.Size = new System.Drawing.Size(35, 16);
             this.lbKhu.TabIndex = 22;
             this.lbKhu.Text = "Khu";
             // 
@@ -176,9 +178,9 @@
             this.cmbHocKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbHocKi.FormattingEnabled = true;
             this.cmbHocKi.Items.AddRange(new object[] {
-            "Học kì 1",
-            "Học kì 2",
-            "Học kì 3 (Hè)"});
+            "1",
+            "2",
+            "3"});
             this.cmbHocKi.Location = new System.Drawing.Point(245, 41);
             this.cmbHocKi.Name = "cmbHocKi";
             this.cmbHocKi.Size = new System.Drawing.Size(164, 24);
@@ -246,7 +248,7 @@
             this.label2.Location = new System.Drawing.Point(245, 131);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.Size = new System.Drawing.Size(69, 16);
             this.label2.TabIndex = 33;
             this.label2.Text = "Thời hạn";
             // 
@@ -268,7 +270,7 @@
             this.label1.Location = new System.Drawing.Point(29, 129);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 16);
+            this.label1.Size = new System.Drawing.Size(104, 16);
             this.label1.TabIndex = 31;
             this.label1.Text = "Ngày bắt đầu";
             // 
@@ -292,11 +294,33 @@
             this.lbNgay.TabIndex = 33;
             this.lbNgay.Text = "Ngày đăng ký:";
             // 
+            // lbMaNV
+            // 
+            this.lbMaNV.AutoSize = true;
+            this.lbMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaNV.Location = new System.Drawing.Point(105, 78);
+            this.lbMaNV.Name = "lbMaNV";
+            this.lbMaNV.Size = new System.Drawing.Size(25, 13);
+            this.lbMaNV.TabIndex = 34;
+            this.lbMaNV.Text = "      ";
+            // 
+            // lbNgayGioDK
+            // 
+            this.lbNgayGioDK.AutoSize = true;
+            this.lbNgayGioDK.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgayGioDK.Location = new System.Drawing.Point(358, 78);
+            this.lbNgayGioDK.Name = "lbNgayGioDK";
+            this.lbNgayGioDK.Size = new System.Drawing.Size(25, 13);
+            this.lbNgayGioDK.TabIndex = 35;
+            this.lbNgayGioDK.Text = "      ";
+            // 
             // FrmDangKyPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 354);
+            this.Controls.Add(this.lbNgayGioDK);
+            this.Controls.Add(this.lbMaNV);
             this.Controls.Add(this.lbNgay);
             this.Controls.Add(this.lbNhanVien);
             this.Controls.Add(this.btnDangKy);
@@ -339,5 +363,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNgayBD;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbMaNV;
+        private System.Windows.Forms.Label lbNgayGioDK;
     }
 }

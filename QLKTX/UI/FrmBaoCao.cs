@@ -20,7 +20,12 @@ namespace QLKTX.UI
 
         private void FrmBaoCao_Load(object sender, EventArgs e)
         {
-            
+
+            this.rvDien_Phong.RefreshReport();
+            this.rvDien_Phong.RefreshReport();
+            this.rv_Dien_Khu.RefreshReport();
+            this.rvNuoc.RefreshReport();
+            this.rvDien.RefreshReport();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -35,6 +40,16 @@ namespace QLKTX.UI
             this.rvSinhVien.RefreshReport();
             this.rvNhanVien.RefreshReport();
             this.rvPhong.RefreshReport();
+        }
+
+        private void cmbPhanMuc_Nuoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbPhanMuc_Dien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
