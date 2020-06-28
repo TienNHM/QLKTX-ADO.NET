@@ -172,9 +172,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Reports\ReportDangKyPhong.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDichVu_Khu.rdlc" />
     <EmbeddedResource Include="Reports\ReportNhanVien.rdlc" />
     <EmbeddedResource Include="Reports\ReportParaChiTietHoaDon.rdlc" />
     <EmbeddedResource Include="Reports\ReportParaChiTietPhieuDK.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSDDV_KTX.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSDDV_Phong.rdlc" />
     <EmbeddedResource Include="Reports\ReportSinhVien.rdlc" />
     <EmbeddedResource Include="UI\FrmBaoCao.resx">
       <DependentUpon>FrmBaoCao.cs</DependentUpon>

@@ -29,21 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.pHIEUDKBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.qUANLYKTXDataSet = new QLKTX.QUANLYKTXDataSet();
-            this.NHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.sINHVIENTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.SINHVIENTableAdapter();
-            this.nHANVIENTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.NHANVIENTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.PHIEUDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pHIEUDKTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.PHIEUDKTableAdapter();
             this.tabPhong = new System.Windows.Forms.TabPage();
             this.rvPhong = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
@@ -54,15 +47,7 @@
             this.tabThongKeDV = new System.Windows.Forms.TabPage();
             this.tabSDDV = new System.Windows.Forms.TabControl();
             this.tabDV_Dien = new System.Windows.Forms.TabPage();
-            this.tabDV_Nuoc = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbPhanMuc_Nuoc = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbKhu_Nuoc = new System.Windows.Forms.ComboBox();
-            this.cmbPhong_Nuoc = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rvNuoc = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvDien = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cmbPhanMuc_Dien = new System.Windows.Forms.ComboBox();
             this.cmbPhong_Dien = new System.Windows.Forms.ComboBox();
@@ -70,14 +55,34 @@
             this.cmbKhu_Dien = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.rvDien = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
+            this.tabDV_Nuoc = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbPhanMuc_Nuoc = new System.Windows.Forms.ComboBox();
+            this.cmbPhong_Nuoc = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbKhu_Nuoc = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rvNuoc = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.select2ParaThongKeSDDVKhuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qUANLYKTXDataSet = new QLKTX.QUANLYKTXDataSet();
+            this.NHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pHIEUDKBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.select3ParaSDDVPhongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sINHVIENTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.SINHVIENTableAdapter();
+            this.nHANVIENTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.NHANVIENTableAdapter();
+            this.PHIEUDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pHIEUDKTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.PHIEUDKTableAdapter();
+            this.select_2Para_ThongKeSDDV_KhuTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.Select_2Para_ThongKeSDDV_KhuTableAdapter();
+            this.Select_3Para_SDDV_PhongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.select_3Para_SDDV_PhongTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.Select_3Para_SDDV_PhongTableAdapter();
+            this.Select_Para_PDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Select_ThongKeDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.selectThongKeDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.select_ThongKeDichVuTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.Select_ThongKeDichVuTableAdapter();
             this.pnTop.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PHIEUDKBindingSource)).BeginInit();
             this.tabPhong.SuspendLayout();
             this.tabNhanVien.SuspendLayout();
             this.tabSinhVien.SuspendLayout();
@@ -85,30 +90,21 @@
             this.tabThongKeDV.SuspendLayout();
             this.tabSDDV.SuspendLayout();
             this.tabDV_Dien.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.tabDV_Nuoc.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.select2ParaThongKeSDDVKhuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.select3ParaSDDVPhongBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PHIEUDKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Select_3Para_SDDV_PhongBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Select_Para_PDKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Select_ThongKeDichVuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectThongKeDichVuBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pHIEUDKBindingSource1
-            // 
-            this.pHIEUDKBindingSource1.DataMember = "PHIEUDK";
-            this.pHIEUDKBindingSource1.DataSource = this.qUANLYKTXDataSet;
-            // 
-            // qUANLYKTXDataSet
-            // 
-            this.qUANLYKTXDataSet.DataSetName = "QUANLYKTXDataSet";
-            this.qUANLYKTXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // NHANVIENBindingSource
-            // 
-            this.NHANVIENBindingSource.DataMember = "NHANVIEN";
-            this.NHANVIENBindingSource.DataSource = this.qUANLYKTXDataSet;
-            // 
-            // sINHVIENBindingSource
-            // 
-            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
-            this.sINHVIENBindingSource.DataSource = this.qUANLYKTXDataSet;
             // 
             // pnTop
             // 
@@ -131,14 +127,6 @@
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "BÁO CÁO";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // sINHVIENTableAdapter
-            // 
-            this.sINHVIENTableAdapter.ClearBeforeFill = true;
-            // 
-            // nHANVIENTableAdapter
-            // 
-            this.nHANVIENTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -166,15 +154,6 @@
             this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // PHIEUDKBindingSource
-            // 
-            this.PHIEUDKBindingSource.DataMember = "PHIEUDK";
-            this.PHIEUDKBindingSource.DataSource = this.qUANLYKTXDataSet;
-            // 
-            // pHIEUDKTableAdapter
-            // 
-            this.pHIEUDKTableAdapter.ClearBeforeFill = true;
-            // 
             // tabPhong
             // 
             this.tabPhong.Controls.Add(this.rvPhong);
@@ -189,9 +168,9 @@
             // rvPhong
             // 
             this.rvPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource10.Name = "DataSetDangKyPhong";
-            reportDataSource10.Value = this.pHIEUDKBindingSource1;
-            this.rvPhong.LocalReport.DataSources.Add(reportDataSource10);
+            reportDataSource1.Name = "DataSetDangKyPhong";
+            reportDataSource1.Value = this.pHIEUDKBindingSource1;
+            this.rvPhong.LocalReport.DataSources.Add(reportDataSource1);
             this.rvPhong.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportDangKyPhong.rdlc";
             this.rvPhong.Location = new System.Drawing.Point(3, 3);
             this.rvPhong.Name = "rvPhong";
@@ -213,9 +192,9 @@
             // rvNhanVien
             // 
             this.rvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource11.Name = "DataSetNhanVien";
-            reportDataSource11.Value = this.NHANVIENBindingSource;
-            this.rvNhanVien.LocalReport.DataSources.Add(reportDataSource11);
+            reportDataSource2.Name = "DataSetNhanVien";
+            reportDataSource2.Value = this.NHANVIENBindingSource;
+            this.rvNhanVien.LocalReport.DataSources.Add(reportDataSource2);
             this.rvNhanVien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportNhanVien.rdlc";
             this.rvNhanVien.Location = new System.Drawing.Point(3, 3);
             this.rvNhanVien.Name = "rvNhanVien";
@@ -237,9 +216,9 @@
             // rvSinhVien
             // 
             this.rvSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource12.Name = "DataSetSinhVien";
-            reportDataSource12.Value = this.sINHVIENBindingSource;
-            this.rvSinhVien.LocalReport.DataSources.Add(reportDataSource12);
+            reportDataSource3.Name = "DataSetSinhVien";
+            reportDataSource3.Value = this.select2ParaThongKeSDDVKhuBindingSource;
+            this.rvSinhVien.LocalReport.DataSources.Add(reportDataSource3);
             this.rvSinhVien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportSinhVien.rdlc";
             this.rvSinhVien.Location = new System.Drawing.Point(3, 3);
             this.rvSinhVien.Name = "rvSinhVien";
@@ -296,97 +275,15 @@
             this.tabDV_Dien.Text = "Điện";
             this.tabDV_Dien.UseVisualStyleBackColor = true;
             // 
-            // tabDV_Nuoc
+            // rvDien
             // 
-            this.tabDV_Nuoc.Controls.Add(this.rvNuoc);
-            this.tabDV_Nuoc.Controls.Add(this.panel2);
-            this.tabDV_Nuoc.Location = new System.Drawing.Point(4, 29);
-            this.tabDV_Nuoc.Name = "tabDV_Nuoc";
-            this.tabDV_Nuoc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDV_Nuoc.Size = new System.Drawing.Size(1042, 521);
-            this.tabDV_Nuoc.TabIndex = 1;
-            this.tabDV_Nuoc.Text = "Nước";
-            this.tabDV_Nuoc.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Báo cáo theo:";
-            // 
-            // cmbPhanMuc_Nuoc
-            // 
-            this.cmbPhanMuc_Nuoc.FormattingEnabled = true;
-            this.cmbPhanMuc_Nuoc.Items.AddRange(new object[] {
-            "Từng phòng",
-            "Từng khu",
-            "Toàn KTX"});
-            this.cmbPhanMuc_Nuoc.Location = new System.Drawing.Point(156, 10);
-            this.cmbPhanMuc_Nuoc.Name = "cmbPhanMuc_Nuoc";
-            this.cmbPhanMuc_Nuoc.Size = new System.Drawing.Size(121, 28);
-            this.cmbPhanMuc_Nuoc.TabIndex = 1;
-            this.cmbPhanMuc_Nuoc.SelectedIndexChanged += new System.EventHandler(this.cmbPhanMuc_Nuoc_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(374, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Khu:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(727, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Phòng:";
-            // 
-            // cmbKhu_Nuoc
-            // 
-            this.cmbKhu_Nuoc.FormattingEnabled = true;
-            this.cmbKhu_Nuoc.Location = new System.Drawing.Point(421, 10);
-            this.cmbKhu_Nuoc.Name = "cmbKhu_Nuoc";
-            this.cmbKhu_Nuoc.Size = new System.Drawing.Size(121, 28);
-            this.cmbKhu_Nuoc.TabIndex = 4;
-            // 
-            // cmbPhong_Nuoc
-            // 
-            this.cmbPhong_Nuoc.FormattingEnabled = true;
-            this.cmbPhong_Nuoc.Location = new System.Drawing.Point(792, 10);
-            this.cmbPhong_Nuoc.Name = "cmbPhong_Nuoc";
-            this.cmbPhong_Nuoc.Size = new System.Drawing.Size(121, 28);
-            this.cmbPhong_Nuoc.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.cmbPhanMuc_Nuoc);
-            this.panel2.Controls.Add(this.cmbPhong_Nuoc);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.cmbKhu_Nuoc);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1036, 46);
-            this.panel2.TabIndex = 6;
-            // 
-            // rvNuoc
-            // 
-            this.rvNuoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvNuoc.Location = new System.Drawing.Point(3, 49);
-            this.rvNuoc.Name = "rvNuoc";
-            this.rvNuoc.ServerReport.BearerToken = null;
-            this.rvNuoc.Size = new System.Drawing.Size(1036, 469);
-            this.rvNuoc.TabIndex = 7;
+            this.rvDien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rvDien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportDichVu_Khu.rdlc";
+            this.rvDien.Location = new System.Drawing.Point(3, 49);
+            this.rvDien.Name = "rvDien";
+            this.rvDien.ServerReport.BearerToken = null;
+            this.rvDien.Size = new System.Drawing.Size(1036, 469);
+            this.rvDien.TabIndex = 8;
             // 
             // panel3
             // 
@@ -459,14 +356,180 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Phòng:";
             // 
-            // rvDien
+            // tabDV_Nuoc
             // 
-            this.rvDien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvDien.Location = new System.Drawing.Point(3, 49);
-            this.rvDien.Name = "rvDien";
-            this.rvDien.ServerReport.BearerToken = null;
-            this.rvDien.Size = new System.Drawing.Size(1036, 469);
-            this.rvDien.TabIndex = 8;
+            this.tabDV_Nuoc.Controls.Add(this.rvNuoc);
+            this.tabDV_Nuoc.Controls.Add(this.panel2);
+            this.tabDV_Nuoc.Location = new System.Drawing.Point(4, 29);
+            this.tabDV_Nuoc.Name = "tabDV_Nuoc";
+            this.tabDV_Nuoc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDV_Nuoc.Size = new System.Drawing.Size(1042, 521);
+            this.tabDV_Nuoc.TabIndex = 1;
+            this.tabDV_Nuoc.Text = "Nước";
+            this.tabDV_Nuoc.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.cmbPhanMuc_Nuoc);
+            this.panel2.Controls.Add(this.cmbPhong_Nuoc);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.cmbKhu_Nuoc);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1036, 46);
+            this.panel2.TabIndex = 6;
+            // 
+            // cmbPhanMuc_Nuoc
+            // 
+            this.cmbPhanMuc_Nuoc.FormattingEnabled = true;
+            this.cmbPhanMuc_Nuoc.Items.AddRange(new object[] {
+            "Từng phòng",
+            "Từng khu",
+            "Toàn KTX"});
+            this.cmbPhanMuc_Nuoc.Location = new System.Drawing.Point(156, 10);
+            this.cmbPhanMuc_Nuoc.Name = "cmbPhanMuc_Nuoc";
+            this.cmbPhanMuc_Nuoc.Size = new System.Drawing.Size(121, 28);
+            this.cmbPhanMuc_Nuoc.TabIndex = 1;
+            this.cmbPhanMuc_Nuoc.SelectedIndexChanged += new System.EventHandler(this.cmbPhanMuc_Nuoc_SelectedIndexChanged);
+            // 
+            // cmbPhong_Nuoc
+            // 
+            this.cmbPhong_Nuoc.FormattingEnabled = true;
+            this.cmbPhong_Nuoc.Location = new System.Drawing.Point(792, 10);
+            this.cmbPhong_Nuoc.Name = "cmbPhong_Nuoc";
+            this.cmbPhong_Nuoc.Size = new System.Drawing.Size(121, 28);
+            this.cmbPhong_Nuoc.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Báo cáo theo:";
+            // 
+            // cmbKhu_Nuoc
+            // 
+            this.cmbKhu_Nuoc.FormattingEnabled = true;
+            this.cmbKhu_Nuoc.Location = new System.Drawing.Point(421, 10);
+            this.cmbKhu_Nuoc.Name = "cmbKhu_Nuoc";
+            this.cmbKhu_Nuoc.Size = new System.Drawing.Size(121, 28);
+            this.cmbKhu_Nuoc.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(374, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Khu:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(727, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Phòng:";
+            // 
+            // rvNuoc
+            // 
+            this.rvNuoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource4.Name = "DataSetSDDV_KTX";
+            reportDataSource4.Value = this.selectThongKeDichVuBindingSource;
+            this.rvNuoc.LocalReport.DataSources.Add(reportDataSource4);
+            this.rvNuoc.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportSDDV_KTX.rdlc";
+            this.rvNuoc.Location = new System.Drawing.Point(3, 49);
+            this.rvNuoc.Name = "rvNuoc";
+            this.rvNuoc.ServerReport.BearerToken = null;
+            this.rvNuoc.Size = new System.Drawing.Size(1036, 469);
+            this.rvNuoc.TabIndex = 7;
+            // 
+            // select2ParaThongKeSDDVKhuBindingSource
+            // 
+            this.select2ParaThongKeSDDVKhuBindingSource.DataMember = "Select_2Para_ThongKeSDDV_Khu";
+            this.select2ParaThongKeSDDVKhuBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // qUANLYKTXDataSet
+            // 
+            this.qUANLYKTXDataSet.DataSetName = "QUANLYKTXDataSet";
+            this.qUANLYKTXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // NHANVIENBindingSource
+            // 
+            this.NHANVIENBindingSource.DataMember = "NHANVIEN";
+            this.NHANVIENBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // pHIEUDKBindingSource1
+            // 
+            this.pHIEUDKBindingSource1.DataMember = "PHIEUDK";
+            this.pHIEUDKBindingSource1.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // select3ParaSDDVPhongBindingSource
+            // 
+            this.select3ParaSDDVPhongBindingSource.DataMember = "Select_3Para_SDDV_Phong";
+            this.select3ParaSDDVPhongBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // sINHVIENBindingSource
+            // 
+            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
+            this.sINHVIENBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // sINHVIENTableAdapter
+            // 
+            this.sINHVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // nHANVIENTableAdapter
+            // 
+            this.nHANVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // PHIEUDKBindingSource
+            // 
+            this.PHIEUDKBindingSource.DataMember = "PHIEUDK";
+            this.PHIEUDKBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // pHIEUDKTableAdapter
+            // 
+            this.pHIEUDKTableAdapter.ClearBeforeFill = true;
+            // 
+            // select_2Para_ThongKeSDDV_KhuTableAdapter
+            // 
+            this.select_2Para_ThongKeSDDV_KhuTableAdapter.ClearBeforeFill = true;
+            // 
+            // Select_3Para_SDDV_PhongBindingSource
+            // 
+            this.Select_3Para_SDDV_PhongBindingSource.DataMember = "Select_3Para_SDDV_Phong";
+            this.Select_3Para_SDDV_PhongBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // select_3Para_SDDV_PhongTableAdapter
+            // 
+            this.select_3Para_SDDV_PhongTableAdapter.ClearBeforeFill = true;
+            // 
+            // Select_Para_PDKBindingSource
+            // 
+            this.Select_Para_PDKBindingSource.DataMember = "Select_Para_PDK";
+            this.Select_Para_PDKBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // Select_ThongKeDichVuBindingSource
+            // 
+            this.Select_ThongKeDichVuBindingSource.DataMember = "Select_ThongKeDichVu";
+            this.Select_ThongKeDichVuBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // selectThongKeDichVuBindingSource
+            // 
+            this.selectThongKeDichVuBindingSource.DataMember = "Select_ThongKeDichVu";
+            this.selectThongKeDichVuBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // select_ThongKeDichVuTableAdapter
+            // 
+            this.select_ThongKeDichVuTableAdapter.ClearBeforeFill = true;
             // 
             // FrmBaoCao
             // 
@@ -482,13 +545,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Báo cáo";
             this.Load += new System.EventHandler(this.FrmBaoCao_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
             this.pnTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PHIEUDKBindingSource)).EndInit();
             this.tabPhong.ResumeLayout(false);
             this.tabNhanVien.ResumeLayout(false);
             this.tabSinhVien.ResumeLayout(false);
@@ -496,11 +554,22 @@
             this.tabThongKeDV.ResumeLayout(false);
             this.tabSDDV.ResumeLayout(false);
             this.tabDV_Dien.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.tabDV_Nuoc.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.select2ParaThongKeSDDVKhuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.select3ParaSDDVPhongBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PHIEUDKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Select_3Para_SDDV_PhongBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Select_Para_PDKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Select_ThongKeDichVuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectThongKeDichVuBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -535,7 +604,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbPhanMuc_Nuoc;
         private System.Windows.Forms.Label label1;
-        private Microsoft.Reporting.WinForms.ReportViewer rvNuoc;
         private System.Windows.Forms.Panel panel2;
         private Microsoft.Reporting.WinForms.ReportViewer rvDien;
         private System.Windows.Forms.Panel panel3;
@@ -545,5 +613,15 @@
         private System.Windows.Forms.ComboBox cmbKhu_Dien;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.BindingSource select2ParaThongKeSDDVKhuBindingSource;
+        private QUANLYKTXDataSetTableAdapters.Select_2Para_ThongKeSDDV_KhuTableAdapter select_2Para_ThongKeSDDV_KhuTableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer rvNuoc;
+        private System.Windows.Forms.BindingSource Select_3Para_SDDV_PhongBindingSource;
+        private System.Windows.Forms.BindingSource select3ParaSDDVPhongBindingSource;
+        private QUANLYKTXDataSetTableAdapters.Select_3Para_SDDV_PhongTableAdapter select_3Para_SDDV_PhongTableAdapter;
+        private System.Windows.Forms.BindingSource Select_Para_PDKBindingSource;
+        private System.Windows.Forms.BindingSource Select_ThongKeDichVuBindingSource;
+        private System.Windows.Forms.BindingSource selectThongKeDichVuBindingSource;
+        private QUANLYKTXDataSetTableAdapters.Select_ThongKeDichVuTableAdapter select_ThongKeDichVuTableAdapter;
     }
 }
