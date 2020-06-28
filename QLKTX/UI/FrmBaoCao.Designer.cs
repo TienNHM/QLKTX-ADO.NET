@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -68,7 +68,6 @@
             this.sINHVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.qUANLYKTXDataSet = new QLKTX.QUANLYKTXDataSet();
             this.NHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pHIEUDKBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.selectThongKeDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.select2ParaThongKeSDDVKhuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.select3ParaSDDVPhongBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -99,7 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectThongKeDichVuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.select2ParaThongKeSDDVKhuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.select3ParaSDDVPhongBindingSource)).BeginInit();
@@ -173,9 +171,9 @@
             // rvPhong
             // 
             this.rvPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetDangKyPhong";
-            reportDataSource1.Value = this.pHIEUDKBindingSource1;
-            this.rvPhong.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource11.Name = "DataSetDangKyPhong";
+            reportDataSource11.Value = this.PHIEUDKBindingSource;
+            this.rvPhong.LocalReport.DataSources.Add(reportDataSource11);
             this.rvPhong.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportDangKyPhong.rdlc";
             this.rvPhong.Location = new System.Drawing.Point(3, 3);
             this.rvPhong.Name = "rvPhong";
@@ -197,9 +195,9 @@
             // rvNhanVien
             // 
             this.rvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSetNhanVien";
-            reportDataSource2.Value = this.NHANVIENBindingSource;
-            this.rvNhanVien.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource12.Name = "DataSetNhanVien";
+            reportDataSource12.Value = this.NHANVIENBindingSource;
+            this.rvNhanVien.LocalReport.DataSources.Add(reportDataSource12);
             this.rvNhanVien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportNhanVien.rdlc";
             this.rvNhanVien.Location = new System.Drawing.Point(3, 3);
             this.rvNhanVien.Name = "rvNhanVien";
@@ -221,9 +219,9 @@
             // rvSinhVien
             // 
             this.rvSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "DataSetSinhVien";
-            reportDataSource3.Value = this.sINHVIENBindingSource1;
-            this.rvSinhVien.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource13.Name = "DataSetSinhVien";
+            reportDataSource13.Value = this.sINHVIENBindingSource1;
+            this.rvSinhVien.LocalReport.DataSources.Add(reportDataSource13);
             this.rvSinhVien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportSinhVien.rdlc";
             this.rvSinhVien.Location = new System.Drawing.Point(3, 3);
             this.rvSinhVien.Name = "rvSinhVien";
@@ -283,9 +281,9 @@
             // rvDien
             // 
             this.rvDien.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource4.Name = "DataSetSDDV_Khu";
-            reportDataSource4.Value = this.Select_2Para_ThongKeSDDV_KhuBindingSource;
-            this.rvDien.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource14.Name = "DataSetSDDV_Khu";
+            reportDataSource14.Value = this.Select_2Para_ThongKeSDDV_KhuBindingSource;
+            this.rvDien.LocalReport.DataSources.Add(reportDataSource14);
             this.rvDien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportSDDV_Khu.rdlc";
             this.rvDien.Location = new System.Drawing.Point(3, 49);
             this.rvDien.Name = "rvDien";
@@ -450,9 +448,9 @@
             // rvNuoc
             // 
             this.rvNuoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource5.Name = "DataSetSDDV_KTX";
-            reportDataSource5.Value = this.selectThongKeDichVuBindingSource;
-            this.rvNuoc.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource15.Name = "DataSetSDDV_KTX";
+            reportDataSource15.Value = this.selectThongKeDichVuBindingSource;
+            this.rvNuoc.LocalReport.DataSources.Add(reportDataSource15);
             this.rvNuoc.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportSDDV_KTX.rdlc";
             this.rvNuoc.Location = new System.Drawing.Point(3, 49);
             this.rvNuoc.Name = "rvNuoc";
@@ -474,11 +472,6 @@
             // 
             this.NHANVIENBindingSource.DataMember = "NHANVIEN";
             this.NHANVIENBindingSource.DataSource = this.qUANLYKTXDataSet;
-            // 
-            // pHIEUDKBindingSource1
-            // 
-            this.pHIEUDKBindingSource1.DataMember = "PHIEUDK";
-            this.pHIEUDKBindingSource1.DataSource = this.qUANLYKTXDataSet;
             // 
             // selectThongKeDichVuBindingSource
             // 
@@ -580,7 +573,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectThongKeDichVuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.select2ParaThongKeSDDVKhuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.select3ParaSDDVPhongBindingSource)).EndInit();
@@ -604,7 +596,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.BindingSource PHIEUDKBindingSource;
-        private System.Windows.Forms.BindingSource pHIEUDKBindingSource1;
         private QUANLYKTXDataSetTableAdapters.PHIEUDKTableAdapter pHIEUDKTableAdapter;
         private System.Windows.Forms.TabPage tabPhong;
         private Microsoft.Reporting.WinForms.ReportViewer rvPhong;

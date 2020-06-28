@@ -13,6 +13,15 @@ namespace QLKTX.UI
 {
     public partial class FrmBaoCao : Form
     {
+        enum ReportType
+        {
+            Phong,
+            Khu,
+            KTX
+        }
+
+        ReportType reportType;
+
         public FrmBaoCao()
         {
             InitializeComponent();
@@ -20,16 +29,7 @@ namespace QLKTX.UI
 
         private void FrmBaoCao_Load(object sender, EventArgs e)
         {
-   
-            // TODO: This line of code loads data into the 'qUANLYKTXDataSet.SINHVIEN' table. You can move, or remove it, as needed.
-            this.sINHVIENTableAdapter.Fill(this.qUANLYKTXDataSet.SINHVIEN);
 
-            // TODO: This line of code loads data into the 'qUANLYKTXDataSet.Select_ThongKeDichVu' table. You can move, or remove it, as needed.
-            this.select_ThongKeDichVuTableAdapter.Fill(this.qUANLYKTXDataSet.Select_ThongKeDichVu);
-            // TODO: This line of code loads data into the 'qUANLYKTXDataSet.NHANVIEN' table. You can move, or remove it, as needed.
-            this.nHANVIENTableAdapter.Fill(this.qUANLYKTXDataSet.NHANVIEN);
-
-            this.rvNuoc.RefreshReport();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -50,18 +50,16 @@ namespace QLKTX.UI
             this.rvPhong.RefreshReport();
             this.rvNuoc.RefreshReport();
             this.rvDien.RefreshReport();
-            
-            
         }
 
         private void cmbPhanMuc_Nuoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            reportType = (ReportType)cmbPhanMuc_Nuoc.SelectedIndex;
         }
 
         private void cmbPhanMuc_Dien_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            reportType = (ReportType)cmbKhu_Dien.SelectedIndex;
         }
     }
 }
