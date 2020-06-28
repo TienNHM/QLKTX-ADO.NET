@@ -83,16 +83,13 @@
     <Compile Include="BS\BS_layer.cs" />
     <Compile Include="BS\EnumConst.cs" />
     <Compile Include="DB\DB_Main.cs" />
+    <Compile Include="QUANLYKTXDataSet.cs">
+      <DependentUpon>QUANLYKTXDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QUANLYKTXDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QUANLYKTXDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\FrmPrint.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reports\FrmPrint.Designer.cs">
-      <DependentUpon>FrmPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrmBaoCao.cs">
       <SubType>Form</SubType>
@@ -111,6 +108,12 @@
     </Compile>
     <Compile Include="UI\FrmHoaDon.Designer.cs">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmInHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmInHoaDon.Designer.cs">
+      <DependentUpon>FrmInHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrmLoaiPhong.cs">
       <SubType>Form</SubType>
@@ -168,12 +171,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Reports\FrmPrint.resx">
-      <DependentUpon>FrmPrint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report.rdlc" />
     <EmbeddedResource Include="Reports\ReportDangKyPhong.rdlc" />
     <EmbeddedResource Include="Reports\ReportNhanVien.rdlc" />
+    <EmbeddedResource Include="Reports\ReportParaChiTietHoaDon.rdlc" />
     <EmbeddedResource Include="Reports\ReportSinhVien.rdlc" />
     <EmbeddedResource Include="UI\FrmBaoCao.resx">
       <DependentUpon>FrmBaoCao.cs</DependentUpon>
@@ -183,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmHoaDon.resx">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmInHoaDon.resx">
+      <DependentUpon>FrmInHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmLoaiPhong.resx">
       <DependentUpon>FrmLoaiPhong.cs</DependentUpon>

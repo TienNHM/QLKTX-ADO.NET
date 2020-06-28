@@ -1,5 +1,4 @@
 ﻿using QLKTX.BS;
-using QLKTX.Reports;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -242,10 +241,7 @@ namespace QLKTX.UI
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
         {
-            DataTable table = new DataTable();
-            table = (DataTable)dgvHoaDon.DataSource;
-            FrmPrint print = new FrmPrint(table);
-            print.ShowDialog();
+
         }
     }
 }
