@@ -13,14 +13,13 @@ namespace QLKTX.UI
 {
     public partial class FrmBaoCao : Form
     {
-        enum ReportType
+        enum ReportDichVu
         {
-            Phong,
-            Khu,
-            KTX
+            Dien = 0,
+            Nuoc
         }
 
-        ReportType reportType;
+        ReportDichVu reportDichVu;
 
         public FrmBaoCao()
         {
@@ -34,32 +33,63 @@ namespace QLKTX.UI
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qUANLYKTXDataSet.NHANVIEN' table. You can move, or remove it, as needed.
-            this.nHANVIENTableAdapter.Fill(this.qUANLYKTXDataSet.NHANVIEN);
-            // TODO: This line of code loads data into the 'qUANLYKTXDataSet.SINHVIEN' table. You can move, or remove it, as needed.
-            this.sINHVIENTableAdapter.Fill(this.qUANLYKTXDataSet.SINHVIEN);
-            // TODO: This line of code loads data into the 'qUANLYKTXDataSet.PHIEUDK' table. You can move, or remove it, as needed.
-            this.pHIEUDKTableAdapter.Fill(this.qUANLYKTXDataSet.PHIEUDK);
-
-            this.select_ThongKeDichVuTableAdapter.Fill(this.qUANLYKTXDataSet.Select_ThongKeDichVu);
-            this.select_2Para_ThongKeSDDV_KhuTableAdapter.Fill(this.qUANLYKTXDataSet.Select_2Para_ThongKeSDDV_Khu, cmbKhu_Dien.Text, "Điện");
-            this.select_3Para_SDDV_PhongTableAdapter.Fill(this.qUANLYKTXDataSet.Select_3Para_SDDV_Phong, cmbKhu_Dien.Text, cmbPhong_Dien.Text, "Điện");
-
-            this.rvSinhVien.RefreshReport();
-            this.rvNhanVien.RefreshReport();
-            this.rvPhong.RefreshReport();
-            this.rvNuoc.RefreshReport();
-            this.rvDien.RefreshReport();
-        }
-
-        private void cmbPhanMuc_Nuoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            reportType = (ReportType)cmbPhanMuc_Nuoc.SelectedIndex;
-        }
-
-        private void cmbPhanMuc_Dien_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            reportType = (ReportType)cmbKhu_Dien.SelectedIndex;
+            //Sinh vien
+            if (tabControl.SelectedTab == tabControl.TabPages[0])
+            {
+                this.sINHVIENTableAdapter.Fill(this.qUANLYKTXDataSet.SINHVIEN);
+                this.rvSinhVien.RefreshReport();
+            }
+            //Nhan vien
+            else if (tabControl.SelectedTab == tabControl.TabPages[1])
+            {
+                this.nHANVIENTableAdapter.Fill(this.qUANLYKTXDataSet.NHANVIEN);
+                this.rvNhanVien.RefreshReport();
+            }
+            //Dang ky phong
+            else if (tabControl.SelectedTab == tabControl.TabPages[2])
+            {
+                this.pHIEUDKTableAdapter.Fill(this.qUANLYKTXDataSet.PHIEUDK);
+                this.rvPhieuDK.RefreshReport();
+            }
+            //SDDV
+            else if (tabControl.SelectedTab == tabControl.TabPages[3])
+            {
+                //KTX
+                if (tabSDDV.SelectedTab == tabSDDV.TabPages[0])
+                {
+                    if (cmb_DV_KTX.SelectedIndex < 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn mục báo cáo!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    this.select_ThongKeDichVuTableAdapter.Fill(qUANLYKTXDataSet.Select_ThongKeDichVu);
+                    this.rvKTX.RefreshReport();
+                }
+                //Khu
+                else if (tabSDDV.SelectedTab == tabSDDV.TabPages[1])
+                {
+                    if (cmb_DV_Khu.SelectedIndex < 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn mục báo cáo!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    string dv = cmb_DV_Khu.Text.Trim();
+                    this.select_2Para_ThongKeSDDV_KhuTableAdapter.Fill(this.qUANLYKTXDataSet.Select_2Para_ThongKeSDDV_Khu, cmbKhu_Khu.Text, dv);
+                    this.rvKhu.RefreshReport();
+                }
+                //Phong
+                else if (tabSDDV.SelectedTab == tabSDDV.TabPages[2])
+                {
+                    if (cmb_DV_Phong.SelectedIndex < 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn mục báo cáo!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    string dv = cmb_DV_Phong.Text.Trim();
+                    this.select_3Para_SDDV_PhongTableAdapter.Fill(this.qUANLYKTXDataSet.Select_3Para_SDDV_Phong, cmb_Khu_Phong.Text, cmb_Phong_Phong.Text, dv);
+                    this.rvPhong.RefreshReport();
+                }                    
+            }
         }
     }
 }
