@@ -19,6 +19,7 @@ namespace QLKTX.UI
             InitializeComponent();
             InitKhu();
             InitDichVu();
+            btnInHoaDon.Enabled = false;
             dtNgayHD.Value = DateTime.Now;
             txtMaNV.Text = FrmMain.MaNV;
         }
@@ -206,10 +207,11 @@ namespace QLKTX.UI
 
                 if (createHoaDon && identity > 0)
                 {
+                    this.MaHD = identity.ToString();
                     foreach (var maDV in DichVuSuDung.Keys)
                     {
                         max++;
-                        var re = FrmMain.bS_Layer.Insert(ref error, identity.ToString(), maDV, SoLuong: DichVuSuDung[maDV]);
+                        var re = FrmMain.bS_Layer.Insert(ref error, this.MaHD, maDV, SoLuong: DichVuSuDung[maDV]);
                         if (re == false)
                             MessageBox.Show("Lỗi khi thêm dịch vụ vào hóa đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         else count++;
@@ -219,7 +221,10 @@ namespace QLKTX.UI
                     MessageBox.Show("Lỗi khi tạo hóa đơn. \n" + error, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 if (count == max && count > 0)
+                {
                     MessageBox.Show("Thêm hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnInHoaDon.Enabled = true;
+                }    
                 else
                     MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thực hiện lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
@@ -241,7 +246,10 @@ namespace QLKTX.UI
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
         {
-
+            FrmInDangKy frmIn = new FrmInDangKy(FrmInDangKy.PrintType.HoaDon, MaHD);
+            this.Hide();
+            frmIn.ShowDialog();
+            this.Dispose();
         }
     }
 }

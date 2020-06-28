@@ -53,14 +53,11 @@
             this.lbPhanLoai = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnBottom = new System.Windows.Forms.Panel();
-            this.btnXuat = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.pnTop.SuspendLayout();
             this.pnInput.SuspendLayout();
             this.pnKey.SuspendLayout();
             this.pnPhanLoai.SuspendLayout();
-            this.pnBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -312,30 +309,6 @@
             this.label2.Text = "TÌM THÔNG TIN";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnBottom
-            // 
-            this.pnBottom.BackColor = System.Drawing.Color.LightGray;
-            this.pnBottom.Controls.Add(this.btnXuat);
-            this.pnBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBottom.ForeColor = System.Drawing.Color.Black;
-            this.pnBottom.Location = new System.Drawing.Point(0, 636);
-            this.pnBottom.Name = "pnBottom";
-            this.pnBottom.Size = new System.Drawing.Size(1064, 45);
-            this.pnBottom.TabIndex = 9;
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnXuat.Location = new System.Drawing.Point(0, 0);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(1064, 45);
-            this.btnXuat.TabIndex = 10;
-            this.btnXuat.Text = "Xuất dữ liệu";
-            this.btnXuat.UseVisualStyleBackColor = true;
-            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
-            // 
             // dgv
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -386,7 +359,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv.Size = new System.Drawing.Size(1064, 477);
+            this.dgv.Size = new System.Drawing.Size(1064, 522);
             this.dgv.TabIndex = 10;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             // 
@@ -398,7 +371,6 @@
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.pnTop);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pnBottom);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1050, 700);
             this.Name = "FrmTimKiem";
@@ -410,7 +382,6 @@
             this.pnKey.ResumeLayout(false);
             this.pnKey.PerformLayout();
             this.pnPhanLoai.ResumeLayout(false);
-            this.pnBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
@@ -429,8 +400,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.Button btnPhieuDK;
-        private System.Windows.Forms.Panel pnBottom;
-        private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.ComboBox cmbMucTimKiem;
         private System.Windows.Forms.Label lbMuc;
         private System.Windows.Forms.Panel panel1;

@@ -32,12 +32,6 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnMoRong = new System.Windows.Forms.Button();
             this.pnSV = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pnMoRong = new System.Windows.Forms.Panel();
-            this.dgvThanNhan = new System.Windows.Forms.DataGridView();
-            this.lbThanNhan = new System.Windows.Forms.Label();
-            this.pnTop = new System.Windows.Forms.Panel();
-            this.lbTitle = new System.Windows.Forms.Label();
             this.pnContainer = new System.Windows.Forms.Panel();
             this.ckbNu = new System.Windows.Forms.CheckBox();
             this.btnChoose = new System.Windows.Forms.Button();
@@ -64,13 +58,19 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbSDT = new System.Windows.Forms.Label();
             this.lbMSSV = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnMoRong = new System.Windows.Forms.Panel();
+            this.dgvThanNhan = new System.Windows.Forms.DataGridView();
+            this.lbThanNhan = new System.Windows.Forms.Label();
+            this.pnTop = new System.Windows.Forms.Panel();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.pnSV.SuspendLayout();
+            this.pnContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvt)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnMoRong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanNhan)).BeginInit();
             this.pnTop.SuspendLayout();
-            this.pnContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvt)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSua
@@ -78,7 +78,7 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Blue;
-            this.btnSua.Location = new System.Drawing.Point(166, 6);
+            this.btnSua.Location = new System.Drawing.Point(193, 6);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(72, 28);
@@ -92,7 +92,7 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Crimson;
-            this.btnLuu.Location = new System.Drawing.Point(337, 6);
+            this.btnLuu.Location = new System.Drawing.Point(365, 6);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(72, 28);
@@ -106,7 +106,7 @@
             this.btnMoRong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMoRong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMoRong.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnMoRong.Location = new System.Drawing.Point(499, 6);
+            this.btnMoRong.Location = new System.Drawing.Point(594, 6);
             this.btnMoRong.Margin = new System.Windows.Forms.Padding(0);
             this.btnMoRong.Name = "btnMoRong";
             this.btnMoRong.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
@@ -114,6 +114,7 @@
             this.btnMoRong.TabIndex = 28;
             this.btnMoRong.Text = ">>>";
             this.btnMoRong.UseVisualStyleBackColor = true;
+            this.btnMoRong.Visible = false;
             this.btnMoRong.Click += new System.EventHandler(this.btnMoRong_Click);
             // 
             // pnSV
@@ -127,77 +128,6 @@
             this.pnSV.Name = "pnSV";
             this.pnSV.Size = new System.Drawing.Size(724, 328);
             this.pnSV.TabIndex = 29;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.Controls.Add(this.btnSua);
-            this.panel2.Controls.Add(this.btnLuu);
-            this.panel2.Controls.Add(this.btnMoRong);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 285);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(724, 43);
-            this.panel2.TabIndex = 29;
-            // 
-            // pnMoRong
-            // 
-            this.pnMoRong.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.pnMoRong.Controls.Add(this.dgvThanNhan);
-            this.pnMoRong.Controls.Add(this.lbThanNhan);
-            this.pnMoRong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMoRong.Location = new System.Drawing.Point(724, 50);
-            this.pnMoRong.Name = "pnMoRong";
-            this.pnMoRong.Size = new System.Drawing.Size(0, 328);
-            this.pnMoRong.TabIndex = 30;
-            this.pnMoRong.Visible = false;
-            // 
-            // dgvThanNhan
-            // 
-            this.dgvThanNhan.BackgroundColor = System.Drawing.Color.Lavender;
-            this.dgvThanNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvThanNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThanNhan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgvThanNhan.Location = new System.Drawing.Point(-310, 40);
-            this.dgvThanNhan.Name = "dgvThanNhan";
-            this.dgvThanNhan.Size = new System.Drawing.Size(310, 288);
-            this.dgvThanNhan.TabIndex = 0;
-            // 
-            // lbThanNhan
-            // 
-            this.lbThanNhan.BackColor = System.Drawing.Color.SteelBlue;
-            this.lbThanNhan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbThanNhan.Font = new System.Drawing.Font("Segoe UI Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThanNhan.Location = new System.Drawing.Point(0, 0);
-            this.lbThanNhan.Name = "lbThanNhan";
-            this.lbThanNhan.Size = new System.Drawing.Size(0, 40);
-            this.lbThanNhan.TabIndex = 1;
-            this.lbThanNhan.Text = "Thân nhân";
-            this.lbThanNhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnTop
-            // 
-            this.pnTop.Controls.Add(this.lbTitle);
-            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.MinimumSize = new System.Drawing.Size(719, 50);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(720, 50);
-            this.pnTop.TabIndex = 31;
-            // 
-            // lbTitle
-            // 
-            this.lbTitle.BackColor = System.Drawing.Color.Goldenrod;
-            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbTitle.Location = new System.Drawing.Point(0, 0);
-            this.lbTitle.MinimumSize = new System.Drawing.Size(724, 50);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(724, 50);
-            this.lbTitle.TabIndex = 0;
-            this.lbTitle.Text = "THÔNG TIN SINH VIÊN";
-            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnContainer
             // 
@@ -485,6 +415,77 @@
             this.lbMSSV.TabIndex = 36;
             this.lbMSSV.Text = "MSSV";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel2.Controls.Add(this.btnSua);
+            this.panel2.Controls.Add(this.btnLuu);
+            this.panel2.Controls.Add(this.btnMoRong);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 285);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(724, 43);
+            this.panel2.TabIndex = 29;
+            // 
+            // pnMoRong
+            // 
+            this.pnMoRong.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pnMoRong.Controls.Add(this.dgvThanNhan);
+            this.pnMoRong.Controls.Add(this.lbThanNhan);
+            this.pnMoRong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMoRong.Location = new System.Drawing.Point(724, 50);
+            this.pnMoRong.Name = "pnMoRong";
+            this.pnMoRong.Size = new System.Drawing.Size(0, 328);
+            this.pnMoRong.TabIndex = 30;
+            this.pnMoRong.Visible = false;
+            // 
+            // dgvThanNhan
+            // 
+            this.dgvThanNhan.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dgvThanNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvThanNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThanNhan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dgvThanNhan.Location = new System.Drawing.Point(-310, 40);
+            this.dgvThanNhan.Name = "dgvThanNhan";
+            this.dgvThanNhan.Size = new System.Drawing.Size(310, 288);
+            this.dgvThanNhan.TabIndex = 0;
+            // 
+            // lbThanNhan
+            // 
+            this.lbThanNhan.BackColor = System.Drawing.Color.SteelBlue;
+            this.lbThanNhan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbThanNhan.Font = new System.Drawing.Font("Segoe UI Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThanNhan.Location = new System.Drawing.Point(0, 0);
+            this.lbThanNhan.Name = "lbThanNhan";
+            this.lbThanNhan.Size = new System.Drawing.Size(0, 40);
+            this.lbThanNhan.TabIndex = 1;
+            this.lbThanNhan.Text = "Thân nhân";
+            this.lbThanNhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnTop
+            // 
+            this.pnTop.Controls.Add(this.lbTitle);
+            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.MinimumSize = new System.Drawing.Size(719, 50);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(720, 50);
+            this.pnTop.TabIndex = 31;
+            // 
+            // lbTitle
+            // 
+            this.lbTitle.BackColor = System.Drawing.Color.Goldenrod;
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbTitle.Location = new System.Drawing.Point(0, 0);
+            this.lbTitle.MinimumSize = new System.Drawing.Size(724, 50);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(724, 50);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "THÔNG TIN SINH VIÊN";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,13 +502,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sinh Viên";
             this.pnSV.ResumeLayout(false);
+            this.pnContainer.ResumeLayout(false);
+            this.pnContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvt)).EndInit();
             this.panel2.ResumeLayout(false);
             this.pnMoRong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanNhan)).EndInit();
             this.pnTop.ResumeLayout(false);
-            this.pnContainer.ResumeLayout(false);
-            this.pnContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvt)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -109,11 +109,11 @@
     <Compile Include="UI\FrmHoaDon.Designer.cs">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FrmInHoaDon.cs">
+    <Compile Include="UI\FrmInDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FrmInHoaDon.Designer.cs">
-      <DependentUpon>FrmInHoaDon.cs</DependentUpon>
+    <Compile Include="UI\FrmInDangKy.Designer.cs">
+      <DependentUpon>FrmInDangKy.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrmLoaiPhong.cs">
       <SubType>Form</SubType>
@@ -174,6 +174,7 @@
     <EmbeddedResource Include="Reports\ReportDangKyPhong.rdlc" />
     <EmbeddedResource Include="Reports\ReportNhanVien.rdlc" />
     <EmbeddedResource Include="Reports\ReportParaChiTietHoaDon.rdlc" />
+    <EmbeddedResource Include="Reports\ReportParaChiTietPhieuDK.rdlc" />
     <EmbeddedResource Include="Reports\ReportSinhVien.rdlc" />
     <EmbeddedResource Include="UI\FrmBaoCao.resx">
       <DependentUpon>FrmBaoCao.cs</DependentUpon>
@@ -184,8 +185,8 @@
     <EmbeddedResource Include="UI\FrmHoaDon.resx">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmInHoaDon.resx">
-      <DependentUpon>FrmInHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FrmInDangKy.resx">
+      <DependentUpon>FrmInDangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmLoaiPhong.resx">
       <DependentUpon>FrmLoaiPhong.cs</DependentUpon>

@@ -50,6 +50,8 @@ namespace QLKTX {
         
         private Select_Para_ChiTietHoaDonDataTable tableSelect_Para_ChiTietHoaDon;
         
+        private Select_Para_PDKDataTable tableSelect_Para_PDK;
+        
         private global::System.Data.DataRelation relationFK__DANGNHAP__MaNV__02084FDA;
         
         private global::System.Data.DataRelation relationFK__HOADON__440B1D61;
@@ -140,6 +142,9 @@ namespace QLKTX {
                 }
                 if ((ds.Tables["Select_Para_ChiTietHoaDon"] != null)) {
                     base.Tables.Add(new Select_Para_ChiTietHoaDonDataTable(ds.Tables["Select_Para_ChiTietHoaDon"]));
+                }
+                if ((ds.Tables["Select_Para_PDK"] != null)) {
+                    base.Tables.Add(new Select_Para_PDKDataTable(ds.Tables["Select_Para_PDK"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -291,6 +296,16 @@ namespace QLKTX {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Select_Para_PDKDataTable Select_Para_PDK {
+            get {
+                return this.tableSelect_Para_PDK;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -394,6 +409,9 @@ namespace QLKTX {
                 }
                 if ((ds.Tables["Select_Para_ChiTietHoaDon"] != null)) {
                     base.Tables.Add(new Select_Para_ChiTietHoaDonDataTable(ds.Tables["Select_Para_ChiTietHoaDon"]));
+                }
+                if ((ds.Tables["Select_Para_PDK"] != null)) {
+                    base.Tables.Add(new Select_Para_PDKDataTable(ds.Tables["Select_Para_PDK"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -506,6 +524,12 @@ namespace QLKTX {
                     this.tableSelect_Para_ChiTietHoaDon.InitVars();
                 }
             }
+            this.tableSelect_Para_PDK = ((Select_Para_PDKDataTable)(base.Tables["Select_Para_PDK"]));
+            if ((initTable == true)) {
+                if ((this.tableSelect_Para_PDK != null)) {
+                    this.tableSelect_Para_PDK.InitVars();
+                }
+            }
             this.relationFK__DANGNHAP__MaNV__02084FDA = this.Relations["FK__DANGNHAP__MaNV__02084FDA"];
             this.relationFK__HOADON__440B1D61 = this.Relations["FK__HOADON__440B1D61"];
             this.relationFK__HOADON__MaNV__4316F928 = this.Relations["FK__HOADON__MaNV__4316F928"];
@@ -554,6 +578,8 @@ namespace QLKTX {
             base.Tables.Add(this.tableSINHVIEN);
             this.tableSelect_Para_ChiTietHoaDon = new Select_Para_ChiTietHoaDonDataTable();
             base.Tables.Add(this.tableSelect_Para_ChiTietHoaDon);
+            this.tableSelect_Para_PDK = new Select_Para_PDKDataTable();
+            base.Tables.Add(this.tableSelect_Para_PDK);
             this.relationFK__DANGNHAP__MaNV__02084FDA = new global::System.Data.DataRelation("FK__DANGNHAP__MaNV__02084FDA", new global::System.Data.DataColumn[] {
                         this.tableNHANVIEN.MaNVColumn}, new global::System.Data.DataColumn[] {
                         this.tableDANGNHAP.MaNVColumn}, false);
@@ -688,6 +714,12 @@ namespace QLKTX {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSelect_Para_PDK() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -779,6 +811,9 @@ namespace QLKTX {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void Select_Para_ChiTietHoaDonRowChangeEventHandler(object sender, Select_Para_ChiTietHoaDonRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void Select_Para_PDKRowChangeEventHandler(object sender, Select_Para_PDKRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5192,6 +5227,487 @@ namespace QLKTX {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Select_Para_PDKDataTable : global::System.Data.TypedTableBase<Select_Para_PDKRow> {
+            
+            private global::System.Data.DataColumn columnMaPDK;
+            
+            private global::System.Data.DataColumn columnMSSV;
+            
+            private global::System.Data.DataColumn columnTenSV;
+            
+            private global::System.Data.DataColumn columnMaNV;
+            
+            private global::System.Data.DataColumn columnHoTenNV;
+            
+            private global::System.Data.DataColumn columnPhong;
+            
+            private global::System.Data.DataColumn columnLoaiPhong;
+            
+            private global::System.Data.DataColumn columnDonGia;
+            
+            private global::System.Data.DataColumn columnThoiHan;
+            
+            private global::System.Data.DataColumn columnNgayBD;
+            
+            private global::System.Data.DataColumn columnHocKi;
+            
+            private global::System.Data.DataColumn columnNamHoc;
+            
+            private global::System.Data.DataColumn columnNgayGioDK;
+            
+            private global::System.Data.DataColumn columnCMND;
+            
+            private global::System.Data.DataColumn columnSDT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Select_Para_PDKDataTable() {
+                this.TableName = "Select_Para_PDK";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Select_Para_PDKDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected Select_Para_PDKDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MaPDKColumn {
+                get {
+                    return this.columnMaPDK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MSSVColumn {
+                get {
+                    return this.columnMSSV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TenSVColumn {
+                get {
+                    return this.columnTenSV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MaNVColumn {
+                get {
+                    return this.columnMaNV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn HoTenNVColumn {
+                get {
+                    return this.columnHoTenNV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PhongColumn {
+                get {
+                    return this.columnPhong;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LoaiPhongColumn {
+                get {
+                    return this.columnLoaiPhong;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DonGiaColumn {
+                get {
+                    return this.columnDonGia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ThoiHanColumn {
+                get {
+                    return this.columnThoiHan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NgayBDColumn {
+                get {
+                    return this.columnNgayBD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn HocKiColumn {
+                get {
+                    return this.columnHocKi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NamHocColumn {
+                get {
+                    return this.columnNamHoc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NgayGioDKColumn {
+                get {
+                    return this.columnNgayGioDK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CMNDColumn {
+                get {
+                    return this.columnCMND;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SDTColumn {
+                get {
+                    return this.columnSDT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Select_Para_PDKRow this[int index] {
+                get {
+                    return ((Select_Para_PDKRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Select_Para_PDKRowChangeEventHandler Select_Para_PDKRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Select_Para_PDKRowChangeEventHandler Select_Para_PDKRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Select_Para_PDKRowChangeEventHandler Select_Para_PDKRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Select_Para_PDKRowChangeEventHandler Select_Para_PDKRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSelect_Para_PDKRow(Select_Para_PDKRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Select_Para_PDKRow AddSelect_Para_PDKRow(string MSSV, string TenSV, string MaNV, string HoTenNV, string Phong, string LoaiPhong, float DonGia, byte ThoiHan, System.DateTime NgayBD, string HocKi, string NamHoc, System.DateTime NgayGioDK, string CMND, string SDT) {
+                Select_Para_PDKRow rowSelect_Para_PDKRow = ((Select_Para_PDKRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        MSSV,
+                        TenSV,
+                        MaNV,
+                        HoTenNV,
+                        Phong,
+                        LoaiPhong,
+                        DonGia,
+                        ThoiHan,
+                        NgayBD,
+                        HocKi,
+                        NamHoc,
+                        NgayGioDK,
+                        CMND,
+                        SDT};
+                rowSelect_Para_PDKRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSelect_Para_PDKRow);
+                return rowSelect_Para_PDKRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Select_Para_PDKRow FindByMaPDK(int MaPDK) {
+                return ((Select_Para_PDKRow)(this.Rows.Find(new object[] {
+                            MaPDK})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Select_Para_PDKDataTable cln = ((Select_Para_PDKDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Select_Para_PDKDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnMaPDK = base.Columns["MaPDK"];
+                this.columnMSSV = base.Columns["MSSV"];
+                this.columnTenSV = base.Columns["TenSV"];
+                this.columnMaNV = base.Columns["MaNV"];
+                this.columnHoTenNV = base.Columns["HoTenNV"];
+                this.columnPhong = base.Columns["Phong"];
+                this.columnLoaiPhong = base.Columns["LoaiPhong"];
+                this.columnDonGia = base.Columns["DonGia"];
+                this.columnThoiHan = base.Columns["ThoiHan"];
+                this.columnNgayBD = base.Columns["NgayBD"];
+                this.columnHocKi = base.Columns["HocKi"];
+                this.columnNamHoc = base.Columns["NamHoc"];
+                this.columnNgayGioDK = base.Columns["NgayGioDK"];
+                this.columnCMND = base.Columns["CMND"];
+                this.columnSDT = base.Columns["SDT"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnMaPDK = new global::System.Data.DataColumn("MaPDK", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaPDK);
+                this.columnMSSV = new global::System.Data.DataColumn("MSSV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMSSV);
+                this.columnTenSV = new global::System.Data.DataColumn("TenSV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenSV);
+                this.columnMaNV = new global::System.Data.DataColumn("MaNV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaNV);
+                this.columnHoTenNV = new global::System.Data.DataColumn("HoTenNV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHoTenNV);
+                this.columnPhong = new global::System.Data.DataColumn("Phong", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhong);
+                this.columnLoaiPhong = new global::System.Data.DataColumn("LoaiPhong", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLoaiPhong);
+                this.columnDonGia = new global::System.Data.DataColumn("DonGia", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDonGia);
+                this.columnThoiHan = new global::System.Data.DataColumn("ThoiHan", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnThoiHan);
+                this.columnNgayBD = new global::System.Data.DataColumn("NgayBD", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNgayBD);
+                this.columnHocKi = new global::System.Data.DataColumn("HocKi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHocKi);
+                this.columnNamHoc = new global::System.Data.DataColumn("NamHoc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNamHoc);
+                this.columnNgayGioDK = new global::System.Data.DataColumn("NgayGioDK", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNgayGioDK);
+                this.columnCMND = new global::System.Data.DataColumn("CMND", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCMND);
+                this.columnSDT = new global::System.Data.DataColumn("SDT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSDT);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnMaPDK}, true));
+                this.columnMaPDK.AutoIncrement = true;
+                this.columnMaPDK.AutoIncrementSeed = -1;
+                this.columnMaPDK.AutoIncrementStep = -1;
+                this.columnMaPDK.AllowDBNull = false;
+                this.columnMaPDK.ReadOnly = true;
+                this.columnMaPDK.Unique = true;
+                this.columnMSSV.AllowDBNull = false;
+                this.columnMSSV.MaxLength = 20;
+                this.columnTenSV.AllowDBNull = false;
+                this.columnTenSV.MaxLength = 50;
+                this.columnMaNV.AllowDBNull = false;
+                this.columnMaNV.MaxLength = 20;
+                this.columnHoTenNV.AllowDBNull = false;
+                this.columnHoTenNV.MaxLength = 50;
+                this.columnPhong.ReadOnly = true;
+                this.columnPhong.MaxLength = 33;
+                this.columnLoaiPhong.AllowDBNull = false;
+                this.columnLoaiPhong.MaxLength = 20;
+                this.columnThoiHan.AllowDBNull = false;
+                this.columnNgayBD.AllowDBNull = false;
+                this.columnHocKi.AllowDBNull = false;
+                this.columnHocKi.MaxLength = 20;
+                this.columnNamHoc.AllowDBNull = false;
+                this.columnNamHoc.MaxLength = 20;
+                this.columnNgayGioDK.AllowDBNull = false;
+                this.columnCMND.AllowDBNull = false;
+                this.columnCMND.MaxLength = 20;
+                this.columnSDT.AllowDBNull = false;
+                this.columnSDT.MaxLength = 20;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Select_Para_PDKRow NewSelect_Para_PDKRow() {
+                return ((Select_Para_PDKRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Select_Para_PDKRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Select_Para_PDKRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Select_Para_PDKRowChanged != null)) {
+                    this.Select_Para_PDKRowChanged(this, new Select_Para_PDKRowChangeEvent(((Select_Para_PDKRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Select_Para_PDKRowChanging != null)) {
+                    this.Select_Para_PDKRowChanging(this, new Select_Para_PDKRowChangeEvent(((Select_Para_PDKRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Select_Para_PDKRowDeleted != null)) {
+                    this.Select_Para_PDKRowDeleted(this, new Select_Para_PDKRowChangeEvent(((Select_Para_PDKRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Select_Para_PDKRowDeleting != null)) {
+                    this.Select_Para_PDKRowDeleting(this, new Select_Para_PDKRowChangeEvent(((Select_Para_PDKRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSelect_Para_PDKRow(Select_Para_PDKRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                QUANLYKTXDataSet ds = new QUANLYKTXDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Select_Para_PDKDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DANGNHAPRow : global::System.Data.DataRow {
@@ -6945,6 +7461,220 @@ namespace QLKTX {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Select_Para_PDKRow : global::System.Data.DataRow {
+            
+            private Select_Para_PDKDataTable tableSelect_Para_PDK;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Select_Para_PDKRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSelect_Para_PDK = ((Select_Para_PDKDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int MaPDK {
+                get {
+                    return ((int)(this[this.tableSelect_Para_PDK.MaPDKColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.MaPDKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string MSSV {
+                get {
+                    return ((string)(this[this.tableSelect_Para_PDK.MSSVColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.MSSVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TenSV {
+                get {
+                    return ((string)(this[this.tableSelect_Para_PDK.TenSVColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.TenSVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string MaNV {
+                get {
+                    return ((string)(this[this.tableSelect_Para_PDK.MaNVColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.MaNVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string HoTenNV {
+                get {
+                    return ((string)(this[this.tableSelect_Para_PDK.HoTenNVColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.HoTenNVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Phong {
+                get {
+                    try {
+                        return ((string)(this[this.tableSelect_Para_PDK.PhongColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Phong\' in table \'Select_Para_PDK\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.PhongColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string LoaiPhong {
+                get {
+                    return ((string)(this[this.tableSelect_Para_PDK.LoaiPhongColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.LoaiPhongColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public float DonGia {
+                get {
+                    try {
+                        return ((float)(this[this.tableSelect_Para_PDK.DonGiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DonGia\' in table \'Select_Para_PDK\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.DonGiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public byte ThoiHan {
+                get {
+                    return ((byte)(this[this.tableSelect_Para_PDK.ThoiHanColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.ThoiHanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime NgayBD {
+                get {
+                    return ((global::System.DateTime)(this[this.tableSelect_Para_PDK.NgayBDColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.NgayBDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string HocKi {
+                get {
+                    return ((string)(this[this.tableSelect_Para_PDK.HocKiColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.HocKiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NamHoc {
+                get {
+                    return ((string)(this[this.tableSelect_Para_PDK.NamHocColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.NamHocColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime NgayGioDK {
+                get {
+                    return ((global::System.DateTime)(this[this.tableSelect_Para_PDK.NgayGioDKColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.NgayGioDKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CMND {
+                get {
+                    return ((string)(this[this.tableSelect_Para_PDK.CMNDColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.CMNDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SDT {
+                get {
+                    return ((string)(this[this.tableSelect_Para_PDK.SDTColumn]));
+                }
+                set {
+                    this[this.tableSelect_Para_PDK.SDTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPhongNull() {
+                return this.IsNull(this.tableSelect_Para_PDK.PhongColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPhongNull() {
+                this[this.tableSelect_Para_PDK.PhongColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDonGiaNull() {
+                return this.IsNull(this.tableSelect_Para_PDK.DonGiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDonGiaNull() {
+                this[this.tableSelect_Para_PDK.DonGiaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -7372,6 +8102,40 @@ namespace QLKTX {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Select_Para_ChiTietHoaDonRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class Select_Para_PDKRowChangeEvent : global::System.EventArgs {
+            
+            private Select_Para_PDKRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Select_Para_PDKRowChangeEvent(Select_Para_PDKRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Select_Para_PDKRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -12991,6 +13755,191 @@ SELECT MSSV, MaLop, DienSV, HoTen, Phai, NgSinh, CMND, Email, SDT, BHYT, QueQuan
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(x));
             QUANLYKTXDataSet.Select_Para_ChiTietHoaDonDataTable dataTable = new QUANLYKTXDataSet.Select_Para_ChiTietHoaDonDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Select_Para_PDKTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public Select_Para_PDKTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Select_Para_PDK";
+            tableMapping.ColumnMappings.Add("MaPDK", "MaPDK");
+            tableMapping.ColumnMappings.Add("MSSV", "MSSV");
+            tableMapping.ColumnMappings.Add("TenSV", "TenSV");
+            tableMapping.ColumnMappings.Add("MaNV", "MaNV");
+            tableMapping.ColumnMappings.Add("HoTenNV", "HoTenNV");
+            tableMapping.ColumnMappings.Add("Phong", "Phong");
+            tableMapping.ColumnMappings.Add("LoaiPhong", "LoaiPhong");
+            tableMapping.ColumnMappings.Add("DonGia", "DonGia");
+            tableMapping.ColumnMappings.Add("ThoiHan", "ThoiHan");
+            tableMapping.ColumnMappings.Add("NgayBD", "NgayBD");
+            tableMapping.ColumnMappings.Add("HocKi", "HocKi");
+            tableMapping.ColumnMappings.Add("NamHoc", "NamHoc");
+            tableMapping.ColumnMappings.Add("NgayGioDK", "NgayGioDK");
+            tableMapping.ColumnMappings.Add("CMND", "CMND");
+            tableMapping.ColumnMappings.Add("SDT", "SDT");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::QLKTX.Properties.Settings.Default.QUANLYKTXConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.Select_Para_PDK";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Variant, 0, global::System.Data.ParameterDirection.ReturnValue, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@x", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MaPDK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(QUANLYKTXDataSet.Select_Para_PDKDataTable dataTable, int x) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(x));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual QUANLYKTXDataSet.Select_Para_PDKDataTable GetData(int x) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(x));
+            QUANLYKTXDataSet.Select_Para_PDKDataTable dataTable = new QUANLYKTXDataSet.Select_Para_PDKDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

@@ -143,7 +143,7 @@
             this.btnDangKy.TabIndex = 20;
             this.btnDangKy.Text = "ĐĂNG KÝ";
             this.btnDangKy.UseVisualStyleBackColor = true;
-            this.btnDangKy.Click += new System.EventHandler(this.btnHoanTat_Click);
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnInPDK
             // 

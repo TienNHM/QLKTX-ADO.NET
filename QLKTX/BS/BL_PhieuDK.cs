@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,10 @@ namespace QLKTX.BS
     public partial class BS_layer
     {
         public bool Insert(string MSSV, string MaNV, string Khu, string MaPhong, string HocKi, string NamHoc,
-            DateTime NgayGioDK, int ThoiHan, string NgayBD, ref string error)
+            DateTime NgayGioDK, int ThoiHan, string NgayBD, ref int identity, ref string error)
         {
-            string sql = "INSERT INTO PHIEUDK VALUES(@MSSV, @MaNV, @Khu, @MaPhong, @HocKi, @NamHoc, @NgayGioDK, @ThoiHan, @NgayBD)";
+            string sql = "INSERT INTO PHIEUDK VALUES(@MSSV, @MaNV, @Khu, @MaPhong, @HocKi, @NamHoc, @NgayGioDK, @ThoiHan, @NgayBD) " +
+                            "SELECT SCOPE_IDENTITY();";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("MSSV", MSSV),
@@ -25,7 +27,7 @@ namespace QLKTX.BS
                 new SqlParameter("ThoiHan", ThoiHan),
                 new SqlParameter("NgayBD", NgayBD)
             };
-            return db.ExecuteNonQuery(sql, sqlParameters, System.Data.CommandType.Text, ref error);
+            return db.SelectScopeIdentity(sql, sqlParameters, CommandType.Text, ref identity, ref error);
         }
 
         public bool Update(string MaPDK, string MSSV, string MaNV, string Khu, string MaPhong, string HocKi, string NamHoc, 

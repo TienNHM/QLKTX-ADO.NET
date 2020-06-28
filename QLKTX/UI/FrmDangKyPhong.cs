@@ -15,6 +15,7 @@ namespace QLKTX.UI
     {
         private string error = "";
         private string MaNV = "";
+        private string MaPDK = "";
 
         public FrmDangKyPhong(string strMaNV = "")
         {
@@ -49,18 +50,35 @@ namespace QLKTX.UI
                 e.Cancel = true;
         }
 
-        private void btnHoanTat_Click(object sender, EventArgs e)
+        private void btnDangKy_Click(object sender, EventArgs e)
         {
-
-            var re = FrmMain.bS_Layer.Insert(txtMSSV.Text.Trim(), MaNV, cmbKhu.Text.Trim(), cmbMaPhong.Text.Trim(),
-                cmbHocKi.Text.Trim(), txtNamHoc.Text.Trim(), DateTime.Now, Convert.ToInt32(txtThoiHan.Text), txtNgayBD.Text.Trim(), ref error);
-            if (re == true)
+            int identity = -1;
+            try
             {
-                btnInPDK.Enabled = true;
-                MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var re = FrmMain.bS_Layer.Insert(
+               MSSV: txtMSSV.Text.Trim(),
+               MaNV,
+               Khu: cmbKhu.Text.Trim(),
+               MaPhong: cmbMaPhong.Text.Trim(),
+               HocKi: cmbHocKi.Text.Trim(),
+               NamHoc: txtNamHoc.Text.Trim(),
+               NgayGioDK: DateTime.Now,
+               ThoiHan: Convert.ToInt32(txtThoiHan.Text),
+               NgayBD: txtNgayBD.Text.Trim(),
+               ref identity, ref error);
+                if (re == true && identity != -1)
+                {
+                    btnInPDK.Enabled = true;
+                    this.MaPDK = identity.ToString();
+                    MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-                MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi! \n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cmbKhu_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,7 +101,8 @@ namespace QLKTX.UI
 
         private void btnInPDK_Click(object sender, EventArgs e)
         {
-
+            FrmInDangKy frmIn = new FrmInDangKy(FrmInDangKy.PrintType.PhieuDK, MaPDK);
+            frmIn.Show();
         }
     }
 }
