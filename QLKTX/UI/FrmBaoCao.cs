@@ -20,6 +20,10 @@ namespace QLKTX.UI
 
         private void FrmBaoCao_Load(object sender, EventArgs e)
         {
+   
+            // TODO: This line of code loads data into the 'qUANLYKTXDataSet.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Fill(this.qUANLYKTXDataSet.SINHVIEN);
+
             // TODO: This line of code loads data into the 'qUANLYKTXDataSet.Select_ThongKeDichVu' table. You can move, or remove it, as needed.
             this.select_ThongKeDichVuTableAdapter.Fill(this.qUANLYKTXDataSet.Select_ThongKeDichVu);
             // TODO: This line of code loads data into the 'qUANLYKTXDataSet.NHANVIEN' table. You can move, or remove it, as needed.

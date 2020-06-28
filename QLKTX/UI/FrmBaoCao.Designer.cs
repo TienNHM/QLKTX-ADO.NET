@@ -33,6 +33,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,12 +65,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rvNuoc = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.select2ParaThongKeSDDVKhuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sINHVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.qUANLYKTXDataSet = new QLKTX.QUANLYKTXDataSet();
             this.NHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pHIEUDKBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.selectThongKeDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.select2ParaThongKeSDDVKhuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.select3ParaSDDVPhongBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sINHVIENTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.SINHVIENTableAdapter();
             this.nHANVIENTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.NHANVIENTableAdapter();
             this.PHIEUDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -79,8 +81,9 @@
             this.select_3Para_SDDV_PhongTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.Select_3Para_SDDV_PhongTableAdapter();
             this.Select_Para_PDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Select_ThongKeDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.selectThongKeDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.select_ThongKeDichVuTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.Select_ThongKeDichVuTableAdapter();
+            this.SINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Select_2Para_ThongKeSDDV_KhuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnTop.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPhong.SuspendLayout();
@@ -93,17 +96,19 @@
             this.panel3.SuspendLayout();
             this.tabDV_Nuoc.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.select2ParaThongKeSDDVKhuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectThongKeDichVuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.select2ParaThongKeSDDVKhuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.select3ParaSDDVPhongBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PHIEUDKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_3Para_SDDV_PhongBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_Para_PDKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_ThongKeDichVuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectThongKeDichVuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SINHVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Select_2Para_ThongKeSDDV_KhuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pnTop
@@ -217,7 +222,7 @@
             // 
             this.rvSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource3.Name = "DataSetSinhVien";
-            reportDataSource3.Value = this.select2ParaThongKeSDDVKhuBindingSource;
+            reportDataSource3.Value = this.sINHVIENBindingSource1;
             this.rvSinhVien.LocalReport.DataSources.Add(reportDataSource3);
             this.rvSinhVien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportSinhVien.rdlc";
             this.rvSinhVien.Location = new System.Drawing.Point(3, 3);
@@ -278,7 +283,10 @@
             // rvDien
             // 
             this.rvDien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvDien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportDichVu_Khu.rdlc";
+            reportDataSource4.Name = "DataSetSDDV_Khu";
+            reportDataSource4.Value = this.Select_2Para_ThongKeSDDV_KhuBindingSource;
+            this.rvDien.LocalReport.DataSources.Add(reportDataSource4);
+            this.rvDien.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportSDDV_Khu.rdlc";
             this.rvDien.Location = new System.Drawing.Point(3, 49);
             this.rvDien.Name = "rvDien";
             this.rvDien.ServerReport.BearerToken = null;
@@ -442,9 +450,9 @@
             // rvNuoc
             // 
             this.rvNuoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource4.Name = "DataSetSDDV_KTX";
-            reportDataSource4.Value = this.selectThongKeDichVuBindingSource;
-            this.rvNuoc.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource5.Name = "DataSetSDDV_KTX";
+            reportDataSource5.Value = this.selectThongKeDichVuBindingSource;
+            this.rvNuoc.LocalReport.DataSources.Add(reportDataSource5);
             this.rvNuoc.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportSDDV_KTX.rdlc";
             this.rvNuoc.Location = new System.Drawing.Point(3, 49);
             this.rvNuoc.Name = "rvNuoc";
@@ -452,10 +460,10 @@
             this.rvNuoc.Size = new System.Drawing.Size(1036, 469);
             this.rvNuoc.TabIndex = 7;
             // 
-            // select2ParaThongKeSDDVKhuBindingSource
+            // sINHVIENBindingSource1
             // 
-            this.select2ParaThongKeSDDVKhuBindingSource.DataMember = "Select_2Para_ThongKeSDDV_Khu";
-            this.select2ParaThongKeSDDVKhuBindingSource.DataSource = this.qUANLYKTXDataSet;
+            this.sINHVIENBindingSource1.DataMember = "SINHVIEN";
+            this.sINHVIENBindingSource1.DataSource = this.qUANLYKTXDataSet;
             // 
             // qUANLYKTXDataSet
             // 
@@ -472,15 +480,20 @@
             this.pHIEUDKBindingSource1.DataMember = "PHIEUDK";
             this.pHIEUDKBindingSource1.DataSource = this.qUANLYKTXDataSet;
             // 
+            // selectThongKeDichVuBindingSource
+            // 
+            this.selectThongKeDichVuBindingSource.DataMember = "Select_ThongKeDichVu";
+            this.selectThongKeDichVuBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // select2ParaThongKeSDDVKhuBindingSource
+            // 
+            this.select2ParaThongKeSDDVKhuBindingSource.DataMember = "Select_2Para_ThongKeSDDV_Khu";
+            this.select2ParaThongKeSDDVKhuBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
             // select3ParaSDDVPhongBindingSource
             // 
             this.select3ParaSDDVPhongBindingSource.DataMember = "Select_3Para_SDDV_Phong";
             this.select3ParaSDDVPhongBindingSource.DataSource = this.qUANLYKTXDataSet;
-            // 
-            // sINHVIENBindingSource
-            // 
-            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
-            this.sINHVIENBindingSource.DataSource = this.qUANLYKTXDataSet;
             // 
             // sINHVIENTableAdapter
             // 
@@ -522,14 +535,19 @@
             this.Select_ThongKeDichVuBindingSource.DataMember = "Select_ThongKeDichVu";
             this.Select_ThongKeDichVuBindingSource.DataSource = this.qUANLYKTXDataSet;
             // 
-            // selectThongKeDichVuBindingSource
-            // 
-            this.selectThongKeDichVuBindingSource.DataMember = "Select_ThongKeDichVu";
-            this.selectThongKeDichVuBindingSource.DataSource = this.qUANLYKTXDataSet;
-            // 
             // select_ThongKeDichVuTableAdapter
             // 
             this.select_ThongKeDichVuTableAdapter.ClearBeforeFill = true;
+            // 
+            // SINHVIENBindingSource
+            // 
+            this.SINHVIENBindingSource.DataMember = "SINHVIEN";
+            this.SINHVIENBindingSource.DataSource = this.qUANLYKTXDataSet;
+            // 
+            // Select_2Para_ThongKeSDDV_KhuBindingSource
+            // 
+            this.Select_2Para_ThongKeSDDV_KhuBindingSource.DataMember = "Select_2Para_ThongKeSDDV_Khu";
+            this.Select_2Para_ThongKeSDDV_KhuBindingSource.DataSource = this.qUANLYKTXDataSet;
             // 
             // FrmBaoCao
             // 
@@ -559,17 +577,19 @@
             this.tabDV_Nuoc.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.select2ParaThongKeSDDVKhuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NHANVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHIEUDKBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectThongKeDichVuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.select2ParaThongKeSDDVKhuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.select3ParaSDDVPhongBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PHIEUDKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_3Para_SDDV_PhongBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_Para_PDKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Select_ThongKeDichVuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectThongKeDichVuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SINHVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Select_2Para_ThongKeSDDV_KhuBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -578,7 +598,6 @@
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Label lbTitle;
         private QUANLYKTXDataSet qUANLYKTXDataSet;
-        private System.Windows.Forms.BindingSource sINHVIENBindingSource;
         private QUANLYKTXDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
         private System.Windows.Forms.BindingSource NHANVIENBindingSource;
         private QUANLYKTXDataSetTableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
@@ -623,5 +642,8 @@
         private System.Windows.Forms.BindingSource Select_ThongKeDichVuBindingSource;
         private System.Windows.Forms.BindingSource selectThongKeDichVuBindingSource;
         private QUANLYKTXDataSetTableAdapters.Select_ThongKeDichVuTableAdapter select_ThongKeDichVuTableAdapter;
+        private System.Windows.Forms.BindingSource sINHVIENBindingSource1;
+        private System.Windows.Forms.BindingSource SINHVIENBindingSource;
+        private System.Windows.Forms.BindingSource Select_2Para_ThongKeSDDV_KhuBindingSource;
     }
 }
