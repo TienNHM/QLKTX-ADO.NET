@@ -75,20 +75,22 @@ namespace QLKTX.UI
             try
             {
                 var re = FrmMain.bS_Layer.Insert(
-               MSSV: txtMSSV.Text.Trim(),
-               MaNV: FrmMain.MaNV,
-               Khu: cmbKhu.Text.Trim(),
-               MaPhong: cmbMaPhong.Text.Trim(),
-               HocKi: cmbHocKi.Text.Trim(),
-               NamHoc: txtNamHoc.Text.Trim(),
-               NgayGioDK: DateTime.Now,
-               ThoiHan: Convert.ToInt32(txtThoiHan.Text),
-               NgayBD: txtNgayBD.Text.Trim(),
-               ref identity, ref error);
+                            MSSV: txtMSSV.Text.Trim(),
+                            MaNV: FrmMain.MaNV,
+                            Khu: cmbKhu.Text.Trim(),
+                            MaPhong: cmbMaPhong.Text.Trim(),
+                            HocKi: cmbHocKi.Text.Trim(),
+                            NamHoc: txtNamHoc.Text.Trim(),
+                            NgayGioDK: DateTime.Now,
+                            ThoiHan: Convert.ToInt32(txtThoiHan.Text),
+                            NgayBD: txtNgayBD.Text.Trim(),
+                            ref identity, ref error);
+
                 if (re == true && identity != -1)
                 {
                     btnInPDK.Enabled = true;
                     this.MaPDK = identity.ToString();
+                    FrmMain.bS_Layer.Insert(ref error, txtMSSV.Text.Trim(), cmbMaPhong.Text.Trim(), cmbKhu.Text.Trim());
                     MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

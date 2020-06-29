@@ -23,7 +23,7 @@ namespace QLKTX.UI
 
         public FrmMain(string strMaNV, BL_DangNhap.AccountType accountType)
         {
-            MaNV = strMaNV;
+            MaNV = strMaNV.Trim();
             this._accountType = accountType;
             InitializeComponent();
             Init();

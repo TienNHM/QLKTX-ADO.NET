@@ -13,7 +13,6 @@ namespace QLKTX.BS
     public partial class BS_layer
     {
         public DB_Main db = null;
-        string error = "";
 
         public BS_layer()
         {
@@ -29,7 +28,8 @@ namespace QLKTX.BS
             Phong,
             DichVu,
             LoaiPhong,
-            SDDV
+            SDDV,
+            Stay
         }
 
         public DataTable Select(ref string error, TableName table, object selectType, string strValue = "")
@@ -82,9 +82,10 @@ namespace QLKTX.BS
                 case TableName.PhieuDK:     key = "MaPDK";break;
                 case TableName.LoaiPhong:   key = "MaLoaiPhong"; break;
                 case TableName.DichVu:      key = "MaDV"; break;
-                    //case Phong
+                case TableName.SDDV:        key = "MaHD"; break;
+                case TableName.Stay:        key = "MSSV"; break;
             }    
-            string sql = $"DELETE FROM {strTableName} WHERE {key}=@Key";
+            string sql = $"DELETE FROM {strTableName} WHERE {key} = @Key";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("Key", strKey)

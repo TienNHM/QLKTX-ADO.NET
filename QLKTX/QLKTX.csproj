@@ -80,6 +80,7 @@
     <Compile Include="BS\BL_PhieuDK.cs" />
     <Compile Include="BS\BL_SinhVien.cs" />
     <Compile Include="BS\BL_SDDV.cs" />
+    <Compile Include="BS\BL_Stay.cs" />
     <Compile Include="BS\BS_layer.cs" />
     <Compile Include="BS\EnumConst.cs" />
     <Compile Include="DB\DB_Main.cs" />
@@ -114,6 +115,12 @@
     </Compile>
     <Compile Include="UI\FrmHoaDon.Designer.cs">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmHuongDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmHuongDan.Designer.cs">
+      <DependentUpon>FrmHuongDan.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrmInDangKy.cs">
       <SubType>Form</SubType>
@@ -196,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmHoaDon.resx">
       <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmHuongDan.resx">
+      <DependentUpon>FrmHuongDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmInDangKy.resx">
       <DependentUpon>FrmInDangKy.cs</DependentUpon>

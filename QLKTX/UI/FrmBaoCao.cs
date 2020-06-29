@@ -13,14 +13,6 @@ namespace QLKTX.UI
 {
     public partial class FrmBaoCao : Form
     {
-        enum ReportDichVu
-        {
-            Dien = 0,
-            Nuoc
-        }
-
-        ReportDichVu reportDichVu;
-
         public FrmBaoCao()
         {
             InitializeComponent();

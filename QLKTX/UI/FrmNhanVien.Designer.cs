@@ -277,7 +277,7 @@
             this.picAvt.Margin = new System.Windows.Forms.Padding(2);
             this.picAvt.Name = "picAvt";
             this.picAvt.Size = new System.Drawing.Size(112, 162);
-            this.picAvt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picAvt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvt.TabIndex = 57;
             this.picAvt.TabStop = false;
             // 

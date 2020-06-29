@@ -488,7 +488,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>CMND</rd:DefaultName>
@@ -698,6 +700,7 @@
                               <Value>=Fields!NgayBD.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
+                                <Format>yyyy-MM-dd</Format>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>

@@ -9,7 +9,6 @@ namespace QLKTX.UI
     public partial class FrmHoaDon : Form
     {
         string error = "";
-        string MaNV = "";
         string MaHD = "";
         DataTable DS_DichVu;
         Dictionary<string, int> DichVuSuDung = new Dictionary<string, int>();
@@ -201,7 +200,7 @@ namespace QLKTX.UI
 
                 //Tạo mới 1 hóa đơn
                 bool createHoaDon = FrmMain.bS_Layer.Insert(txtNamHoc.Text.Trim(), txtThang.Text.Trim(), dtNgayHD.Value,
-                                                            MaNV, cmbPhong.Text.Trim(), cmbKhu.Text.Trim(), ref identity, ref error);
+                                                            FrmMain.MaNV, cmbPhong.Text.Trim(), cmbKhu.Text.Trim(), ref identity, ref error);
                 
                 int count = 0, max = 0; //Dùng để xác định có thêm được tất cả các dịch vụ vào hóa đơn hay không
 
@@ -250,6 +249,32 @@ namespace QLKTX.UI
             this.Hide();
             frmIn.ShowDialog();
             this.Dispose();
+        }
+
+        private void btnXoaHD_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có thật sự muốn xóa hóa đơn này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                if (MaHD == "")
+                    this.Dispose();
+                else
+                {
+                    FrmMain.bS_Layer.Delete(BS_layer.TableName.SDDV, MaHD, ref error);
+                    if (error != "")
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi trong quá trình xóa danh sách dịch vụ của hóa đơn số " + MaHD + ". \n" + error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }    
+                    FrmMain.bS_Layer.Delete(BS_layer.TableName.HoaDon, MaHD, ref error);
+                    if (error != "")
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi trong quá trình xóa hóa đơn. \n" + error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }    
+                    else this.Dispose();
+                }    
+            }    
         }
     }
 }

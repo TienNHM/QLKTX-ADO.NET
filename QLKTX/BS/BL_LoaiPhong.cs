@@ -65,5 +65,15 @@ namespace QLKTX.BS
             };
             return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref error);
         }
+
+        public DataTable LayThongTinLoaiPhong(ref string error, string MaLoaiPhong)
+        {
+            string sql = "SELECT * FROM LOAIPHONG INNER JOIN PHONG ON PHONG.LoaiPhong = LOAIPHONG.MaLoaiPhong WHERE LOAIPHONG.MaLoaiPhong = @Ma;";
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("Ma", MaLoaiPhong)
+            };
+            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
+        }
     }
 }

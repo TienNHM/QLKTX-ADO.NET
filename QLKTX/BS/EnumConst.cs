@@ -78,6 +78,14 @@ namespace QLKTX.BS
             MaHD,
             All
         }
+
+        public enum Stay
+        {
+            MSSV,
+            MaPhong,
+            Khu,
+            All
+        }
         #endregion
 
         #region Mục chọn để tìm kiếm

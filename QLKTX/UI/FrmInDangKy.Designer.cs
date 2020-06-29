@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.selectParaPDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qUANLYKTXDataSet = new QLKTX.QUANLYKTXDataSet();
             this.selectParaChiTietHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -150,9 +150,9 @@
             // rvPDK
             // 
             this.rvPDK.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "DataSetParaPDK";
-            reportDataSource3.Value = this.selectParaPDKBindingSource;
-            this.rvPDK.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DataSetParaPDK";
+            reportDataSource1.Value = this.selectParaPDKBindingSource;
+            this.rvPDK.LocalReport.DataSources.Add(reportDataSource1);
             this.rvPDK.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportParaChiTietPhieuDK.rdlc";
             this.rvPDK.Location = new System.Drawing.Point(3, 3);
             this.rvPDK.Name = "rvPDK";
@@ -174,9 +174,9 @@
             // rvHoaDon
             // 
             this.rvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource4.Name = "DataSetParaChiTietHoaDon";
-            reportDataSource4.Value = this.selectParaChiTietHoaDonBindingSource;
-            this.rvHoaDon.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource2.Name = "DataSetParaChiTietHoaDon";
+            reportDataSource2.Value = this.selectParaChiTietHoaDonBindingSource;
+            this.rvHoaDon.LocalReport.DataSources.Add(reportDataSource2);
             this.rvHoaDon.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportParaChiTietHoaDon.rdlc";
             this.rvHoaDon.Location = new System.Drawing.Point(3, 3);
             this.rvHoaDon.Name = "rvHoaDon";

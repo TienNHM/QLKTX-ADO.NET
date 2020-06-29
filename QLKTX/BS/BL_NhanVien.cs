@@ -9,9 +9,9 @@ namespace QLKTX.BS
 {
     public partial class BS_layer
     {
-        public bool Insert(string MaNV, string CMND, string HoTen, string SDT, string Email, string DiaChi, int Luong, string MaNQL)
+        public bool Insert(ref string error, string MaNV, string CMND, string HoTen, string SDT, string Email, string DiaChi, int Luong, string MaNQL, string avt)
         {
-            string sql = "INSERT INTO NhanVien VALUES(@MaNV, @CMND, @HoTen, @SDT, @Email, @DiaChi,@Luong, @MaNQL)";
+            string sql = "INSERT INTO NhanVien VALUES(@MaNV, @CMND, @HoTen, @SDT, @Email, @DiaChi,@Luong, @MaNQL, @AnhChanDung);";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("MaNV", MaNV),
@@ -21,22 +21,24 @@ namespace QLKTX.BS
                 new SqlParameter("Email", Email),
                 new SqlParameter("DiaChi", DiaChi),
                 new SqlParameter("Luong", Luong),
-                new SqlParameter("MaNQL", MaNQL)
+                new SqlParameter("MaNQL", MaNQL),
+                new SqlParameter("AnhChanDung", avt)
             };
             return db.ExecuteNonQuery(sql, sqlParameters, System.Data.CommandType.Text, ref error);
         }
 
-        public bool Update(string MaNV, string CMND, string HoTen, string SDT, string Email, string DiaChi, int Luong, string MaNQL)
+        public bool Update(ref string error, string MaNV, string CMND, string HoTen, string SDT, string Email, string DiaChi, int Luong, string MaNQL, string avt)
         {
-            string sql = "UPDATE NhanVien SET" +
-                            "CMND = @CMND," +
+            string sql = "UPDATE NhanVien SET " +
+                            "CMND = @CMND, " +
                             "HoTen = @HoTen, " +
                             "SDT = @SDT, " +
                             "Email = @Email, " +
                             "DiaChi = @DiaChi, " +
                             "Luong = @Luong, " +
-                            "MaNQL = @MaNQL" +
-                         "WHERE MaNV = @MaNV";
+                            "MaNQL = @MaNQL, " +
+                            "AnhChanDung = @AnhChanDung " +
+                         "WHERE MaNV = @MaNV;";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("MaNV", MaNV),
@@ -46,7 +48,8 @@ namespace QLKTX.BS
                 new SqlParameter("Email", Email),
                 new SqlParameter("DiaChi", DiaChi),
                 new SqlParameter("Luong", Luong),
-                new SqlParameter("MaNQL", MaNQL)
+                new SqlParameter("MaNQL", MaNQL),
+                new SqlParameter("AnhChanDung", avt)
             };
             return db.ExecuteNonQuery(sql, sqlParameters, System.Data.CommandType.Text, ref error);
         }

@@ -59,5 +59,10 @@ namespace QLKTX.BS
             };
             return db.ExecuteNonQuery(sql, sqlParameters, System.Data.CommandType.Text, ref error);
         }
+
+        public DataTable LayDSPhongConChoTrong(ref string error)
+        {
+            string sql = 
+        }
     }
 }
