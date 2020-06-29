@@ -51,6 +51,7 @@ namespace QLKTX.BS
                     break;
                 case EnumConst.SinhVien.HoTen:
                 case EnumConst.NhanVien.HoTen:
+                case EnumConst.DichVu.TenDV:
                     strValue = "%" + strValue + "%";
                     sql = $"SELECT * FROM {strTableName} WHERE {strType} LIKE @Value";
                     sqlParameters = new SqlParameter[]

@@ -39,6 +39,7 @@ namespace QLKTX.DB
                 da = new SqlDataAdapter(comm);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+                error = "";
                 return dt;
             }
             catch (Exception ex)
@@ -60,6 +61,7 @@ namespace QLKTX.DB
                 comm.Parameters.Clear();
                 comm.Parameters.AddRange(sqlParameters);
                 identity = Convert.ToInt32(comm.ExecuteScalar());
+                error = "";
                 return true;
             }
             catch (Exception ex)

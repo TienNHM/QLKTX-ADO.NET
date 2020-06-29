@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.selectParaChiTietHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qUANLYKTXDataSet = new QLKTX.QUANLYKTXDataSet();
             this.selectParaPDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qUANLYKTXDataSet = new QLKTX.QUANLYKTXDataSet();
+            this.selectParaChiTietHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInput = new System.Windows.Forms.TextBox();
@@ -46,9 +46,9 @@
             this.select_Para_ChiTietHoaDonTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.Select_Para_ChiTietHoaDonTableAdapter();
             this.Select_Para_PDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.select_Para_PDKTableAdapter = new QLKTX.QUANLYKTXDataSetTableAdapters.Select_Para_PDKTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.selectParaChiTietHoaDonBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectParaPDKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectParaChiTietHoaDonBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPhieuDK.SuspendLayout();
@@ -56,20 +56,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.Select_Para_PDKBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // selectParaChiTietHoaDonBindingSource
+            // selectParaPDKBindingSource
             // 
-            this.selectParaChiTietHoaDonBindingSource.DataMember = "Select_Para_ChiTietHoaDon";
-            this.selectParaChiTietHoaDonBindingSource.DataSource = this.qUANLYKTXDataSet;
+            this.selectParaPDKBindingSource.DataMember = "Select_Para_PDK";
+            this.selectParaPDKBindingSource.DataSource = this.qUANLYKTXDataSet;
             // 
             // qUANLYKTXDataSet
             // 
             this.qUANLYKTXDataSet.DataSetName = "QUANLYKTXDataSet";
             this.qUANLYKTXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // selectParaPDKBindingSource
+            // selectParaChiTietHoaDonBindingSource
             // 
-            this.selectParaPDKBindingSource.DataMember = "Select_Para_PDK";
-            this.selectParaPDKBindingSource.DataSource = this.qUANLYKTXDataSet;
+            this.selectParaChiTietHoaDonBindingSource.DataMember = "Select_Para_ChiTietHoaDon";
+            this.selectParaChiTietHoaDonBindingSource.DataSource = this.qUANLYKTXDataSet;
             // 
             // tableLayoutPanel1
             // 
@@ -205,11 +205,12 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmInDangKy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "In";
             this.Load += new System.EventHandler(this.FrmInDangKy_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.selectParaChiTietHoaDonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectParaPDKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qUANLYKTXDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectParaChiTietHoaDonBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabControl.ResumeLayout(false);

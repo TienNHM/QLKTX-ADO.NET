@@ -16,16 +16,24 @@ namespace QLKTX.UI
     public partial class FrmMain : Form
     {
         private bool isExit = false;
+        private BL_DangNhap.AccountType _accountType;
         public static BS_layer bS_Layer = new BS_layer();
 
         public static string MaNV { get; set; }
 
-        public FrmMain(string strMaNV)
+        public FrmMain(string strMaNV, BL_DangNhap.AccountType accountType)
         {
             MaNV = strMaNV;
+            this._accountType = accountType;
             InitializeComponent();
             Init();
             lbNgay.Text = "Ngày hiện tại: " + DateTime.Today.ToString("dddd, dd MMMM yyyy");
+
+            if (accountType == BL_DangNhap.AccountType.Employee)
+            {
+                ctrlDS_NhanVien.Enabled = false;
+                ctrlBaoCao.Enabled = false;
+            }                
         }
 
         #region Init

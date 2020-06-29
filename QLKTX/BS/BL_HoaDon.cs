@@ -13,7 +13,7 @@ namespace QLKTX.BS
     {
         public bool Insert(string Nam, string Thang, DateTime NgayHD, string MaNV, string MaPhong, string Khu, ref int identity, ref string error)
         {
-            string sql = "INSERT INTO HoaDon VALUES(@Nam, @Thang, @NgayHD, @MaNV, @MaPhong, @Khu)" +
+            string sql = "INSERT INTO HoaDon VALUES(@Nam, @Thang, @NgayHD, @MaNV, @MaPhong, @Khu)  " +
                             "SELECT SCOPE_IDENTITY()";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {

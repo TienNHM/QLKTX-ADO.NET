@@ -529,6 +529,7 @@
                               <Value>=Fields!NgSinh.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
+                                <Format>yyyy-MM-dd</Format>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>

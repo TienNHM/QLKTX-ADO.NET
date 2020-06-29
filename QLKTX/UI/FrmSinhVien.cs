@@ -104,7 +104,10 @@ namespace QLKTX.UI
                     ref error);
             }
             if (result)
+            {
                 MessageBox.Show("Đã lưu xong!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
+            }    
             else
                 MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

@@ -14,6 +14,7 @@ namespace QLKTX.UI
     public partial class FrmDangNhap : Form
     {
         public static bool exit = false;
+        private string error = "";
 
         public FrmDangNhap()
         {
@@ -23,11 +24,13 @@ namespace QLKTX.UI
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             BL_DangNhap dangNhap = new BL_DangNhap();
-            string result = dangNhap.Select(txtUserName.Text.Trim(), txtPassword.Text.Trim());
-            if (result != null)
+            string MaNV = "";
+            BL_DangNhap.AccountType accountType = BL_DangNhap.AccountType.Employee;
+            bool result = dangNhap.Select(txtUserName.Text.Trim(), txtPassword.Text.Trim(), ref MaNV, ref accountType, ref error);
+            if (result)
             {
                 this.Hide();
-                FrmMain main = new FrmMain(result);
+                FrmMain main = new FrmMain(MaNV, accountType);
                 main.ShowDialog();
                 if (exit == false)
                 {
