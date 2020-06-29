@@ -60,9 +60,24 @@ namespace QLKTX.BS
             return db.ExecuteNonQuery(sql, sqlParameters, System.Data.CommandType.Text, ref error);
         }
 
-        public DataTable LayDSPhongConChoTrong(ref string error)
+        public DataTable LayDSPhongTrong(ref string error)
         {
-            string sql = 
+            string sql =
+            " SELECT PHONG.Khu AS Khu, PHONG.MaPhong AS MaPhong " +
+            " FROM PHONG, LOAIPHONG " +
+            " EXCEPT " +
+            " SELECT TMP.Khu, TMP.MaPhong FROM " +
+            "    (SELECT STAY.Khu, STAY.MaPhong, COUNT(STAY.MSSV) AS SV, SoSV " +
+            "        FROM " +
+            "            STAY INNER JOIN PHONG ON STAY.Khu= PHONG.Khu AND STAY.MaPhong= PHONG.MaPhong " +
+            "                 INNER JOIN LOAIPHONG ON LOAIPHONG.MaLoaiPhong= PHONG.LoaiPhong " +
+            "        GROUP BY STAY.Khu, STAY.MaPhong, SoSV " +
+            "     ) AS TMP " +
+            " WHERE TMP.SV = TMP.SoSV;";
+            SqlParameter[] sqlParameters= new SqlParameter[] { };
+            return db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
+
+            //return db.ExecuteStoredProcedure("DS_PHONG_TRONG", ref error);
         }
     }
 }

@@ -47,6 +47,10 @@ namespace QLKTX.DB
                 error = ex.Message;
                 return null;
             }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public bool SelectScopeIdentity(string strSQL, SqlParameter[] sqlParameters, CommandType ct, ref int identity, ref string error)
@@ -98,5 +102,33 @@ namespace QLKTX.DB
             }
             return f;
         }
+
+        public DataTable ExecuteStoredProcedure(string storedProcedure, ref string error)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(storedProcedure, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                comm.Parameters.Clear();
+                da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                comm.ExecuteNonQuery();
+                error = "";
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                error = ex.Message;
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
 }

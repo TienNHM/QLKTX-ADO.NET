@@ -248,6 +248,9 @@
       <DependentUpon>FrmTimKiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <Resource Include="HuongDan.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -274,6 +277,7 @@
     <None Include="QUANLYKTXDataSet.xss">
       <DependentUpon>QUANLYKTXDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Resources\HuongDan.rtf" />
     <None Include="Resources\woman-4.png" />
   </ItemGroup>
   <ItemGroup>

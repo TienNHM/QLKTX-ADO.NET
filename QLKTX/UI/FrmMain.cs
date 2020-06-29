@@ -177,7 +177,8 @@ namespace QLKTX.UI
 
         private void HuongDan()
         {
-
+            FrmHuongDan huongDan = new FrmHuongDan();
+            huongDan.ShowDialog();
         }
 
         private void HoaDon()

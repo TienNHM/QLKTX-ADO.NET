@@ -40,7 +40,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1064, 59);
+            this.label1.Size = new System.Drawing.Size(784, 59);
             this.label1.TabIndex = 23;
             this.label1.Text = "HƯỚNG DẪN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -51,7 +51,7 @@
             this.rtb.Location = new System.Drawing.Point(0, 59);
             this.rtb.Name = "rtb";
             this.rtb.ReadOnly = true;
-            this.rtb.Size = new System.Drawing.Size(1064, 622);
+            this.rtb.Size = new System.Drawing.Size(784, 502);
             this.rtb.TabIndex = 24;
             this.rtb.Text = "";
             // 
@@ -59,10 +59,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.rtb);
             this.Controls.Add(this.label1);
             this.Name = "FrmHuongDan";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hướng dẫn";
             this.ResumeLayout(false);

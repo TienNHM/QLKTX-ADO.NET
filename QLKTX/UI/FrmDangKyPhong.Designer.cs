@@ -60,7 +60,7 @@
             this.lbMSSV.Location = new System.Drawing.Point(30, 20);
             this.lbMSSV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMSSV.Name = "lbMSSV";
-            this.lbMSSV.Size = new System.Drawing.Size(54, 16);
+            this.lbMSSV.Size = new System.Drawing.Size(50, 16);
             this.lbMSSV.TabIndex = 0;
             this.lbMSSV.Text = "MSSV";
             // 
@@ -71,7 +71,7 @@
             this.lbMaPhong.Location = new System.Drawing.Point(110, 76);
             this.lbMaPhong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaPhong.Name = "lbMaPhong";
-            this.lbMaPhong.Size = new System.Drawing.Size(78, 16);
+            this.lbMaPhong.Size = new System.Drawing.Size(76, 16);
             this.lbMaPhong.TabIndex = 3;
             this.lbMaPhong.Text = "Mã phòng";
             // 
@@ -82,7 +82,7 @@
             this.lbHocKi.Location = new System.Drawing.Point(245, 22);
             this.lbHocKi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHocKi.Name = "lbHocKi";
-            this.lbHocKi.Size = new System.Drawing.Size(54, 16);
+            this.lbHocKi.Size = new System.Drawing.Size(52, 16);
             this.lbHocKi.TabIndex = 4;
             this.lbHocKi.Text = "Học kì";
             // 
@@ -93,7 +93,7 @@
             this.lbNamHoc.Location = new System.Drawing.Point(245, 75);
             this.lbNamHoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNamHoc.Name = "lbNamHoc";
-            this.lbNamHoc.Size = new System.Drawing.Size(71, 16);
+            this.lbNamHoc.Size = new System.Drawing.Size(69, 16);
             this.lbNamHoc.TabIndex = 5;
             this.lbNamHoc.Text = "Năm học";
             // 
@@ -167,7 +167,7 @@
             this.lbKhu.Location = new System.Drawing.Point(30, 76);
             this.lbKhu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbKhu.Name = "lbKhu";
-            this.lbKhu.Size = new System.Drawing.Size(35, 16);
+            this.lbKhu.Size = new System.Drawing.Size(33, 16);
             this.lbKhu.TabIndex = 22;
             this.lbKhu.Text = "Khu";
             // 
@@ -248,7 +248,7 @@
             this.label2.Location = new System.Drawing.Point(245, 131);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 16);
+            this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 33;
             this.label2.Text = "Thời hạn";
             // 
@@ -270,7 +270,7 @@
             this.label1.Location = new System.Drawing.Point(29, 129);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
+            this.label1.Size = new System.Drawing.Size(101, 16);
             this.label1.TabIndex = 31;
             this.label1.Text = "Ngày bắt đầu";
             // 
@@ -333,7 +333,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng ký phòng";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhieuDangKy_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

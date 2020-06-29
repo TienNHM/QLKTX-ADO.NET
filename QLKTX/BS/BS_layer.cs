@@ -70,7 +70,7 @@ namespace QLKTX.BS
             return db.ExecuteQuery(sql, sqlParameters, CommandType.Text, ref error);
         }
 
-        public bool Delete(TableName tableName, string strKey, ref string err)
+        public bool Delete(TableName tableName, string strKey, ref string error)
         {
             string strTableName = tableName.ToString();
             string key = "";
@@ -90,7 +90,7 @@ namespace QLKTX.BS
             {
                 new SqlParameter("Key", strKey)
             };
-            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref err);
+            return db.ExecuteNonQuery(sql, sqlParameters, CommandType.Text, ref error);
         }
     }
 }

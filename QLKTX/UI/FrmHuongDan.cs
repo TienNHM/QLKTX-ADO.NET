@@ -15,6 +15,9 @@ namespace QLKTX.UI
         public FrmHuongDan()
         {
             InitializeComponent();
+            
+            rtb.SelectAll();
+            rtb.SelectedRtf = Properties.Resources.HuongDan;
         }
     }
 }

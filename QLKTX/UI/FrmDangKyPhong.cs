@@ -15,6 +15,7 @@ namespace QLKTX.UI
     {
         private string error = "";
         private string MaPDK = "";
+        DataTable dataKhuPhong = new DataTable();
 
         public FrmDangKyPhong(string MaPDK = "")
         {
@@ -50,23 +51,20 @@ namespace QLKTX.UI
 
         private void InitKhu()
         {
-            var dt = FrmMain.bS_Layer.Select(ref error, BS.BS_layer.TableName.Phong);
-            string[] Khu = { "" };
-            if (dt != null)
+            dataKhuPhong = FrmMain.bS_Layer.LayDSPhongTrong(ref error);
+            if (error == "")
             {
-                List<string> tmp = new List<string>();
-                for (int i = 0; i < dt.Rows.Count; i++)
-                    tmp.Add(dt.Rows[i]["Khu"].ToString());
-                Khu = tmp.ToArray();
+                string current_Khu = "";
+                for (int i = 0; i < dataKhuPhong.Rows.Count; i++)
+                {
+                    string tmp = dataKhuPhong.Rows[i]["Khu"].ToString();
+                    if (tmp.Equals(current_Khu) == false)
+                    {
+                        cmbKhu.Items.Add(tmp);
+                        current_Khu = tmp;
+                    }    
+                }                    
             }    
-            cmbKhu.Items.AddRange(Khu);
-        }
-
-        private void PhieuDangKy_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult re = MessageBox.Show("Bạn muốn thoát phải không?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (re == DialogResult.No)
-                e.Cancel = true;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
@@ -92,6 +90,8 @@ namespace QLKTX.UI
                     this.MaPDK = identity.ToString();
                     FrmMain.bS_Layer.Insert(ref error, txtMSSV.Text.Trim(), cmbMaPhong.Text.Trim(), cmbKhu.Text.Trim());
                     MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    panel1.Enabled = false;
+                    btnDangKy.Enabled = false;
                 }
                 else
                     MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -104,26 +104,32 @@ namespace QLKTX.UI
 
         private void cmbKhu_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbMaPhong.Text = "";
             if (cmbKhu.SelectedIndex > 0)
             {
                 cmbMaPhong.Enabled = true;
-                string[] MaPhong = { "" };
-                var dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.Phong, strMaKhu: cmbKhu.Text.Trim());
-                if (dt != null)
+                cmbMaPhong.Items.Clear();
+
+                //Xác định đang chọn phòng cho khu nào
+                string khu = cmbKhu.SelectedItem.ToString();
+
+                //Lấy danh sách phòng của khu tương ứng
+                var rows = dataKhuPhong.Select($"Khu = '{khu}'");
+                //Thêm vào cmb
+                foreach (DataRow r in rows)
                 {
-                    List<string> tmp = new List<string>();
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                        tmp.Add(dt.Rows[i]["MaPhong"].ToString());
-                    MaPhong = tmp.ToArray();
-                }
-                cmbMaPhong.Items.AddRange(MaPhong);
-            }     
+                    cmbMaPhong.Items.Add(r["MaPhong"].ToString());
+                }    
+            }   
         }
 
         private void btnInPDK_Click(object sender, EventArgs e)
         {
+            if (MaPDK == "") return;
+            this.Hide();
             FrmInDangKy frmIn = new FrmInDangKy(FrmInDangKy.PrintType.PhieuDK, MaPDK);
             frmIn.Show();
+            this.Dispose();
         }
     }
 }
