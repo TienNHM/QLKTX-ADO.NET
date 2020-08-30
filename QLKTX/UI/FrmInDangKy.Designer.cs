@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.selectParaPDKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qUANLYKTXDataSet = new QLKTX.QUANLYKTXDataSet();
             this.selectParaChiTietHoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -86,7 +86,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1064, 43);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1064, 37);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -96,7 +96,7 @@
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 43);
+            this.label1.Size = new System.Drawing.Size(366, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã số:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -104,21 +104,22 @@
             // txtInput
             // 
             this.txtInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInput.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInput.Location = new System.Drawing.Point(375, 3);
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(313, 36);
+            this.txtInput.Size = new System.Drawing.Size(313, 29);
             this.txtInput.TabIndex = 1;
+            this.txtInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnXuat
             // 
             this.btnXuat.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuat.Font = new System.Drawing.Font("Segoe UI Black", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuat.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuat.ForeColor = System.Drawing.Color.DarkRed;
             this.btnXuat.Location = new System.Drawing.Point(694, 3);
             this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(75, 37);
+            this.btnXuat.Size = new System.Drawing.Size(75, 31);
             this.btnXuat.TabIndex = 2;
             this.btnXuat.Text = "XUẤT";
             this.btnXuat.UseVisualStyleBackColor = true;
@@ -130,10 +131,10 @@
             this.tabControl.Controls.Add(this.tabHoaDon);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(0, 43);
+            this.tabControl.Location = new System.Drawing.Point(0, 37);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1064, 638);
+            this.tabControl.Size = new System.Drawing.Size(1064, 644);
             this.tabControl.TabIndex = 1;
             // 
             // tabPhieuDK
@@ -142,7 +143,7 @@
             this.tabPhieuDK.Location = new System.Drawing.Point(4, 30);
             this.tabPhieuDK.Name = "tabPhieuDK";
             this.tabPhieuDK.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPhieuDK.Size = new System.Drawing.Size(1056, 604);
+            this.tabPhieuDK.Size = new System.Drawing.Size(1056, 610);
             this.tabPhieuDK.TabIndex = 0;
             this.tabPhieuDK.Text = "Phiếu đăng ký phòng";
             this.tabPhieuDK.UseVisualStyleBackColor = true;
@@ -150,14 +151,14 @@
             // rvPDK
             // 
             this.rvPDK.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetParaPDK";
-            reportDataSource1.Value = this.selectParaPDKBindingSource;
-            this.rvPDK.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "DataSetParaPDK";
+            reportDataSource3.Value = this.selectParaPDKBindingSource;
+            this.rvPDK.LocalReport.DataSources.Add(reportDataSource3);
             this.rvPDK.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportParaChiTietPhieuDK.rdlc";
             this.rvPDK.Location = new System.Drawing.Point(3, 3);
             this.rvPDK.Name = "rvPDK";
             this.rvPDK.ServerReport.BearerToken = null;
-            this.rvPDK.Size = new System.Drawing.Size(1050, 598);
+            this.rvPDK.Size = new System.Drawing.Size(1050, 604);
             this.rvPDK.TabIndex = 0;
             // 
             // tabHoaDon
@@ -174,9 +175,9 @@
             // rvHoaDon
             // 
             this.rvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSetParaChiTietHoaDon";
-            reportDataSource2.Value = this.selectParaChiTietHoaDonBindingSource;
-            this.rvHoaDon.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource4.Name = "DataSetParaChiTietHoaDon";
+            reportDataSource4.Value = this.selectParaChiTietHoaDonBindingSource;
+            this.rvHoaDon.LocalReport.DataSources.Add(reportDataSource4);
             this.rvHoaDon.LocalReport.ReportEmbeddedResource = "QLKTX.Reports.ReportParaChiTietHoaDon.rdlc";
             this.rvHoaDon.Location = new System.Drawing.Point(3, 3);
             this.rvHoaDon.Name = "rvHoaDon";

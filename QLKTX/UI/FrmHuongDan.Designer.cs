@@ -47,6 +47,7 @@
             // 
             // rtb
             // 
+            this.rtb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtb.Location = new System.Drawing.Point(0, 59);
             this.rtb.Name = "rtb";

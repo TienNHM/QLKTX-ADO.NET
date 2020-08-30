@@ -21,19 +21,25 @@ namespace QLKTX.UI
         public FrmSinhVien()
         {
             InitializeComponent();
+            btnSua.Visible = false;
         }
 
         public FrmSinhVien(string MSSV)
         {
             InitializeComponent();
             var dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.SinhVien, EnumConst.SinhVien.MSSV, MSSV);
+            if (error != "")
+            {
+                MessageBox.Show("Đã xảy ra lối trong quá trình lưu dữ liệu. \n" + error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (dt != null)
             {
                 txtMSSV.Text = dt.Rows[0]["MSSV"].ToString();
                 txtHoTen.Text = dt.Rows[0]["HoTen"].ToString();
                 txtCMND.Text = dt.Rows[0]["CMND"].ToString();
                 ckbNu.Checked = (bool) dt.Rows[0]["Phai"];
-                txtDienSV.Text = dt.Rows[0]["DienSV"].ToString();
+                cmbDienSV.Text = dt.Rows[0]["DienSV"].ToString();
                 txtEmail.Text = dt.Rows[0]["Email"].ToString();
                 txtNgSinh.Text = ((DateTime)dt.Rows[0]["NgSinh"]).ToString("yyyy-MM-dd");
                 txtQueQuan.Text = dt.Rows[0]["QueQuan"].ToString();
@@ -41,7 +47,11 @@ namespace QLKTX.UI
                 txtSDT.Text = dt.Rows[0]["SDT"].ToString();
                 txtBHYT.Text = dt.Rows[0]["BHYT"].ToString();
                 cmbMaLop.Text = dt.Rows[0]["MaLop"].ToString();
-                try { picAvt.BackgroundImage = Image.FromFile(strAvt); }
+                try 
+                {
+                    if (strAvt != "")
+                        picAvt.BackgroundImage = Image.FromFile(strAvt);
+                }
                 catch { }
             }
             pnContainer.Enabled = false;
@@ -61,20 +71,34 @@ namespace QLKTX.UI
                 this.Width = 735;
             }
         }
+        private bool CheckInput()
+        {
+            if (txtMSSV.Text == ""
+                || cmbMaLop.Text == ""
+                || txtHoTen.Text == ""
+                || txtCMND.Text == ""
+                || txtSDT.Text == ""
+                || cmbDienSV.Text == "")
+                return false;
+            return true;
+        }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (CheckInput() == false)
+            {
+                MessageBox.Show("Xin nhập đầy đủ thông tin cho sinh viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.SinhVien, EnumConst.SinhVien.MSSV, txtMSSV.Text.Trim());
-            bool bNu = false;
-            if (ckbNu.Checked)
-                bNu = true;
+            bool bNu = (ckbNu.Checked) ? true : false;
             bool result = false;
             if (dt.Rows.Count > 0)
             {
                 result = FrmMain.bS_Layer.Update(
                     txtMSSV.Text.Trim(),
                     cmbMaLop.Text.Trim(),
-                    txtDienSV.Text.Trim(),
+                    cmbDienSV.Text.Trim(),
                     txtHoTen.Text.Trim(),
                     Phai: bNu,
                     txtNgSinh.Text,
@@ -91,7 +115,7 @@ namespace QLKTX.UI
                 result = FrmMain.bS_Layer.Insert(
                     txtMSSV.Text.Trim(),
                     cmbMaLop.Text.Trim(),
-                    txtDienSV.Text.Trim(),
+                    cmbDienSV.Text.Trim(),
                     txtHoTen.Text.Trim(),
                     Phai: bNu,
                     txtNgSinh.Text,

@@ -21,6 +21,7 @@ namespace QLKTX.UI
             btnInHoaDon.Enabled = false;
             dtNgayHD.Value = DateTime.Now;
             txtMaNV.Text = FrmMain.MaNV;
+            btnXoaHD.Visible = false;
         }
 
         public FrmHoaDon(string MaHD)

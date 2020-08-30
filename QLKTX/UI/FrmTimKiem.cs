@@ -199,7 +199,7 @@ namespace QLKTX.UI
             }
 
             //cập nhật lại những thay đổi, nếu có
-            btnSearch_Click(btnSearch, e);
+            btnSearch_Click(btnSearch, new EventArgs());
         }
     }
 }

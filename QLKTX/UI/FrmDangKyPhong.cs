@@ -17,36 +17,39 @@ namespace QLKTX.UI
         private string MaPDK = "";
         DataTable dataKhuPhong = new DataTable();
 
+        public FrmDangKyPhong()
+        {
+            InitializeComponent();
+            //Ngày đăng kí
+            lbNgayGioDK.Text = DateTime.Today.ToString("yyyy-MM-dd hh:mm:ss");
+            //Thông tin nhân viên
+            lbMaNV.Text = FrmMain.MaNV + "";
+            //Khu
+            InitKhu();
+        }
+
         public FrmDangKyPhong(string MaPDK = "")
         {
             InitializeComponent();
-            if (MaPDK != "")
+            var dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.PhieuDK, EnumConst.PhieuDK.MaPDK, MaPDK.Trim());
+            if (dt.Rows.Count > 0)
             {
-                var dt = FrmMain.bS_Layer.Select(ref error, BS_layer.TableName.PhieuDK, EnumConst.PhieuDK.MaPDK, MaPDK.Trim());
-                if (dt.Rows.Count > 0)
-                {
-                    this.MaPDK = MaPDK;
-                    txtMSSV.Text = dt.Rows[0]["MSSV"].ToString();
-                    txtNamHoc.Text = dt.Rows[0]["NamHoc"].ToString();
-                    txtNgayBD.Text = dt.Rows[0]["NgayBD"].ToString();
-                    txtThoiHan.Text = dt.Rows[0]["ThoiHan"].ToString();
-                    cmbHocKi.Text = dt.Rows[0]["HocKi"].ToString();
-                    cmbKhu.Text = dt.Rows[0]["Khu"].ToString();
-                    cmbMaPhong.Text = dt.Rows[0]["MaPhong"].ToString();
-                    lbMaNV.Text = dt.Rows[0]["MaNV"].ToString();
-                }
-                else
-                    MessageBox.Show("Đã xảy ra lỗi trong quá trình truy xuất dữ liệu! \n" + error, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }   
+                this.MaPDK = MaPDK;
+                btnDangKy.Enabled = false;
+                btnInPDK.Enabled = true;
+                panel1.Enabled = false;
+                txtMSSV.Text = dt.Rows[0]["MSSV"].ToString();
+                txtNamHoc.Text = dt.Rows[0]["NamHoc"].ToString();
+                dtpNgayBD.Value = ((DateTime)dt.Rows[0]["NgayBD"]);
+                txtThoiHan.Text = dt.Rows[0]["ThoiHan"].ToString();
+                cmbHocKi.Text = dt.Rows[0]["HocKi"].ToString();
+                cmbKhu.Text = dt.Rows[0]["Khu"].ToString();
+                cmbMaPhong.Text = dt.Rows[0]["MaPhong"].ToString();
+                lbMaNV.Text = dt.Rows[0]["MaNV"].ToString();
+                lbNgayGioDK.Text = dt.Rows[0]["NgayGioDK"].ToString();
+            }
             else
-            {
-                //Ngày đăng kí
-                lbNgayGioDK.Text = DateTime.Today.ToString("yyyy-MM-dd hh:mm:ss");
-                //Thông tin nhân viên
-                lbMaNV.Text = FrmMain.MaNV + "";
-                //Khu
-                InitKhu();
-            }    
+                MessageBox.Show("Đã xảy ra lỗi trong quá trình truy xuất dữ liệu! \n" + error, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); 
         }
 
         private void InitKhu()
@@ -81,17 +84,17 @@ namespace QLKTX.UI
                             NamHoc: txtNamHoc.Text.Trim(),
                             NgayGioDK: DateTime.Now,
                             ThoiHan: Convert.ToInt32(txtThoiHan.Text),
-                            NgayBD: txtNgayBD.Text.Trim(),
+                            NgayBD: dtpNgayBD.Value.ToString("yyyy-MM-dd"),
                             ref identity, ref error);
 
                 if (re == true && identity != -1)
                 {
-                    btnInPDK.Enabled = true;
                     this.MaPDK = identity.ToString();
                     FrmMain.bS_Layer.Insert(ref error, txtMSSV.Text.Trim(), cmbMaPhong.Text.Trim(), cmbKhu.Text.Trim());
                     MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     panel1.Enabled = false;
                     btnDangKy.Enabled = false;
+                    btnInPDK.Enabled = true;
                 }
                 else
                     MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -126,7 +129,6 @@ namespace QLKTX.UI
         private void btnInPDK_Click(object sender, EventArgs e)
         {
             if (MaPDK == "") return;
-            this.Hide();
             FrmInDangKy frmIn = new FrmInDangKy(FrmInDangKy.PrintType.PhieuDK, MaPDK);
             frmIn.Show();
             this.Dispose();

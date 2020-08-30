@@ -42,9 +42,9 @@
             this.cmbMaPhong = new System.Windows.Forms.ComboBox();
             this.cmbKhu = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
             this.txtThoiHan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNgayBD = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbNhanVien = new System.Windows.Forms.Label();
             this.lbNgay = new System.Windows.Forms.Label();
@@ -115,23 +115,25 @@
             // 
             this.txtMSSV.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtMSSV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.txtMSSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMSSV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMSSV.Location = new System.Drawing.Point(33, 41);
             this.txtMSSV.Margin = new System.Windows.Forms.Padding(2);
             this.txtMSSV.Name = "txtMSSV";
-            this.txtMSSV.Size = new System.Drawing.Size(164, 22);
+            this.txtMSSV.Size = new System.Drawing.Size(164, 23);
             this.txtMSSV.TabIndex = 14;
+            this.txtMSSV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNamHoc
             // 
             this.txtNamHoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtNamHoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.txtNamHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNamHoc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamHoc.Location = new System.Drawing.Point(245, 95);
             this.txtNamHoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtNamHoc.Name = "txtNamHoc";
-            this.txtNamHoc.Size = new System.Drawing.Size(164, 22);
+            this.txtNamHoc.Size = new System.Drawing.Size(164, 23);
             this.txtNamHoc.TabIndex = 15;
+            this.txtNamHoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnDangKy
             // 
@@ -173,9 +175,9 @@
             // 
             // cmbHocKi
             // 
-            this.cmbHocKi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbHocKi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.cmbHocKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbHocKi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHocKi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbHocKi.FormattingEnabled = true;
             this.cmbHocKi.Items.AddRange(new object[] {
             "1",
@@ -183,37 +185,39 @@
             "3"});
             this.cmbHocKi.Location = new System.Drawing.Point(245, 41);
             this.cmbHocKi.Name = "cmbHocKi";
-            this.cmbHocKi.Size = new System.Drawing.Size(164, 24);
+            this.cmbHocKi.Size = new System.Drawing.Size(164, 23);
             this.cmbHocKi.TabIndex = 28;
             // 
             // cmbMaPhong
             // 
-            this.cmbMaPhong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbMaPhong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.cmbMaPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaPhong.Enabled = false;
+            this.cmbMaPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaPhong.FormattingEnabled = true;
             this.cmbMaPhong.Location = new System.Drawing.Point(113, 95);
             this.cmbMaPhong.Name = "cmbMaPhong";
-            this.cmbMaPhong.Size = new System.Drawing.Size(82, 21);
+            this.cmbMaPhong.Size = new System.Drawing.Size(82, 23);
             this.cmbMaPhong.TabIndex = 29;
             // 
             // cmbKhu
             // 
-            this.cmbKhu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbKhu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.cmbKhu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKhu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKhu.FormattingEnabled = true;
             this.cmbKhu.Location = new System.Drawing.Point(32, 95);
             this.cmbKhu.Name = "cmbKhu";
-            this.cmbKhu.Size = new System.Drawing.Size(73, 21);
+            this.cmbKhu.Size = new System.Drawing.Size(73, 23);
             this.cmbKhu.TabIndex = 30;
             this.cmbKhu.SelectedIndexChanged += new System.EventHandler(this.cmbKhu_SelectedIndexChanged);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.dtpNgayBD);
             this.panel1.Controls.Add(this.txtThoiHan);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtNgayBD);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbKhu);
             this.panel1.Controls.Add(this.cmbMaPhong);
@@ -230,16 +234,27 @@
             this.panel1.Size = new System.Drawing.Size(447, 195);
             this.panel1.TabIndex = 31;
             // 
+            // dtpNgayBD
+            // 
+            this.dtpNgayBD.CustomFormat = "yyyy-MM-dd";
+            this.dtpNgayBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBD.Location = new System.Drawing.Point(33, 151);
+            this.dtpNgayBD.Name = "dtpNgayBD";
+            this.dtpNgayBD.Size = new System.Drawing.Size(164, 21);
+            this.dtpNgayBD.TabIndex = 35;
+            // 
             // txtThoiHan
             // 
             this.txtThoiHan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtThoiHan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.txtThoiHan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThoiHan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThoiHan.Location = new System.Drawing.Point(245, 149);
             this.txtThoiHan.Margin = new System.Windows.Forms.Padding(2);
             this.txtThoiHan.Name = "txtThoiHan";
-            this.txtThoiHan.Size = new System.Drawing.Size(164, 22);
+            this.txtThoiHan.Size = new System.Drawing.Size(164, 23);
             this.txtThoiHan.TabIndex = 34;
+            this.txtThoiHan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -251,17 +266,6 @@
             this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 33;
             this.label2.Text = "Thời hạn";
-            // 
-            // txtNgayBD
-            // 
-            this.txtNgayBD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtNgayBD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.txtNgayBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayBD.Location = new System.Drawing.Point(31, 147);
-            this.txtNgayBD.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNgayBD.Name = "txtNgayBD";
-            this.txtNgayBD.Size = new System.Drawing.Size(164, 22);
-            this.txtNgayBD.TabIndex = 32;
             // 
             // label1
             // 
@@ -360,9 +364,9 @@
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.TextBox txtThoiHan;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNgayBD;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbMaNV;
         private System.Windows.Forms.Label lbNgayGioDK;
+        private System.Windows.Forms.DateTimePicker dtpNgayBD;
     }
 }

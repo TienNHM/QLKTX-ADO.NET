@@ -18,6 +18,7 @@ namespace QLKTX.UI
             
             rtb.SelectAll();
             rtb.SelectedRtf = Properties.Resources.HuongDan;
+            rtb.SelectionStart = 0;
         }
     }
 }

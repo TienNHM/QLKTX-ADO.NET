@@ -71,7 +71,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(93, 26);
-            this.btnSearch.TabIndex = 1;
+            this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "TÌM KIẾM";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -130,7 +130,7 @@
             this.pnTop.Controls.Add(this.pnPhanLoai);
             this.pnTop.Controls.Add(this.panel1);
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTop.Location = new System.Drawing.Point(0, 50);
+            this.pnTop.Location = new System.Drawing.Point(0, 62);
             this.pnTop.Name = "pnTop";
             this.pnTop.Size = new System.Drawing.Size(1064, 109);
             this.pnTop.TabIndex = 6;
@@ -168,7 +168,7 @@
             this.txtPhong.Location = new System.Drawing.Point(389, 0);
             this.txtPhong.Name = "txtPhong";
             this.txtPhong.Size = new System.Drawing.Size(150, 25);
-            this.txtPhong.TabIndex = 3;
+            this.txtPhong.TabIndex = 12;
             // 
             // label4
             // 
@@ -186,7 +186,7 @@
             this.txtKhu.Location = new System.Drawing.Point(91, 0);
             this.txtKhu.Name = "txtKhu";
             this.txtKhu.Size = new System.Drawing.Size(150, 25);
-            this.txtKhu.TabIndex = 1;
+            this.txtKhu.TabIndex = 11;
             // 
             // label3
             // 
@@ -201,7 +201,7 @@
             // 
             // cmbMucTimKiem
             // 
-            this.cmbMucTimKiem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbMucTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMucTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbMucTimKiem.FormattingEnabled = true;
             this.cmbMucTimKiem.Location = new System.Drawing.Point(24, 28);
@@ -300,11 +300,11 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Goldenrod;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1064, 50);
+            this.label2.Size = new System.Drawing.Size(1064, 62);
             this.label2.TabIndex = 7;
             this.label2.Text = "TÌM THÔNG TIN";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -340,7 +340,7 @@
             this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgv.Location = new System.Drawing.Point(0, 159);
+            this.dgv.Location = new System.Drawing.Point(0, 171);
             this.dgv.Margin = new System.Windows.Forms.Padding(10);
             this.dgv.Name = "dgv";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -359,7 +359,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv.Size = new System.Drawing.Size(1064, 522);
+            this.dgv.Size = new System.Drawing.Size(1064, 510);
             this.dgv.TabIndex = 10;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             // 

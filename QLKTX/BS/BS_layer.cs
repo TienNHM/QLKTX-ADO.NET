@@ -49,18 +49,9 @@ namespace QLKTX.BS
                 case EnumConst.LoaiPhong.All:
                     sql = $"SELECT * FROM {strTableName}";
                     break;
-                case EnumConst.SinhVien.HoTen:
-                case EnumConst.NhanVien.HoTen:
-                case EnumConst.DichVu.TenDV:
+                default:
                     strValue = "%" + strValue + "%";
                     sql = $"SELECT * FROM {strTableName} WHERE {strType} LIKE @Value";
-                    sqlParameters = new SqlParameter[]
-                    {
-                        new SqlParameter("Value", strValue)
-                    };
-                    break;
-                default:
-                    sql = $"SELECT * FROM {strTableName} WHERE {strType} = @Value";
                     sqlParameters = new SqlParameter[]
                     {
                         new SqlParameter("Value", strValue)

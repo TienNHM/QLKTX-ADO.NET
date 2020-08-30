@@ -56,7 +56,7 @@ namespace QLKTX.UI
         private void FrmInDangKy_Load(object sender, EventArgs e)
         {
             if (txtInput.Text == "") return;
-            ReportViewerLoad();
+            //ReportViewerLoad();
         }
 
         private void btnXuat_Click(object sender, EventArgs e)

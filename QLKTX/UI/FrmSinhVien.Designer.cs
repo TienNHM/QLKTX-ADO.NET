@@ -37,7 +37,6 @@
             this.btnChoose = new System.Windows.Forms.Button();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDienSV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.cmbMaLop = new System.Windows.Forms.ComboBox();
@@ -64,6 +63,7 @@
             this.lbThanNhan = new System.Windows.Forms.Label();
             this.pnTop = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.cmbDienSV = new System.Windows.Forms.ComboBox();
             this.pnSV.SuspendLayout();
             this.pnContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvt)).BeginInit();
@@ -132,11 +132,11 @@
             // 
             // pnContainer
             // 
+            this.pnContainer.Controls.Add(this.cmbDienSV);
             this.pnContainer.Controls.Add(this.ckbNu);
             this.pnContainer.Controls.Add(this.btnChoose);
             this.pnContainer.Controls.Add(this.txtQueQuan);
             this.pnContainer.Controls.Add(this.label3);
-            this.pnContainer.Controls.Add(this.txtDienSV);
             this.pnContainer.Controls.Add(this.label2);
             this.pnContainer.Controls.Add(this.txtMSSV);
             this.pnContainer.Controls.Add(this.cmbMaLop);
@@ -204,15 +204,6 @@
             this.label3.Size = new System.Drawing.Size(60, 15);
             this.label3.TabIndex = 57;
             this.label3.Text = "Quê quán";
-            // 
-            // txtDienSV
-            // 
-            this.txtDienSV.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDienSV.Location = new System.Drawing.Point(362, 198);
-            this.txtDienSV.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDienSV.Name = "txtDienSV";
-            this.txtDienSV.Size = new System.Drawing.Size(160, 23);
-            this.txtDienSV.TabIndex = 56;
             // 
             // label2
             // 
@@ -488,6 +479,21 @@
             this.lbTitle.Text = "THÔNG TIN SINH VIÊN";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cmbDienSV
+            // 
+            this.cmbDienSV.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbDienSV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDienSV.FormattingEnabled = true;
+            this.cmbDienSV.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "2NT",
+            "3"});
+            this.cmbDienSV.Location = new System.Drawing.Point(362, 200);
+            this.cmbDienSV.Name = "cmbDienSV";
+            this.cmbDienSV.Size = new System.Drawing.Size(160, 23);
+            this.cmbDienSV.TabIndex = 63;
+            // 
             // FrmSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,7 +537,6 @@
         private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.TextBox txtQueQuan;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDienSV;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMSSV;
         private System.Windows.Forms.ComboBox cmbMaLop;
@@ -552,5 +557,6 @@
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbSDT;
         private System.Windows.Forms.Label lbMSSV;
+        private System.Windows.Forms.ComboBox cmbDienSV;
     }
 }
