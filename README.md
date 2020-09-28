@@ -2,7 +2,7 @@
 
 ## Giao diện
 
-![Màn hình đăng nhập](../QLKTX/Resources/login_screenshoot.png)
+![Màn hình đăng nhập](../tree/master/QLKTX/Resources/login_screenshoot.png)
 
 
 ## Các chức năng chính
