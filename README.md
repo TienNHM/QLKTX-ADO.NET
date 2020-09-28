@@ -5,3 +5,4 @@
 ![Màn hình đăng nhập](../images/login.png)
 
 
+## Các chức năng chính
