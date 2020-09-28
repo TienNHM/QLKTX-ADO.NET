@@ -2,7 +2,7 @@
 
 ## Giao diện
 
-![Màn hình đăng nhập](../images/login.png)
+![Màn hình đăng nhập](Resources/login_screenshoot.png)
 
 
 ## Các chức năng chính
