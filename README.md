@@ -1,5 +1,11 @@
 # Quản lý Kí túc xá
 
+![GitHub contributors](https://img.shields.io/github/contributors/TienNHM/QLKTX-ADO.NET) ![GitHub issues](https://img.shields.io/github/issues/TienNHM/QLKTX-ADO.NET?color=red) ![GitHub top language](https://img.shields.io/github/languages/top/TienNHM/QLKTX-ADO.NET?color=cyan) ![GitHub repo size](https://img.shields.io/github/repo-size/TienNHM/QLKTX-ADO.NET) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/TienNHM/QLKTX-ADO.NET) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/TienNHM/QLKTX-ADO.NET?color=g) ![GitHub last commit](https://img.shields.io/github/last-commit/TienNHM/QLKTX-ADO.NET?color=yellow) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/TienNHM/QLKTX-ADO.NET)
+
+Các thành viên:
+- Nguyễn Huỳnh Minh Tiến - [@TienNHM](https://github.com/TienNHM)
+- Hồ Quốc Khánh - [@khanhthusinh](https://github.com/khanhthusinh)
+
 ## Giới thiệu
 - Với số lượng sinh viên lớn, số phòng ở và số hóa đơn cần quản lý tương ứng cũng rất lớn, thực tế cho thấy việc ứng dụng công nghệ thông tin vào quản lý ký túc xá là một nhu cầu tất yếu, hiển nhiên.
 - Nắm bắt được xu hướng trên, ứng dụng Quản lý kí túc xá với mục tiêu hướng đến sự đơn giản, tiện dụng, dễ cài đặt và thao tác cho người sử dụng. Đồng thời nhấn mạnh tính hiện đại, tinh tế trong việc trải nghiệm người dùng, trên hết là những tính năng cần thiết nhất của công việc quản lý.
