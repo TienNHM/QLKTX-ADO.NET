@@ -31,7 +31,7 @@ Mỗi sinh viên, ứng với mã số sinh viên tương ứng, sẽ có các t
 
 Mỗi phiếu đăng kí phòng sẽ có một mã số xác định (tự động sinh ra khi tạo mới) để quản lý các thông tin về: *Mã nhân viên tạo phiếu đăng ký, Mã số sinh viên, Khu, Phòng, Ngày bắt đầu ở, Học kỳ, Năm học, Thời hạn ở, Ngày giờ tạo hóa đơn.*
 
-![Tạo phiếu đăng ký phòng - 2](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-them-pdk-2.png)
+<p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-them-pdk-2.png" alt="Tạo phiếu đăng ký phòng - 2"></p>
 
 #### 3.3. Tạo mới một hóa đơn tháng:
 Mỗi tháng, sẽ xuất hóa đơn dịch vụ mà mỗi phòng sử dụng trong tháng trước đó. Các dịch vụ sử dụng: điện, nước, đổ rác, wifi,…
