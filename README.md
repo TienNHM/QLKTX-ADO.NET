@@ -118,7 +118,7 @@ Kết quả trả về:
 ### 4.6. Xem và cập nhật thông tin chi tiết từ các kết quả tìm kiếm
 Để xem và cập nhật thông tin từ các tìm kiếm trả về, chỉ câng nhấn vào dòng chưa thông tin tương ứng và bắt đầu sửa chữa.
 #### 4.6.1. Xem và cập nhật thông tin sinh viên
-![Xem và cập nhật thông tin sinh viên](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/sua-sinh-vien.png)
+<p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/sua-sinh-vien.png" alt="Xem và cập nhật thông tin sinh viên"></p>
 
 #### 4.6.2. Xem và cập nhật thông tin nhân viên
 ![Xem và cập nhật thông tin nhân viên](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/sua-nhan-vien.png)
