@@ -24,7 +24,7 @@ Mỗi sinh viên, ứng với mã số sinh viên tương ứng, sẽ có các t
 
 ![Thêm thông tin sinh viên - ảnh 1](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-them-1.png)
 
-<img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-them-2.png" alt="Thêm thông tin sinh viên - ảnh 2" >
+<p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-them-2.png" alt="Thêm thông tin sinh viên - ảnh 2" ></p>
 
 #### 3.2. Tạo phiếu đăng ký phòng ở
 ![Tạo phiếu đăng ký phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-them-pdk.png)
@@ -47,7 +47,7 @@ Mỗi hóa đơn sẽ xuất theo phòng, gồm các thông tin về:
 Sau khi cung cấp đầy đủ thông tin về hóa đơn, người dùng có thể in hóa đơn và giao cho khách hàng.
 ![Hóa đơn - 1](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-hoa-don-1.png)
 
-<img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-hoa-don-2.png" alt="Hóa đơn - 2" >
+<p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-hoa-don-2.png" alt="Hóa đơn - 2" ></p>
 
 ### 4. Chức năng xem và cập nhật thông tin
 #### 4.1. Xem danh sách các khu phòng
@@ -65,7 +65,7 @@ Khi nhấn vào từng nhân viên, sẽ hiện ra các thông tin chi tiết v�
 
 Khi nhấn vào từng loại phòng, sẽ hiện thông tin chi tiết về loại phòng đó.
 
-<img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-chi-tiet-loai-phong.png" alt="Chi tiết loại phòng" > 
+<p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-chi-tiet-loai-phong.png" alt="Chi tiết loại phòng" ></p>
 
 #### 4.4. Xem danh sách các dịch vụ
 ![Chức năng thông tin dịch vụ](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-thong-tin-dich-vu.png)
@@ -95,13 +95,54 @@ Tương tự, ta có thể tìm kiếm các thông tin về nhân viên, phòng,
 
 Kết quả trả về:
 
-<img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/kq-tim-nhan-vien.png" alt="Kết quả tìm nhân viên" >
+<p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/kq-tim-nhan-vien.png" alt="Kết quả tìm nhân viên" ></p>
 
 #### 4.5.4. Tìm kiếm phòng
 ![Chức năng tìm phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/kq-tim-phong.png)
 
 Kết quả trả về:
-<img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/kq-tim-phong.png" alt="Kết quả tìm phòng" >
+<p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/kq-tim-phong.png" alt="Kết quả tìm phòng" ></p>
 
 #### 4.5.5. Tìm kiếm phiếu đăng ký phòng
+![Chức năng tìm phiếu đăng ký phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-tim-pdk.png)
 
+Kết quả trả về:
+<p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/kq-tim-pdk.png" alt="Kết quả tìm phiếu đăng ký phòng"></p>
+
+#### 4.5.6. Tìm kiếm hóa đơn
+![Chức năng tìm hóa đơn](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-tim-hoa-don.png)
+
+Kết quả trả về:
+<p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/kq-tim-hoa-don.png" alt="Kết quả tìm hóa đơn"></p>
+
+### 4.6. Xem và cập nhật thông tin chi tiết từ các kết quả tìm kiếm
+Để xem và cập nhật thông tin từ các tìm kiếm trả về, chỉ câng nhấn vào dòng chưa thông tin tương ứng và bắt đầu sửa chữa.
+#### 4.6.1. Xem và cập nhật thông tin sinh viên
+![Xem và cập nhật thông tin sinh viên](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/sua-sinh-vien.png)
+
+#### 4.6.2. Xem và cập nhật thông tin nhân viên
+![Xem và cập nhật thông tin nhân viên](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/sua-nhan-vien.png)
+
+#### 4.6.3. Xem và cập nhật thông tin phòng
+![Xem và cập nhật thông tin phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/sua-phong-o.png)
+
+#### 4.6.4. Xem và in phiếu đăng ký phòng
+![Xem và in phiếu đăng ký phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/sua-pdk.png)
+
+![In phiếu đăng ký](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/in-pdk.png)
+
+#### 4.6.5. Xem và cập nhật thông tin và in hóa đơn
+![Xem và cập nhật thông tin và in hóa đơn](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/sua-hoa-don.png)
+
+![In hóa đơn](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/in-hoa-don.png)
+
+### 4.7. Báo cáo
+
+## 5. Diagram
+### 5.1. Database diagram
+![Database diagram](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/database-diagram.png)
+
+### 5.2. Class diagram
+![Class diagram](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/class-diagram.png)
+
+![Class diagram 2](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/class-diagram-2.png)
