@@ -26,7 +26,7 @@ Mỗi sinh viên, ứng với mã số sinh viên tương ứng, sẽ có các t
 
 ![Thêm thông tin sinh viên - ảnh 2](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-them-2.png)
 
-#### 3.2.Tạo phiếu đăng ký phòng ở
+#### 3.2. Tạo phiếu đăng ký phòng ở
 ![Tạo phiếu đăng ký phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-them-pdk.png)
 
 Mỗi phiếu đăng kí phòng sẽ có một mã số xác định (tự động sinh ra khi tạo mới) để quản lý các thông tin về: *Mã nhân viên tạo phiếu đăng ký, Mã số sinh viên, Khu, Phòng, Ngày bắt đầu ở, Học kỳ, Năm học, Thời hạn ở, Ngày giờ tạo hóa đơn.*
@@ -48,3 +48,44 @@ Sau khi cung cấp đầy đủ thông tin về hóa đơn, người dùng có t
 ![Hóa đơn - 1](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-hoa-don-1.png)
 
 ![Hóa đơn - 2](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-hoa-don-2.png)
+
+### 4. Chức năng xem và cập nhật thông tin
+#### 4.1. Xem danh sách các khu phòng
+![Chức năng thông tin khu phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-thong-tin-khu-phong.png)
+
+#### 4.2. Xem danh sách và chỉnh sửa thông tin các nhân viên được quản lý
+![Chức năng thông tin nhân viên](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-thong-tin-nhan-vien.png)
+
+Khi nhấn vào từng nhân viên, sẽ hiện ra các thông tin chi tiết về nhân viên đó để có thể sửa đổi, cập nhật mới.
+
+![Thông tin nhân viên](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/thong-tin-nhan-vien.png)
+
+#### 4.3. Xem danh sách các loại phòng
+![Chức năng thông tin loại phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-thong-tin-loai-phong.png)
+
+Khi nhấn vào từng loại phòng, sẽ hiện thông tin chi tiết về loại phòng đó.
+
+![Chi tiết loại phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-chi-tiet-loai-phong.png)
+
+#### 4.4. Xem danh sách các dịch vụ
+![Chức năng thông tin dịch vụ](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-thong-tin-dich-vu.png)
+
+Khi nhấn vào từng dịch vụ, sẽ hiện thông tin chi tiets về từng dịc vụ đó.
+
+![Chi tiết dịch vụ](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-chi-tiet-dich-vu.png)
+
+### 4.5. Tìm kiếm thông tin
+Cung cấp cho người dùng khả năng tìm kiếm và lọc dữ liệu một cách tiện dụng, trực quan và hiệu quả. Đồng thời nhấn mạnh sự đơn giản, dễ sử dụng.
+#### 4.5.1. Giao diện chính
+![Chức năng tìm kiếm](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-tim-kiem.png)
+
+Với chức năng tìm kiếm, người dùng dễ dọn chọn đối tượng tìm kiếm, bao gồm: Sinh viên, Nhân viên, Phòng, Phiếu đăng ký phòng, Hóa đơn.
+
+##### 4.5.2. Tìm kiếm sinh viên
+Người dùng chọn tiếp nội dung cần tìm kiếm, sau đó nhập từ khóa để bấm tìm.
+![Tìm kiếm sinh viên](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-tim-sinh-vien.png)
+
+Kết quả trả về:
+![Kết quả tìm sinh viên](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/kq-tim-sinh-vien.png)
+
+Tương tự, ta có thể tìm kiếm các thông tin về nhân viên, phòng, phiếu đăng ký và hóa đơn.
