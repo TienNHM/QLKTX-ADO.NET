@@ -1,5 +1,11 @@
 # Quản lý Kí túc xá
 
+![GitHub contributors](https://img.shields.io/github/contributors/TienNHM/QLKTX-ADO.NET) ![GitHub issues](https://img.shields.io/github/issues/TienNHM/QLKTX-ADO.NET?color=red) ![GitHub top language](https://img.shields.io/github/languages/top/TienNHM/QLKTX-ADO.NET?color=cyan) ![GitHub repo size](https://img.shields.io/github/repo-size/TienNHM/QLKTX-ADO.NET) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/TienNHM/QLKTX-ADO.NET) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/TienNHM/QLKTX-ADO.NET?color=g) ![GitHub last commit](https://img.shields.io/github/last-commit/TienNHM/QLKTX-ADO.NET?color=yellow) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/TienNHM/QLKTX-ADO.NET)
+
+Các thành viên:
+- Nguyễn Huỳnh Minh Tiến - [@TienNHM](https://github.com/TienNHM)
+- Hồ Quốc Khánh - [@khanhthusinh](https://github.com/khanhthusinh)
+
 ## Giới thiệu
 - Với số lượng sinh viên lớn, số phòng ở và số hóa đơn cần quản lý tương ứng cũng rất lớn, thực tế cho thấy việc ứng dụng công nghệ thông tin vào quản lý ký túc xá là một nhu cầu tất yếu, hiển nhiên.
 - Nắm bắt được xu hướng trên, ứng dụng Quản lý kí túc xá với mục tiêu hướng đến sự đơn giản, tiện dụng, dễ cài đặt và thao tác cho người sử dụng. Đồng thời nhấn mạnh tính hiện đại, tinh tế trong việc trải nghiệm người dùng, trên hết là những tính năng cần thiết nhất của công việc quản lý.
@@ -18,6 +24,9 @@
 ![Giao diện chính](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/man-hinh-chinh.png)
 
 ### 3. Chức năng thêm mới
+<details>
+  <summary>Mô tả</summary>
+  
 #### 3.1. Thêm thông tin sinh viên
 Được dùng khi thêm thông tin một sinh viên mới, chứa có thông tin lưu trữ trong cơ sở dữ liệu.
 Mỗi sinh viên, ứng với mã số sinh viên tương ứng, sẽ có các thông tin quản lý về: *Họ tên, Ngày sinh, Giới tính, Lớp, Quê quán, CMND, Số điện thoại, Email, Bảo hiểm y tế, Diện sinh viên, Ảnh chân dung.*
@@ -49,7 +58,12 @@ Sau khi cung cấp đầy đủ thông tin về hóa đơn, người dùng có t
 
 <p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-hoa-don-2.png" alt="Hóa đơn - 2" ></p>
 
+</details>
+
 ### 4. Chức năng xem và cập nhật thông tin
+<details>
+  <summary>Mô tả</summary>
+  
 #### 4.1. Xem danh sách các khu phòng
 ![Chức năng thông tin khu phòng](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-thong-tin-khu-phong.png)
 
@@ -75,6 +89,9 @@ Khi nhấn vào từng dịch vụ, sẽ hiện thông tin chi tiets về từng
 ![Chi tiết dịch vụ](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-chi-tiet-dich-vu.png)
 
 ### 4.5. Tìm kiếm thông tin
+<details>
+  <summary>Mô tả</summary>
+  
 Cung cấp cho người dùng khả năng tìm kiếm và lọc dữ liệu một cách tiện dụng, trực quan và hiệu quả. Đồng thời nhấn mạnh sự đơn giản, dễ sử dụng.
 #### 4.5.1. Giao diện chính
 ![Chức năng tìm kiếm](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/cn-tim-kiem.png)
@@ -115,7 +132,12 @@ Kết quả trả về:
 Kết quả trả về:
 <p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/kq-tim-hoa-don.png" alt="Kết quả tìm hóa đơn"></p>
 
+</details>
+
 ### 4.6. Xem và cập nhật thông tin chi tiết từ các kết quả tìm kiếm
+<details>
+  <summary>Mô tả</summary>
+  
 Để xem và cập nhật thông tin từ các tìm kiếm trả về, chỉ câng nhấn vào dòng chưa thông tin tương ứng và bắt đầu sửa chữa.
 #### 4.6.1. Xem và cập nhật thông tin sinh viên
 <p align="center"><img src="https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/sua-sinh-vien.png" alt="Xem và cập nhật thông tin sinh viên"></p>
@@ -136,9 +158,16 @@ Kết quả trả về:
 
 ![In hóa đơn](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/in-hoa-don.png)
 
+</details>
+
 ### 4.7. Báo cáo
 
+</details>
+
 ## 5. Diagram
+<details>
+  <summary>Mô tả</summary>
+  
 ### 5.1. Database diagram
 ![Database diagram](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/database-diagram.png)
 
@@ -146,3 +175,5 @@ Kết quả trả về:
 ![Class diagram](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/class-diagram.png)
 
 ![Class diagram 2](https://github.com/TienNHM/QLKTX-ADO.NET/raw/master/QLKTX/Resources/images/class-diagram-2.png)
+
+</details>
